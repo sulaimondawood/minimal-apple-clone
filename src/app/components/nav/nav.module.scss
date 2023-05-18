@@ -1,0 +1,28 @@
+// hidden nav-blur backdrop-blur-3xl  fixed top-0 w-screen  justify-center space-x-9 py-3 lg:flex
+@import "../../utils/_variable.module.scss";
+
+.header_wrapper {
+  backdrop-filter: blur(90px);
+  background-color: $white-ish;
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+  align-items: center;
+  padding: 0 12px;
+
+  button {
+    background-color: transparent;
+    border: none;
+  }
+  svg {
+    width: 17px;
+  }
+  path {
+    fill: $white-ish;
+  }
+
+  a {
+    color: $white-ish;
+    font-size: 12px;
+  }
+}
