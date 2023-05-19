@@ -1,0 +1,118 @@
+@import "../../utils/variable.module";
+.hero {
+  background-color: $black;
+  width: 100%;
+  padding-bottom: 72px;
+
+  h1 {
+    font-size: 3rem;
+    padding: 72px 16px;
+    width: 100%;
+    max-width: 768px;
+    text-align: center;
+    margin: 0 auto;
+    color: $white;
+    font-weight: 600;
+  }
+
+  button {
+    border: 1px solid $white;
+    text-align: center;
+    border-radius: 20px;
+    padding: 8px 24px;
+    margin-top: 40px;
+    display: block;
+    margin: 0 auto;
+    gap: 8px;
+    font-size: 18px;
+    background-color: transparent;
+    color: $white;
+  }
+}
+
+.products_wrp {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .bg_item {
+    background-size: cover;
+    width: 100%;
+    background-position: center;
+    height: 600px;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 650;
+      padding-top: 72px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 0.8rem 0;
+      font-weight: 400;
+    }
+
+    .btn_wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+
+      a {
+        color: $blue;
+      }
+    }
+  }
+}
+
+.products_2_wrp {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+
+  .bg_item {
+    background-size: cover;
+    width: 100%;
+    background-position: center;
+    height: 600px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    // gap: 0.8rem;
+    align-items: center;
+
+    .logo_initial {
+      width: 200px;
+      padding-top: 300px;
+      text-align: center;
+    }
+    .logo {
+      width: 150px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 0.8rem 0;
+      font-weight: 300;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .btn_wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+
+      a {
+        color: $blue;
+      }
+    }
+  }
+}
