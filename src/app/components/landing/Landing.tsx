@@ -44,14 +44,14 @@ export default function Landing({ landingProducts, landingProducts2 }: any) {
               <h2 style={{ color: items.color }}>{items.desc}</h2>
 
               <div className={styles.btn_wrap}>
-                <Link href=""> {items.learnmore} </Link>
-                <Link href="/order">{items.buy}</Link>
+                {/* <Link href="">{items.learnmore}</Link>
+                <Link href="/order">{items.buy}</Link> */}
               </div>
             </Link>
           );
         })}
       </div>
-      <div className={styles.products_2_wrp}>
+      {/* <div className={styles.products_2_wrp}>
         {landingProducts2.map((items: Iitems) => {
           return (
             <Link
@@ -80,7 +80,7 @@ export default function Landing({ landingProducts, landingProducts2 }: any) {
             </Link>
           );
         })}
-      </div>
+      </div> */}
     </>
   );
 }
