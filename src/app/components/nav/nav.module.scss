@@ -3,14 +3,13 @@
 
 .header_wrapper {
   backdrop-filter: blur(90px);
-  background-color: $white-ish;
   display: flex;
   justify-content: center;
   gap: 56px;
   align-items: center;
   padding: 0 12px;
-  position: fixed;
-  width:100%;
+  width: 100%;
+  top: 0;
 
   button {
     background-color: transparent;
@@ -19,12 +18,8 @@
   svg {
     width: 17px;
   }
-  path {
-    fill: $white-ish-2;
-  }
 
   a {
-    color: $white-ish-2;
     font-size: 12px;
   }
 }

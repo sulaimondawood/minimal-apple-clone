@@ -38,5 +38,21 @@ export default {
       type: "array",
       of: [{ type: "image" }],
     },
+    {
+      name: "sec2Title",
+      title: "Sec2 Title",
+      type: "string",
+    },
+    {
+      name: "sec2pricerange",
+      title: "Sec 2Price Range",
+      type: "string",
+    },
+    {
+      name: "sec2gridone",
+      title: "Sec2 Grid One",
+      type: "array",
+      of: [{ type: "image" }],
+    },
   ],
 };
