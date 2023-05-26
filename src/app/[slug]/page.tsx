@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "./detail.module.scss";
 import { client } from "../../../sanity/lib/client";
 import { urlForImage } from "../../../sanity/lib/image";
+import { url } from "inspector";
 
 export default async function Detail({ params }: any) {
   const { slug } = params;
@@ -82,11 +83,22 @@ export default async function Detail({ params }: any) {
                 ).url()})`,
               }}
             >
-              <h2></h2>
+              <h2>{res.secGridThreeItem1Text}</h2>
+            </div>
+            <div className={styles.div_2}>
+              <p>Superspeedy</p>
+              <img src={urlForImage(res.secGridThreeItem2Img).url()} alt="" />
             </div>
           </div>
-          <div className={styles.grid_4_right}>
-            <h2></h2>
+          <div
+            style={{
+              backgroundImage: `url(${urlForImage(
+                res?.secGridThreeItem3Img
+              ).url()})`,
+            }}
+            className={styles.grid_4_right}
+          >
+            <h2>{res.secGridThreeItem3Text}</h2>
           </div>
         </div>
       </div>
