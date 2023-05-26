@@ -3,10 +3,8 @@
   position: sticky;
   width: 100%;
   top: 0px;
-  background-color: #ffffff90;
+  background-color: #ffffff;
   padding: 1rem 0;
-  // z-index: 9;
-  backdrop-filter: blur(50px);
 
   > div {
     display: flex;
@@ -32,7 +30,7 @@
 }
 
 .hero_detail {
-  margin-top: 80px;
+  margin-top: 30px;
   width: 100%;
   overflow: hidden;
   background-size: cover;
@@ -47,6 +45,145 @@
 
     > h1 {
       font-size: 80px;
+
+      font-weight: 500;
+    }
+  }
+}
+
+.sec_2 {
+  background-color: $white;
+  text-align: center;
+  padding: 3.5rem 0;
+
+  h2 {
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  .grid_2 {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    // grid-template-columns: 1.3fr 1fr;
+    gap: 30px;
+
+    h2 {
+      font-weight: 500;
+    }
+
+    p {
+      color: $white-ish;
+    }
+
+    .grid_item_left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      background-color: $white-2;
+      padding: 1rem;
+      flex: 1.5;
+      border-radius: 30px;
+
+      .btm_sub_div {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+      }
+    }
+    .grid_item_right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      flex: 1;
+
+      .sub_div {
+        padding: 2.5rem 1rem;
+        background-color: $white-2;
+        border-radius: 30px;
+        height: 100%;
+
+        h2 {
+          font-size: 2.3rem;
+          background-clip: text;
+          background: -webkit-linear-gradient(#9ccc15, #000000);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+      .sub_div_2 {
+        background-color: $white-2;
+        border-radius: 30px;
+        padding: 0 2rem;
+        padding-bottom: 1.5rem;
+        height: 100%;
+
+        img {
+          width: 80%;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .grid_3 {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 30px;
+
+    img {
+      flex: 1;
+      border-radius: 30px;
+    }
+
+    div {
+      background-color: $white-2;
+      border-radius: 30px;
+      flex: 1.5;
+      padding: 1rem 0;
+
+      p {
+        color: $white-ish;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      img {
+        width: 80%;
+      }
+    }
+  }
+
+  .grid_4 {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 30px;
+
+    .grid_4_left {
+      display: flex;
     }
   }
 }
