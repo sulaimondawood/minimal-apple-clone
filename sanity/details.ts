@@ -144,5 +144,176 @@ export default {
       title: "Sec Grid Three Item3 Text",
       type: "string",
     },
+    {
+      name: "secGridFourItem1Img",
+      title: "Sec Grid Four Item1 Img",
+      type: "image",
+    },
+    {
+      name: "secGridFourItem1Text",
+      title: "Sec Grid Four Item1 Text",
+      type: "string",
+    },
+    {
+      name: "secGridFourItem2Img",
+      title: "Sec Grid Four Item2 Img",
+      type: "image",
+    },
+    {
+      name: "secGridFiveItemText1",
+      title: "Sec Grid Five Item Text 1",
+      type: "string",
+    },
+    {
+      name: "secGridFiveItemText1Color",
+      title: "Sec Grid Five Item Text 1 Color",
+      type: "string",
+    },
+    {
+      name: "seGridFiveItem1Text2",
+      title: "Sec Grid Five Item Text 2",
+      type: "string",
+    },
+    {
+      name: "secGridFiveItem1Text2Color",
+      title: "Sec Grid Five Item Text 2 Color",
+      type: "string",
+    },
+    {
+      name: "secGridFiveItem1Img",
+      title: "Sec Grid Five Item Img",
+      type: "image",
+    },
+    {
+      name: "secGridFiveItem2Text",
+      title: "Sec Grid Five Item 2 Text",
+      type: "string",
+    },
+    {
+      name: "secGridFiveItem2TextColor",
+      title: "Sec Grid Five Item 2 Text Color",
+      type: "string",
+    },
+    {
+      name: "secGridFiveItem2Img",
+      title: "Sec Grid Five Item2 Img",
+      type: "image",
+    },
+    {
+      name: "sec2GridMainTitle",
+      title: "Sec2 Grid Main Title",
+      type: "string",
+    },
+    {
+      name: "sec2GridItem1Title",
+      title: "Sec2 Grid Item1 Title",
+      type: "string",
+    },
+    {
+      name: "sec2GridItem1Text",
+      title: "Sec2 Grid Item1 Text",
+      type: "string",
+    },
+    {
+      name: "sec2GridItem1Image",
+      title: "Sec2 Grid Item1 Image",
+      type: "image",
+    },
+    {
+      name: "sec2GridItem2Title",
+      title: "Sec2 Grid Item2 Title",
+      type: "string",
+    },
+    {
+      name: "sec2GridItem2Text",
+      title: "Sec2 Grid Item2 Text",
+      type: "string",
+    },
+    {
+      name: "sec2GridItem2Image",
+      title: "Sec2 Grid Item2 Image",
+      type: "image",
+    },
+    {
+      name: "sec2GridItem3Title",
+      title: "Sec2 Grid Item3 Title",
+      type: "string",
+    },
+    {
+      name: "sec2GridItem3Text",
+      title: "Sec2 Grid Item3 Text",
+      type: "string",
+    },
+    {
+      name: "sec2GridItem3Image",
+      title: "Sec2 Grid Item3 Image",
+      type: "image",
+    },
+
+    {
+      name: "sec3GridMainTitle",
+      title: "Sec3 Grid Main Title",
+      type: "string",
+    },
+    {
+      name: "sec3GridItem1Icon",
+      title: "Sec3 Grid Item1 Icon",
+      type: "image",
+    },
+    {
+      name: "sec3GridItem1Title",
+      title: "Sec3 Grid Item1 Title",
+      type: "string",
+    },
+    {
+      name: "sec3GridItem1Text",
+      title: "Sec3 Grid Item1 Text",
+      type: "string",
+    },
+    {
+      name: "sec3GridItem1Image",
+      title: "Sec3 Grid Item1 Image",
+      type: "image",
+    },
+    {
+      name: "sec3GridItem2Icon",
+      title: "Sec3 Grid Item2 Icon",
+      type: "image",
+    },
+    {
+      name: "sec3GridItem2Title",
+      title: "Sec3 Grid Item2 Title",
+      type: "string",
+    },
+    {
+      name: "sec3GridItem2Text",
+      title: "Sec3 Grid Item2 Text",
+      type: "string",
+    },
+    {
+      name: "sec3GridItem2Image",
+      title: "Sec3 Grid Item2 Image",
+      type: "image",
+    },
+    {
+      name: "sec3GridItem3Icon",
+      title: "Sec3 Grid Item3 Icon",
+      type: "image",
+    },
+    {
+      name: "sec3GridItem3Title",
+      title: "Sec3 Grid Item3 Title",
+      type: "string",
+    },
+    {
+      name: "sec3GridItem3Text",
+      title: "Sec3 Grid Item3 Text",
+      type: "string",
+    },
+    {
+      name: "sec3GridItem3Image",
+      title: "Sec3 Grid Item3 Image",
+      type: "image",
+    },
   ],
 };
