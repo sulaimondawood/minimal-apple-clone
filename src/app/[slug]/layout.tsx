@@ -1,3 +1,5 @@
+import { useState } from "react";
+import Footer from "../components/footer/Footer";
 import Nav from "../components/nav/Nav";
 
 export default function HomepageLayout({
@@ -7,8 +9,9 @@ export default function HomepageLayout({
 }) {
   return (
     <>
-      <Nav state={false} />
+      {/* <Nav state={false} /> */}
       {children}
+      {/* <Footer state={false} /> */}
     </>
   );
 }

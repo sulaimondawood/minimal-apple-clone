@@ -1,7 +1,9 @@
 import styles from "./footer.module.scss";
-const Footer = () => {
+const Footer = ({ state }: { state: string }) => {
+  console.log(state);
+
   return (
-    <div className={styles.footer_wrapper}>
+    <div style={{ backgroundColor: state }} className={styles.footer_wrapper}>
       <div className={styles.footer_wrapper_sub_wrapper}>
         To access and use all the features of Apple Card, you must add Apple
         Card to your Wallet on iPhonne or iPad with the latest version of IOS or

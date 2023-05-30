@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Footer from "./components/footer/Footer";
 import Nav from "./components/nav/Nav";
 import "./globals.css";
@@ -21,9 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Nav state={true} />
+        {/* <Nav state={true} /> */}
         {children}
-        <Footer />
+        {/* <Footer state={true} /> */}
       </body>
     </html>
   );

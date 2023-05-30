@@ -90,6 +90,11 @@ export default {
       type: "string",
     },
     {
+      name: "sec2gridoneimgstate",
+      title: "Sec2 Grid One Img State",
+      type: "boolean",
+    },
+    {
       name: "sec2gridone",
       title: "Sec2 Grid One",
       type: "array",
@@ -271,6 +276,11 @@ export default {
       name: "secGridThreeItem3Text",
       title: "Sec Grid Three Item3 Text",
       type: "string",
+    },
+    {
+      name: "sec2Grid4State",
+      title: "Sec Grid Four State",
+      type: "boolean",
     },
     {
       name: "secGridFourItem1Img",

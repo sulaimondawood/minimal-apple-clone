@@ -1,6 +1,8 @@
 import Link from "next/link";
 import styles from "./landing.module.scss";
 import { urlForImage } from "../../../../sanity/lib/image";
+import Footer from "../footer/Footer";
+import Nav from "../nav/Nav";
 
 interface Iitems {
   learnmore: "Learn More";
@@ -22,6 +24,8 @@ export default function Landing({ landingProducts, landingProducts2 }: any) {
   // console.log(landingProducts);
   return (
     <>
+      <Nav bgState="rgba(22, 22, 23, 0.8)" colorState="#e8e8ed" state={true} />
+
       <section className={styles.hero}>
         <h1>Introducing the new MacBook Pro and Mac mini.</h1>
         <button>Watch the announcement</button>
@@ -81,6 +85,7 @@ export default function Landing({ landingProducts, landingProducts2 }: any) {
           );
         })}
       </div> */}
+      <Footer state={"white"} />
     </>
   );
 }
