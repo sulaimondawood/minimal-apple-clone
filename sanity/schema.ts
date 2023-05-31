@@ -3,6 +3,7 @@ import landingProducts from "./landingProducts";
 import landingProducts2 from "./landingProducts2";
 import slider from "./slider";
 import details from "./details";
+import details2 from "./details2";
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [landingProducts, landingProducts2, slider, details],
+  types: [landingProducts, landingProducts2, slider, details, details2],
 };
