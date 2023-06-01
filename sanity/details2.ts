@@ -4,6 +4,11 @@ export default {
   type: "document",
   fields: [
     {
+      name: "layoutState",
+      title: "LayoutState",
+      type: "string",
+    },
+    {
       name: "heroBg",
       title: "Hero Bacground Img",
       type: "image",
@@ -168,6 +173,70 @@ export default {
       title: "Div4 Item2 Image",
       type: "array",
       of: [{ type: "image" }],
+    },
+
+    // grid 5 begin here
+    {
+      name: "div5BgColor",
+      title: "Div5 BgColor",
+      type: "string",
+    },
+
+    {
+      name: "div5Title",
+      title: "Div5 Title",
+      type: "string",
+    },
+    {
+      name: "div5TitleColor",
+      title: "Div5 Title Color",
+      type: "string",
+    },
+
+    {
+      name: "div5Image",
+      title: "Div5 Image",
+      type: "image",
+    },
+
+    // div6 starts
+    {
+      name: "div6BgColor",
+      title: "Div6 BgColor",
+      type: "string",
+    },
+    {
+      name: "div6Text",
+      title: "Div6 Text",
+      type: "string",
+    },
+    {
+      name: "div6Title",
+      title: "Div6 Title",
+      type: "string",
+    },
+
+    // div7 starts
+
+    {
+      name: "sec2BgColor",
+      title: "Sec2 BgColor ",
+      type: "image",
+    },
+    {
+      name: "sec2Img",
+      title: "Sec2 Image",
+      type: "image",
+    },
+    {
+      name: "sec2Title",
+      title: "Sec2 Title",
+      type: "string",
+    },
+    {
+      name: "sec2Text",
+      title: "Sec2 Text",
+      type: "string",
     },
   ],
 };

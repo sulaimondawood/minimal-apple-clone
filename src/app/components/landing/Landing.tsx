@@ -59,7 +59,7 @@ export default function Landing({ landingProducts, landingProducts2 }: any) {
         {landingProducts2.map((items: Iitems) => {
           return (
             <Link
-              href={`/card/${items.slug.current}`}
+              href={`/${items.slug.current}`}
               key={items.slug.current}
               className={styles.bg_item}
               style={{

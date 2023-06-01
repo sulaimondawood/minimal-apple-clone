@@ -23,7 +23,11 @@ export default {
       title: "Header Background Color",
       type: "string",
     },
-
+    {
+      name: "layoutState",
+      title: "LayoutState",
+      type: "string",
+    },
     {
       name: "name",
       title: "Name",
