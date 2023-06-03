@@ -1,0 +1,25 @@
+.btn_wrp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  .button {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border: none;
+
+    img {
+      width: 70px;
+      height: 100px;
+
+      fill: red;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}

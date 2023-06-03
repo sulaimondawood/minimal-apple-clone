@@ -3,7 +3,8 @@ import styles from "./appleTrade.module.scss";
 import Link from "next/link";
 import { urlForImage } from "../../../../sanity/lib/image";
 import Nav from "../nav/Nav";
-import TradeTab1 from "@/types/TradeTab1";
+import TradeTab1, { ContentI } from "@/types/TradeTab1";
+import Tab from "../tabs1/Tab";
 
 const AppleTrade = ({ res, tab }: { res: any; tab: TradeTab1[] }) => {
   console.log(tab);
@@ -26,19 +27,8 @@ const AppleTrade = ({ res, tab }: { res: any; tab: TradeTab1[] }) => {
           <h1>{res.heroTitleString}</h1>
           <p>{res.heroDesc}</p>
         </div>
-        <div className={styles.sec2}>
-          <div className={styles.btn_wrp}>
-            {tab.map((item: TradeTab1) => {
-              return (
-                <>
-                  <button key={item.slug.current}>
-                    <img src={urlForImage(item.icon).url()} alt="" />
-                    <p>{item.title}</p>
-                  </button>
-                </>
-              );
-            })}
-          </div>
+        <div className={styles.sec_2}>
+          <Tab tab={tab} />
         </div>
       </section>
     </div>
