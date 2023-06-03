@@ -1,10 +1,13 @@
 import Link from "next/link";
 import styles from "./detail.module.scss";
 import styles2 from "../utils/card.module.scss";
+import styles3 from "../utils/appleTrade.module.scss";
 import { client } from "../../../sanity/lib/client";
 import { urlForImage } from "../../../sanity/lib/image";
 import Nav from "../components/nav/Nav";
 import Footer from "../components/footer/Footer";
+import AppleTrade from "../components/appleTrade/AppleTrade";
+import TradeTab1 from "@/types/TradeTab1";
 
 let layoutState: any;
 
@@ -450,16 +453,17 @@ export default async function Detail({ params }: any) {
   const { slug } = params;
 
   const data = await client.fetch(
-    `*[_type in ['details2', 'details'] && slug.current == "${slug}" ][0]`
+    `*[_type in ['details2', 'detail'] && slug.current == "${slug}" ][0]`
   );
 
   const res = data;
-  console.log(res.layoutState);
 
-  return slugContent(res.layoutState, res);
+  const tab = await client.fetch(`*[_type == 'appleTab1']`);
+
+  return slugContent(res.layoutState, res, tab);
 }
 
-function slugContent(state: any, res: any) {
+function slugContent(state: any, res: any, tab: TradeTab1[]) {
   if (state === "sharedLayout") {
     return (
       <>
@@ -1018,5 +1022,8 @@ function slugContent(state: any, res: any) {
         </article>
       </section>
     );
+  }
+  if (state === "appleTradeIn") {
+    return <AppleTrade tab={tab} res={res} />;
   }
 }

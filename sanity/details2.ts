@@ -19,6 +19,11 @@ export default {
       type: "string",
     },
     {
+      name: "heroDesc",
+      title: "Hero Desc",
+      type: "string",
+    },
+    {
       name: "name",
       title: "Name",
       type: "string",
