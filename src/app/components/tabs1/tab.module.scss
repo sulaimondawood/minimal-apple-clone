@@ -1,16 +1,18 @@
+@import "../../utils/variable.module";
 .btn_wrp {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  // gap: 2rem;
 
   .button {
     background-color: transparent;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 0.6rem;
     border: none;
-
+    padding: 1rem 4rem;
+    // border-bottom: 1px solid $gray;
     img {
       width: 70px;
       height: 100px;
@@ -21,5 +23,115 @@
     p {
       font-size: 1.5rem;
     }
+  }
+}
+
+.tab1_content {
+  background-color: $white-2;
+  max-width: 1200px;
+  padding: 3rem 5rem;
+  width: 100%;
+  border-radius: 30px;
+  margin: 0 auto;
+  height: 600px;
+  margin-top: 3rem;
+
+  .row {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+    justify-content: center;
+
+    .left {
+      max-width: 650px;
+      flex: 1;
+
+      h1 {
+        font-size: 2rem;
+        color: $white-ish;
+        line-height: 0.9;
+        font-weight: 600;
+      }
+
+      table {
+        width: 100%;
+        margin-top: 2rem;
+        border-collapse: collapse;
+
+        td {
+          padding: 0.7rem 0;
+          font-size: 1.1rem;
+        }
+        .thead {
+          tr {
+            color: $gray;
+            font-size: 0.8rem;
+
+            .td_l {
+              max-width: 50px;
+              text-align: right;
+            }
+          }
+        }
+
+        .tbody {
+          tr {
+            .td_s {
+              text-align: right;
+            }
+
+            td {
+              border-bottom: 1px solid $gray;
+            }
+
+            .td_ss {
+              border-bottom: none !important;
+            }
+          }
+        }
+      }
+
+      button {
+        background-color: $blue;
+        color: $white;
+        padding: 1em 1.5em;
+        border-radius: 50px;
+        margin-top: 3rem;
+        border: none;
+        font-size: 1.3rem;
+      }
+    }
+
+    .right {
+      flex: 1;
+      max-width: 700px;
+
+      img {
+        height: 500px;
+        width: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+  }
+}
+
+.sec_2 {
+  background-color: $white-2;
+  padding: 5rem;
+  margin-top: 7rem;
+
+  h1 {
+    font-size: 4.5rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  p {
+    max-width: 950px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.7rem;
+    padding-top: 2rem;
   }
 }

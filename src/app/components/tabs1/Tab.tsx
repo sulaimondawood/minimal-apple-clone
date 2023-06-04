@@ -6,10 +6,9 @@ import styles from "./tab.module.scss";
 import TradeTab1, { ContentI } from "@/types/TradeTab1";
 const Tab = ({ tab }: { tab: TradeTab1[] }) => {
   const [tabIndex, setTabIndex] = useState(0);
-
+  const [isActive, setIsActive] = useState(false);
   const handleTabFunc = (index: any) => {
     setTabIndex((prev) => (prev = index));
-    console.log(tabIndex);
   };
   return (
     <>
@@ -21,6 +20,11 @@ const Tab = ({ tab }: { tab: TradeTab1[] }) => {
               //   onClick={handleTabFunc(index)}
               className={styles.button}
               key={item.slug.current}
+              style={{
+                borderBottomColor: tabIndex === index ? "black" : "gray",
+                borderBottomWidth: "1.2px",
+                borderBottomStyle: "solid",
+              }}
             >
               <img src={urlForImage(item.icon).url()} alt="" />
               <p>{item.title}</p>
@@ -35,29 +39,38 @@ const Tab = ({ tab }: { tab: TradeTab1[] }) => {
             {tab[tabIndex].ContentName.map((item: ContentI) => {
               return (
                 <table>
-                  <thead>
+                  <thead className={styles.thead}>
                     <tr>
-                      <th>{item.contentSubName}</th>
-                      <th>{item.contentSubPrice}</th>
+                      <td>{tab[tabIndex].subContentTitle}</td>
+                      <td className={styles.td_l}>
+                        {tab[tabIndex].subContentTitle2}
+                      </td>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody className={styles.tbody}>
+                    <tr>
+                      <td>{item.contentSubName}</td>
+                      <td className={styles.td_s}>{item.contentSubPrice}</td>
+                    </tr>
                     <tr>
                       <td>{item.contentSubName2}</td>
-                      <td>{item.contentSubPrice2}</td>
+                      <td className={styles.td_s}>{item.contentSubPrice2}</td>
                     </tr>
                     <tr>
                       <td>{item.contentSubName3}</td>
-                      <td>{item.contentSubPrice3}</td>
+                      <td className={styles.td_s}>{item.contentSubPrice3}</td>
                     </tr>
                     <tr>
-                      <td>{item.contentSubName4}</td>
-                      <td>{item.contentSubPrice4}</td>
+                      <td className={styles.td_ss}>{item.contentSubName4}</td>
+                      <td className={`${styles.td_s} ${styles.td_ss}`}>
+                        {item.contentSubPrice4}
+                      </td>
                     </tr>
                   </tbody>
                 </table>
               );
             })}
+            <button>Find your trade-in value</button>
           </div>
           <div className={styles.right}>
             {tab[tabIndex].ContentName.map((item: ContentI) => {
@@ -67,6 +80,13 @@ const Tab = ({ tab }: { tab: TradeTab1[] }) => {
             })}
           </div>
         </div>
+      </div>
+      <div className={styles.sec_2}>
+        <h1>Two easy ways to trade in.</h1>
+        <p>
+          Trade in your way — online or at an Apple Store. From getting an
+          estimate to returning your device, we ll help every step of the way.
+        </p>
       </div>
     </>
   );

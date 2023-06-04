@@ -7,8 +7,6 @@ import TradeTab1, { ContentI } from "@/types/TradeTab1";
 import Tab from "../tabs1/Tab";
 
 const AppleTrade = ({ res, tab }: { res: any; tab: TradeTab1[] }) => {
-  console.log(tab);
-
   return (
     <div>
       <section className={styles.appleTradeSec}>
