@@ -17,6 +17,22 @@ interface ContentI {
   contentSubPrice4: string;
 }
 
+interface Tab2Extra {
+  title: string;
+  desc: string;
+  image: any;
+  step: string;
+}
+
+interface Tab2 {
+  slug: {
+    current: string;
+  };
+  btnText1: string;
+  title1: string;
+  extraDetails: tab2Extra[];
+}
+
 export default interface TradeTab1 {
   subContentTitle2: string;
   contentTitle: string;

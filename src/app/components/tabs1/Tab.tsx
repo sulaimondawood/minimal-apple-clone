@@ -81,13 +81,6 @@ const Tab = ({ tab }: { tab: TradeTab1[] }) => {
           </div>
         </div>
       </div>
-      <div className={styles.sec_2}>
-        <h1>Two easy ways to trade in.</h1>
-        <p>
-          Trade in your way — online or at an Apple Store. From getting an
-          estimate to returning your device, we ll help every step of the way.
-        </p>
-      </div>
     </>
   );
 };

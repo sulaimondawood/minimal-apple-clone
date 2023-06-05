@@ -458,12 +458,15 @@ export default async function Detail({ params }: any) {
 
   const res = data;
 
+  const tab2 = await client.fetch(`*[_type == 'appleTab2']`);
   const tab = await client.fetch(`*[_type == 'appleTab1']`);
 
-  return slugContent(res.layoutState, res, tab);
+  console.log(tab2);
+
+  return slugContent(res.layoutState, res, tab, tab2);
 }
 
-function slugContent(state: any, res: any, tab: TradeTab1[]) {
+function slugContent(state: any, res: any, tab: TradeTab1[], tab2: any) {
   if (state === "sharedLayout") {
     return (
       <>
@@ -1024,6 +1027,6 @@ function slugContent(state: any, res: any, tab: TradeTab1[]) {
     );
   }
   if (state === "appleTradeIn") {
-    return <AppleTrade tab={tab} res={res} />;
+    return <AppleTrade tab={tab} res={res} tab2={tab2} />;
   }
 }

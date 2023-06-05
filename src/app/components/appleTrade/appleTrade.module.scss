@@ -70,3 +70,22 @@
     margin-top: 100px;
   }
 }
+.sec_3 {
+  background-color: $white-2;
+  padding: 5rem;
+  margin-top: 7rem;
+
+  h1 {
+    font-size: 4.5rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  p {
+    max-width: 950px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.7rem;
+    padding-top: 2rem;
+  }
+}
