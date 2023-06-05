@@ -234,6 +234,11 @@ export default {
       type: "image",
     },
     {
+      name: "sec2GrandTitle",
+      title: "Sec2 Grand Title",
+      type: "string",
+    },
+    {
       name: "sec2Title",
       title: "Sec2 Title",
       type: "string",
@@ -241,6 +246,16 @@ export default {
     {
       name: "sec2Text",
       title: "Sec2 Text",
+      type: "string",
+    },
+    {
+      name: "sec2Title2",
+      title: "Sec2 Title2",
+      type: "string",
+    },
+    {
+      name: "sec2Text2",
+      title: "Sec2 Text2",
       type: "string",
     },
   ],

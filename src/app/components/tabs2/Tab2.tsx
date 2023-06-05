@@ -33,7 +33,7 @@ function Tab2({ tab2 }: { tab2: Tab2[] }) {
             return (
               <div>
                 <img src={urlForImage(item.image).url()} alt="" />
-                <p>{item.step}</p>
+                <p className={styles.p}>{item.step}</p>
                 <h2>{item.title}</h2>
                 <p>{item.desc}</p>
               </div>

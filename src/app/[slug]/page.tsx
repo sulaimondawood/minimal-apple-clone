@@ -461,8 +461,6 @@ export default async function Detail({ params }: any) {
   const tab2 = await client.fetch(`*[_type == 'appleTab2']`);
   const tab = await client.fetch(`*[_type == 'appleTab1']`);
 
-  console.log(tab2);
-
   return slugContent(res.layoutState, res, tab, tab2);
 }
 

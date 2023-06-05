@@ -45,6 +45,13 @@ const AppleTrade = ({
           estimate to returning your device, we ll help every step of the way.
         </p>
         <Tab2 tab2={tab2} />
+
+        {/* // anusers */}
+        <div className={styles.answers}></div>
+      </div>
+
+      <div className={styles.sec_4}>
+        <h1>{res.sec2GrandTitle}</h1>
       </div>
     </div>
   );
