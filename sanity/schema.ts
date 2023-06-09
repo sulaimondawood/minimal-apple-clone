@@ -6,6 +6,7 @@ import details from "./details";
 import details2 from "./details2";
 import appleTab1 from "./appleTab1";
 import appleTab2 from "./appleTab2";
+import faq from "./faq";
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     landingProducts,
@@ -15,5 +16,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     details2,
     appleTab1,
     appleTab2,
+    faq,
   ],
 };

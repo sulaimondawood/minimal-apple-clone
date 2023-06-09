@@ -52,6 +52,28 @@ const AppleTrade = ({
 
       <div className={styles.sec_4}>
         <h1>{res.sec2GrandTitle}</h1>
+        <div className={styles.row}>
+          <div
+            style={{ backgroundImage: `url(${urlForImage(res.sec2BgColor)})` }}
+            className={styles.item_1}
+          >
+            <h1>{res.sec2Title}</h1>
+            <p>{res.sec2Text}</p>
+          </div>
+          <div
+            style={{ backgroundImage: `url(${urlForImage(res.sec2Img)})` }}
+            className={styles.item_1}
+          >
+            <h1>{res.sec2Title2}</h1>
+            <p>{res.sec2Text2}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* frequently asked question */}
+      <div className={styles.sec_5}>
+        <h1></h1>
+        <div className={styles.btn_wrp}></div>
       </div>
     </div>
   );

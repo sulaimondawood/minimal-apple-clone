@@ -41,8 +41,10 @@ const Tab = ({ tab }: { tab: TradeTab1[] }) => {
                 <table>
                   <thead className={styles.thead}>
                     <tr>
-                      <td>{tab[tabIndex].subContentTitle}</td>
-                      <td className={styles.td_l}>
+                      <td className={styles.td}>
+                        {tab[tabIndex].subContentTitle}
+                      </td>
+                      <td className={`${styles.td_l} ${styles.td}`}>
                         {tab[tabIndex].subContentTitle2}
                       </td>
                     </tr>
