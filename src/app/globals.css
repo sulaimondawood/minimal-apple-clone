@@ -11,3 +11,14 @@ body {
 a {
   text-decoration: none;
 }
+
+/* .swiper-container {
+  bottom: -50px;
+} */
+
+.swiper-pagination-bullet {
+  background-color: gray !important;
+}
+.swiper-pagination-bullet-active {
+  background-color: black !important;
+}

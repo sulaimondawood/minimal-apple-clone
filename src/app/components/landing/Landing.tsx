@@ -3,6 +3,7 @@ import styles from "./landing.module.scss";
 import { urlForImage } from "../../../../sanity/lib/image";
 import Footer from "../footer/Footer";
 import Nav from "../nav/Nav";
+import Slider from "../slider/Slider";
 
 interface Iitems {
   learnmore: "Learn More";
@@ -13,15 +14,25 @@ interface Iitems {
   image: any;
   color: string;
   logo: any;
-  // image: {
-  //   asset: {
-  //     _ref: string;
-  //   };
-  // };
 }
 
-export default function Landing({ landingProducts, landingProducts2 }: any) {
-  // console.log(landingProducts);
+export type Slides = {
+  image: any;
+  name: string;
+  slug: {
+    current: string;
+  };
+};
+
+export default function Landing({
+  landingProducts,
+  landingProducts2,
+  slides,
+}: {
+  landingProducts: any;
+  landingProducts2: any;
+  slides: Slides[];
+}) {
   return (
     <>
       <Nav bgState="rgba(22, 22, 23, 0.8)" colorState="#e8e8ed" state={true} />
@@ -85,6 +96,7 @@ export default function Landing({ landingProducts, landingProducts2 }: any) {
           );
         })}
       </div>
+      <Slider slides={slides} />
       <Footer state={"white"} />
     </>
   );
