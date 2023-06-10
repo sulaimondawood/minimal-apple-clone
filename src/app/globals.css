@@ -12,12 +12,8 @@ a {
   text-decoration: none;
 }
 
-/* .swiper-container {
-  bottom: -50px;
-} */
-
 .swiper-pagination-bullet {
-  background-color: gray !important;
+  background-color: white !important;
 }
 .swiper-pagination-bullet-active {
   background-color: black !important;

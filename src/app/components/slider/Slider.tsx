@@ -26,16 +26,22 @@ function Slider({ slides }: { slides: Slides[] }) {
         modules={[Navigation, Pagination, Autoplay, EffectFade]}
         spaceBetween={20}
         slidesPerView={1}
+        loop={true}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
+          pauseOnMouseEnter: true,
         }}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         pagination={{ clickable: true }}
         breakpoints={{
-          1400: {
-            width: 1400,
+          0: {
             slidesPerView: 1.2,
+            spaceBetween: 20,
+          },
+          1440: {
+            width: 1440,
+            slidesPerView: 1.16,
             spaceBetween: 30,
           },
         }}

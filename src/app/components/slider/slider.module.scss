@@ -1,9 +1,25 @@
+@import "../../utils/variable.module";
 .grd_swiper {
   position: relative;
   margin-top: 1rem;
 
   .swiper_slide {
     height: 650px;
+
+    @include mobile {
+      height: 500px;
+      width: 100vw;
+    }
+
+    img {
+      @include mobile {
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        background-position: center;
+        background-size: contain;
+      }
+    }
   }
 
   .autoplay_progress {
@@ -17,7 +33,8 @@
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    color: var(--swiper-theme-color);
+    color: white;
+    // color: var(--swiper-theme-color);
   }
 
   .autoplay_progress svg {
@@ -27,9 +44,11 @@
     top: 0px;
     z-index: 10;
     width: 100%;
+
     height: 100%;
     stroke-width: 4px;
-    stroke: var(--swiper-theme-color);
+    stroke: white;
+    // stroke: var(--swiper-theme-color);
     fill: none;
     stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
     stroke-dasharray: 125.6;

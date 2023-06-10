@@ -45,8 +45,7 @@ export default function Landing({
       <div className={styles.products_wrp}>
         {landingProducts.map((items: Iitems) => {
           return (
-            <Link
-              href={`/${items.slug.current}`}
+            <div
               key={items.slug.current}
               className={styles.bg_item}
               style={{
@@ -58,19 +57,15 @@ export default function Landing({
               </h1>
               <h2 style={{ color: items.color }}>{items.desc}</h2>
 
-              <div className={styles.btn_wrap}>
-                {/* <Link href="">{items.learnmore}</Link>
-                <Link href="/order">{items.buy}</Link> */}
-              </div>
-            </Link>
+              <MyLink items={items} />
+            </div>
           );
         })}
       </div>
       <div className={styles.products_2_wrp}>
         {landingProducts2.map((items: Iitems) => {
           return (
-            <Link
-              href={`/${items.slug.current}`}
+            <div
               key={items.slug.current}
               className={styles.bg_item}
               style={{
@@ -87,17 +82,22 @@ export default function Landing({
                 alt="alt"
               />
               <h2 style={{ color: items.color }}>{items.desc}</h2>
-
-              {/* <div className={styles.btn_wrap}>
-                <Link href=""> {items.learnmore} </Link>
-                <Link href="/order">{items.buy}</Link>
-              </div> */}
-            </Link>
+              <MyLink items={items} />
+            </div>
           );
         })}
       </div>
       <Slider slides={slides} />
       <Footer state={"white"} />
     </>
+  );
+}
+
+function MyLink({ items }: { items: any }) {
+  return (
+    <div className={styles.btn_wrap}>
+      <Link href={`/${items.slug.current}`}> {items.learnmore} </Link>
+      <Link href="/buy">{items.buy}</Link>
+    </div>
   );
 }
