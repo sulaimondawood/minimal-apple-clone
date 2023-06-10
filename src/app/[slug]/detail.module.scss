@@ -97,10 +97,20 @@
   text-align: center;
   padding: 3.5rem 0;
 
+  @include mobile {
+    padding: 0 1rem;
+  }
+
   h2 {
     font-size: 2.5rem;
     padding-bottom: 1rem;
     font-weight: 500;
+
+    @include mobile {
+      font-size: 1.5rem;
+      padding-left: 3.8rem;
+      padding-right: 3.8rem;
+    }
   }
 
   p {
@@ -115,8 +125,11 @@
     display: flex;
     justify-content: center;
     align-items: stretch;
-    // grid-template-columns: 1.3fr 1fr;
     gap: 30px;
+
+    @include mobile {
+      flex-direction: column;
+    }
 
     h2 {
       font-weight: 500;
@@ -126,7 +139,6 @@
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
-      // background-color: $white-2;
       padding: 1rem;
       flex: 1.5;
       border-radius: 30px;
@@ -135,6 +147,14 @@
         display: flex;
         justify-content: center;
         gap: 30px;
+      }
+
+      .f_sub_div {
+        img {
+          @include mobile {
+            width: 80%;
+          }
+        }
       }
     }
     .grid_item_right {
@@ -145,21 +165,18 @@
 
       .sub_div {
         padding: 2.5rem 1rem;
-        // background-color: $white-2;
         border-radius: 30px;
         height: 100%;
 
         h2 {
           font-size: 2.3rem;
           background-clip: text;
-          // background: -webkit-linear-gradient(#9ccc15, #000000);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
       }
 
       .sub_div_2 {
-        // background-color: $white-2;
         border-radius: 30px;
         padding: 0 2rem;
         padding-bottom: 1.5rem;
@@ -167,6 +184,10 @@
         width: fit-content;
         overflow: hidden;
         position: relative;
+
+        @include mobile {
+          height: 380px;
+        }
 
         .img {
           width: 80%;
@@ -182,6 +203,12 @@
         h2 {
           font-size: 1.5rem;
           padding-top: 1rem;
+
+          @include mobile {
+            text-align: left;
+            font-size: 1.8rem;
+            margin-left: -2.3rem;
+          }
         }
       }
     }
@@ -196,6 +223,10 @@
     margin-top: 30px;
     gap: 30px;
 
+    @include mobile {
+      flex-direction: column;
+    }
+
     img {
       flex: 1;
       border-radius: 30px;
@@ -206,6 +237,10 @@
       border-radius: 30px;
       flex: 1.5;
       padding: 1rem 0;
+
+      @include mobile {
+        padding: 2rem 0;
+      }
 
       h2 {
         font-size: 1.5rem;
@@ -225,6 +260,10 @@
     justify-content: center;
     margin-top: 30px;
     gap: 30px;
+
+    @include mobile {
+      flex-direction: column;
+    }
 
     .grid_4_left {
       display: flex;
@@ -297,6 +336,10 @@
     gap: 30px;
     margin-top: 30px;
 
+    @include mobile {
+      flex-direction: column;
+    }
+
     .grid_item_left {
       flex: 1.5;
       border-radius: 20px;
@@ -329,6 +372,10 @@
     gap: 30px;
     margin-top: 30px;
 
+    @include mobile {
+      flex-direction: column;
+    }
+
     .grid_6_item_left {
       flex: 1.5;
       display: flex;
@@ -358,6 +405,8 @@
       border-radius: 20px;
       display: flex;
       padding-bottom: 2rem;
+      background-size: cover;
+      background-position: center;
 
       h2 {
         align-self: flex-end;
@@ -370,6 +419,10 @@
 .sec_3 {
   margin-top: 80px;
   background-color: $white;
+
+  @include mobile {
+    padding: 0 1rem;
+  }
 
   h2 {
     font-size: 1.5rem;
@@ -399,12 +452,21 @@
   .top {
     padding: 80px 0;
 
+    @include mobile {
+      padding-bottom: 30px;
+    }
+
     h1 {
       font-size: 50px;
       font-weight: 500;
       max-width: 400px;
       width: 100%;
       line-height: 1;
+
+      @include mobile {
+        font-size: 35px;
+        text-align: center;
+      }
     }
   }
 
@@ -413,6 +475,10 @@
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     gap: 30px;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
 
     .bottom_item {
       background-color: $white-2;
@@ -432,6 +498,10 @@
   background-color: $white;
   padding: 50px 0;
 
+  @include mobile {
+    padding: 0 1rem;
+  }
+
   .sec_4_sub {
     width: 100%;
     max-width: 1000px;
@@ -445,17 +515,33 @@
       align-items: center;
       padding: 4rem 0;
 
+      @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+
       h1 {
         font-size: 50px;
         font-weight: 500;
         max-width: 400px;
         width: 100%;
         line-height: 1;
+
+        @include mobile {
+          font-size: 30px;
+          max-width: 250px;
+        }
       }
 
       a {
         font-size: 1.5rem;
         color: $blue;
+
+        @include mobile {
+          padding-top: 1rem;
+          font-size: 1rem;
+        }
       }
     }
     .bottom {
@@ -464,6 +550,10 @@
         grid-template-columns: repeat(4, 1fr);
         justify-content: center;
         gap: 30px;
+
+        @include mobile {
+          grid-template-columns: repeat(2, 1fr);
+        }
 
         div {
           display: flex;
