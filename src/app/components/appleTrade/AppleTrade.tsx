@@ -3,15 +3,23 @@ import styles from "./appleTrade.module.scss";
 import Link from "next/link";
 import { urlForImage } from "../../../../sanity/lib/image";
 import Nav from "../nav/Nav";
-import TradeTab1, { ContentI, Tab2 as TTab2 } from "@/types/TradeTab1";
+import TradeTab1, {
+  ContentI,
+  Faqs as Faqqs,
+  Tab2 as TTab2,
+} from "@/types/TradeTab1";
 import Tab from "../tabs1/Tab";
 import Tab2 from "../tabs2/Tab2";
+import Faqs from "../faqs/Faqs";
+import Footer from "../footer/Footer";
 
 const AppleTrade = ({
   res,
   tab,
   tab2,
+  faqs,
 }: {
+  faqs: Faqqs[];
   res: any;
   tab: TradeTab1[];
   tab2: TTab2[];
@@ -49,7 +57,6 @@ const AppleTrade = ({
         {/* // anusers */}
         <div className={styles.answers}></div>
       </div>
-
       <div className={styles.sec_4}>
         <h1>{res.sec2GrandTitle}</h1>
         <div className={styles.row}>
@@ -69,12 +76,13 @@ const AppleTrade = ({
           </div>
         </div>
       </div>
-
       {/* frequently asked question */}
       <div className={styles.sec_5}>
-        <h1></h1>
-        <div className={styles.btn_wrp}></div>
+        <div className={styles.btn_wrp}>
+          <Faqs faqs={faqs} />
+        </div>
       </div>
+      <Footer state="#f5f5f5" />
     </div>
   );
 };

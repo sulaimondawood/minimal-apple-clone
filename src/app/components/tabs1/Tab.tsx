@@ -21,7 +21,7 @@ const Tab = ({ tab }: { tab: TradeTab1[] }) => {
               className={styles.button}
               key={item.slug.current}
               style={{
-                borderBottomColor: tabIndex === index ? "black" : "gray",
+                borderBottomColor: tabIndex === index ? "black" : "#b8b8c2",
                 borderBottomWidth: "1.2px",
                 borderBottomStyle: "solid",
               }}

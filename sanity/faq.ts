@@ -27,6 +27,11 @@ export default {
           type: "object",
           fields: [
             {
+              name: "name",
+              title: "Name",
+              type: "string",
+            },
+            {
               name: "question",
               title: "Question",
               type: "string",

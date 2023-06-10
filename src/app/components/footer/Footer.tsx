@@ -1,7 +1,5 @@
 import styles from "./footer.module.scss";
 const Footer = ({ state }: { state: string }) => {
-  console.log(state);
-
   return (
     <div style={{ backgroundColor: state }} className={styles.footer_wrapper}>
       <div className={styles.footer_wrapper_sub_wrapper}>

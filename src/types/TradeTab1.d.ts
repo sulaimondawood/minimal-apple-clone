@@ -33,6 +33,24 @@ interface Tab2 {
   extraDetails: tab2Extra[];
 }
 
+interface FaqsQues {
+  name: string;
+  answer: string;
+  question: string;
+}
+
+interface Faqs {
+  questions: {
+    name: string;
+    answer: string;
+    question: string;
+  }[];
+  slug: {
+    current: string;
+  };
+  name: string;
+}
+
 export default interface TradeTab1 {
   subContentTitle2: string;
   contentTitle: string;

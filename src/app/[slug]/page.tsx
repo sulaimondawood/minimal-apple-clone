@@ -7,7 +7,7 @@ import { urlForImage } from "../../../sanity/lib/image";
 import Nav from "../components/nav/Nav";
 import Footer from "../components/footer/Footer";
 import AppleTrade from "../components/appleTrade/AppleTrade";
-import TradeTab1 from "@/types/TradeTab1";
+import TradeTab1, { Faqs } from "@/types/TradeTab1";
 
 let layoutState: any;
 
@@ -460,11 +460,18 @@ export default async function Detail({ params }: any) {
 
   const tab2 = await client.fetch(`*[_type == 'appleTab2']`);
   const tab = await client.fetch(`*[_type == 'appleTab1']`);
+  const faqs = await client.fetch(`*[_type == 'faqs']`);
 
-  return slugContent(res.layoutState, res, tab, tab2);
+  return slugContent(res.layoutState, res, tab, tab2, faqs);
 }
 
-function slugContent(state: any, res: any, tab: TradeTab1[], tab2: any) {
+function slugContent(
+  state: any,
+  res: any,
+  tab: TradeTab1[],
+  tab2: any,
+  faqs: Faqs[]
+) {
   if (state === "sharedLayout") {
     return (
       <>
@@ -1025,6 +1032,6 @@ function slugContent(state: any, res: any, tab: TradeTab1[], tab2: any) {
     );
   }
   if (state === "appleTradeIn") {
-    return <AppleTrade tab={tab} res={res} tab2={tab2} />;
+    return <AppleTrade tab={tab} res={res} tab2={tab2} faqs={faqs} />;
   }
 }
