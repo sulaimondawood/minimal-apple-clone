@@ -22,7 +22,7 @@ const Tab = ({ tab }: { tab: TradeTab1[] }) => {
               key={item.slug.current}
               style={{
                 borderBottomColor: tabIndex === index ? "black" : "#b8b8c2",
-                borderBottomWidth: "1.2px",
+                borderBottomWidth: "2px",
                 borderBottomStyle: "solid",
               }}
             >

@@ -572,7 +572,7 @@ function slugContent(
                   className={styles.sub_div_2}
                 >
                   <img
-                    className={styles.option_img}
+                    className={`${styles.option_img} ${styles.img}`}
                     style={{ display: res?.sec2gridone[3] ? "none" : "block" }}
                     src={urlForImage(res?.sec2gridone[1]).url()}
                     alt=""
@@ -722,7 +722,11 @@ function slugContent(
                     {res.sec2GridItem1Title}
                   </h2>
                   <Link href={""}>{res.sec2GridItem1Text}</Link>
-                  <img src={urlForImage(res.sec2GridItem1Image).url()} alt="" />
+                  <img
+                    className={styles.img_img}
+                    src={urlForImage(res.sec2GridItem1Image).url()}
+                    alt=""
+                  />
                 </article>
                 <article
                   style={{ backgroundColor: res.eachGridItemColor }}
@@ -732,7 +736,11 @@ function slugContent(
                     {res.sec2GridItem2Title}
                   </h2>
                   <Link href={""}>{res.sec2GridItem2Text}</Link>
-                  <img src={urlForImage(res.sec2GridItem2Image).url()} alt="" />
+                  <img
+                    className={styles.img_img}
+                    src={urlForImage(res.sec2GridItem2Image).url()}
+                    alt=""
+                  />
                 </article>
                 <article
                   style={{ backgroundColor: res.eachGridItemColor }}
@@ -799,7 +807,7 @@ function slugContent(
                     {res.sec3GridItem3Title}
                   </h2>
 
-                  <p>{res.sec3GridItem3Text}</p>
+                  <Link href={""}>{res.sec3GridItem3Text}</Link>
 
                   <img src={urlForImage(res.sec3GridItem3Image).url()} alt="" />
                 </article>

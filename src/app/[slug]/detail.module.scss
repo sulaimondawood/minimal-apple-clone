@@ -110,6 +110,7 @@
       font-size: 1.5rem;
       padding-left: 3.8rem;
       padding-right: 3.8rem;
+      padding-top: 2rem;
     }
   }
 
@@ -129,6 +130,7 @@
 
     @include mobile {
       flex-direction: column;
+      margin-top: 2rem;
     }
 
     h2 {
@@ -143,16 +145,24 @@
       flex: 1.5;
       border-radius: 30px;
 
-      .btm_sub_div {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-      }
-
       .f_sub_div {
         img {
           @include mobile {
             width: 80%;
+          }
+        }
+      }
+      .btm_sub_div {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+
+        .sub_div {
+          @include mobile {
+            display: flex;
+            flex-direction: column;
+            gap: 0rem;
+            font-size: 1rem;
           }
         }
       }
@@ -167,12 +177,24 @@
         padding: 2.5rem 1rem;
         border-radius: 30px;
         height: 100%;
+        background-size: cover;
+        background-position: center;
+
+        @include mobile {
+          padding: 2rem 0rem;
+          width: 100%;
+        }
 
         h2 {
           font-size: 2.3rem;
           background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+
+          @include mobile {
+            font-size: 2rem;
+            width: 100%;
+          }
         }
       }
 
@@ -187,10 +209,15 @@
 
         @include mobile {
           height: 380px;
+          padding: 0rem;
         }
 
         .img {
-          width: 80%;
+          width: 100%;
+
+          @include mobile {
+            width: 100%;
+          }
         }
 
         img:last-child {
@@ -205,9 +232,9 @@
           padding-top: 1rem;
 
           @include mobile {
-            text-align: left;
-            font-size: 1.8rem;
-            margin-left: -2.3rem;
+            text-align: center;
+            font-size: 1.5rem;
+            width: 100%;
           }
         }
       }
@@ -281,6 +308,10 @@
         border-radius: 30px;
         display: flex;
 
+        @include mobile {
+          height: 250px;
+        }
+
         h2 {
           align-self: flex-end;
           font-size: 1.5rem;
@@ -288,6 +319,10 @@
           max-width: 200px;
           width: 100%;
           margin: 0 auto;
+
+          @include mobile {
+            max-width: 400px;
+          }
         }
       }
 
@@ -489,6 +524,10 @@
       align-items: center;
       justify-content: flex-start;
       gap: 1.5rem;
+
+      .img_img {
+        width: 100%;
+      }
     }
   }
 }
