@@ -925,7 +925,7 @@ function slugContent(
   }
   if (state === "appleCard") {
     return (
-      <section>
+      <>
         <Nav bgState={res?.navBg} colorState={res?.navColor} state={false} />
         <div
           style={{ backgroundColor: res.navColor }}
@@ -965,6 +965,7 @@ function slugContent(
           <h2>{res.div1Text}</h2>
           <img src={urlForImage(res.div1Image).url()} alt="" />
         </article>
+
         <article className={styles2.grid_2}>
           <div
             style={{ backgroundImage: res.div2ItemBgColor }}
@@ -979,6 +980,7 @@ function slugContent(
             </h1>
           </div>
         </article>
+
         <article
           style={{ backgroundColor: res.div3BgColor }}
           className={styles2.grid_3}
@@ -1027,6 +1029,7 @@ function slugContent(
           <p>{res.div6Text}</p>
           <h1>{res.div6Title}</h1>
         </article>
+
         <article
           style={{
             backgroundImage: `url(${urlForImage(res.sec2BgColor).url()})`,
@@ -1038,7 +1041,8 @@ function slugContent(
           <p>{res.sec2Text}</p>
           <Link href={""}>Apply now</Link>
         </article>
-      </section>
+        <Footer state="#f5f5f5" />
+      </>
     );
   }
   if (state === "appleTradeIn") {

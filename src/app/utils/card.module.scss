@@ -1,332 +1,486 @@
 @import "../utils/variable.module";
 
-section {
-  .header {
-    position: sticky;
-    width: 100%;
-    top: 0px;
-    z-index: 99;
-    // background-color: #ffffff;
-    padding: 1rem 0;
+.header {
+  position: sticky;
+  width: 100%;
+  top: 0px;
+  z-index: 99;
+  padding: 1rem 0;
 
-    > div {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 920px;
-      width: 100%;
-      margin: 0 auto;
-
-      h2 {
-        font-weight: 600;
-        font-size: 20px;
-      }
-
-      div {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-
-        p {
-          color: gray;
-          font-size: 12px;
-        }
-
-        a {
-          background-color: blue;
-          color: $white;
-          font-size: 12px;
-          border-radius: 15px;
-          padding: 0.5em 1em;
-        }
-      }
-    }
+  @include mobile {
+    padding: 1rem;
   }
 
-  .hero_detail {
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 920px;
     width: 100%;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    height: 90vh;
-    padding: 2rem 0;
-
-    div {
-      max-width: 920px;
-      margin: 0 auto;
-      padding-top: 280px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-self: center;
-      gap: 0.5rem;
-
-      img {
-        width: 50%;
-      }
-      a {
-        // font-size: 20px;
-        color: $white-2;
-        background-color: $white-ish;
-        padding: 1em 1.5em;
-        border-radius: 50px;
-      }
-    }
-  }
-  .sec_1 {
-    margin-top: 160px;
-
-    p:first-child {
-      font-size: 120px;
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 600;
-      text-align: center;
-      max-width: 1500px;
-      width: 100%;
-      line-height: 1.1;
-      margin: 0 auto;
-    }
-
-    p:last-child {
-      font-size: 30px;
-      font-weight: 500;
-      text-align: center;
-      line-height: 1;
-      max-width: 900px;
-      width: 100%;
-      margin: 0 auto;
-      margin-top: 50px;
-    }
-  }
-  .grid1 {
-    box-shadow: 10px 10px 60px #00000020;
-    max-width: 1100px;
-    width: 100%;
-    height: 700px;
     margin: 0 auto;
-    margin-top: 100px;
-    border-radius: 30px;
-    padding: 4rem;
-    position: relative;
-    overflow: hidden;
 
     h2 {
-      font-size: 60px;
-      max-width: 800px;
-      width: 100%;
-      line-height: 1;
+      font-weight: 600;
+      font-size: 20px;
+
+      @include mobile {
+        font-weight: 500;
+      }
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+
+      p {
+        color: gray;
+        font-size: 12px;
+      }
+
+      a {
+        background-color: blue;
+        color: $white;
+        font-size: 12px;
+        border-radius: 15px;
+        padding: 0.5em 1em;
+      }
+    }
+  }
+}
+
+.hero_detail {
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  padding: 2rem 0;
+
+  div {
+    max-width: 920px;
+    margin: 0 auto;
+    padding-top: 280px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    gap: 0.5rem;
+
+    @include mobile {
+      padding-top: 200px;
     }
 
     img {
-      width: 100%;
-      position: absolute;
-      bottom: -200px;
-      left: 2rem;
-    }
-  }
-  .grid_2 {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    gap: 1rem;
-    margin-top: 1rem;
+      width: 50%;
 
-    .left {
-      padding: 6rem 3.5rem;
-      border-radius: 30px;
-      box-shadow: 10px 10px 60px #00000020;
-
-      h1 {
-        font-size: 115px;
-        width: 100%;
-        line-height: 0.9;
+      @include mobile {
+        width: 80%;
       }
     }
+    a {
+      color: $white-2;
+      background-color: $white-ish;
+      padding: 1em 1.5em;
+      border-radius: 50px;
+    }
+  }
+}
+.sec_1 {
+  margin-top: 160px;
 
-    .right {
-      position: relative;
-      background-color: white;
-      border-radius: 30px;
-      padding: 0 3.5rem;
-      padding-bottom: 6rem;
-      box-shadow: 10px 10px 60px #00000020;
+  @include mobile {
+    margin-top: 100px;
+    padding: 0 1rem;
+  }
 
-      h1 {
-        font-size: 48px;
+  p:first-child {
+    font-size: 120px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    text-align: center;
+    max-width: 1500px;
+    width: 100%;
+    line-height: 1.1;
+    margin: 0 auto;
+
+    @include mobile {
+      font-size: 3.5rem;
+      text-align: left;
+      padding-right: 3rem;
+      line-height: 1;
+    }
+  }
+
+  p:last-child {
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+
+    @include mobile {
+      font-size: 1.2rem;
+      text-align: left;
+      line-height: 1.2;
+    }
+  }
+}
+
+.grid1 {
+  box-shadow: 10px 10px 60px #00000020;
+  max-width: 1100px;
+  width: 100%;
+  height: 700px;
+  margin: 0 auto;
+  margin-top: 100px;
+  border-radius: 30px;
+  padding: 4rem;
+  position: relative;
+  overflow: hidden;
+
+  @include mobile {
+    height: 600px;
+    padding-left: 2rem;
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 60px;
+    max-width: 800px;
+    width: 100%;
+    line-height: 1;
+
+    @include mobile {
+      font-size: 40px;
+      line-height: 1.2;
+    }
+  }
+
+  img {
+    width: 100%;
+    position: absolute;
+    bottom: -200px;
+    left: 2rem;
+
+    @include mobile {
+      bottom: 2rem;
+      width: 600px;
+      left: -2rem;
+    }
+  }
+}
+
+.grid_2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  gap: 1rem;
+  margin-top: 1rem;
+
+  @include mobile {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .left {
+    padding: 6rem 3.5rem;
+    border-radius: 30px;
+    box-shadow: 10px 10px 60px #00000020;
+
+    @include mobile {
+      width: 90%;
+      padding: 3rem 2rem;
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 115px;
+      width: 100%;
+      line-height: 0.9;
+
+      @include mobile {
+        font-size: 80px;
         line-height: 1;
       }
     }
   }
-  .grid_3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    margin-top: 1rem;
-    padding-left: 4.5rem;
-    padding-right: 10rem;
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
+
+  .right {
+    position: relative;
+    background-color: white;
     border-radius: 30px;
+    padding: 0 3.5rem;
+    padding-bottom: 6rem;
+    box-shadow: 10px 10px 60px #00000020;
+
+    @include mobile {
+      border-radius: 10px;
+      width: 90%;
+      padding: 0 2rem;
+      padding-bottom: 4rem;
+    }
 
     img {
-      margin-bottom: -50px;
+      @include mobile {
+        width: 100%;
+      }
     }
 
     h1 {
-      font-size: 110px;
-      line-height: 1;
-    }
-  }
-  .grid_4 {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: 1100px;
-    width: 100%;
-    gap: 1rem;
-    margin: 0 auto;
-    margin-top: 1rem;
+      font-size: 48px;
 
-    .left {
-      padding: 4.5rem;
-      background-color: white;
-      border-radius: 30px;
-      box-shadow: 10px 10px 60px #00000020;
-      flex: 1;
-      height: 750px;
-
-      h1 {
-        font-size: 50px;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+      @include mobile {
+        font-size: 40px;
         line-height: 1.2;
-        font-weight: 600;
-      }
-    }
-
-    .right {
-      padding: 4.5rem;
-      padding-right: 0;
-      border-radius: 30px;
-      flex: 1;
-      height: 750px;
-      position: relative;
-      overflow: hidden;
-      width: calc((1000px / 2) - 1rem);
-
-      h1 {
-        font-size: 70px;
-        line-height: 1.1;
-        max-width: 1000px;
-        font-weight: 600;
-      }
-
-      .img {
-        position: absolute;
-        right: -150px;
-        bottom: 120px;
-      }
-      .img2 {
-        position: absolute;
-        bottom: 0;
-        left: 20px;
       }
     }
   }
-  .grid_5 {
-    max-width: 1100px;
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 1rem;
-    border-radius: 50px;
+}
+.grid_3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 1rem;
+  padding-left: 4.5rem;
+  padding-right: 10rem;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+  border-radius: 30px;
+
+  @include mobile {
+    padding-top: 3rem;
+    flex-direction: column;
+    width: 90%;
+    border-radius: 10px;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    align-items: flex-start;
+  }
+
+  img {
+    margin-bottom: -50px;
+    // width: 100%;
+
+    @include mobile {
+      width: 40%;
+      margin-bottom: 0;
+    }
+  }
+
+  h1 {
+    font-size: 110px;
+    line-height: 1;
+
+    @include mobile {
+      font-size: 40px;
+    }
+  }
+}
+.grid_4 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1100px;
+  width: 100%;
+  gap: 1rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left {
+    padding: 4.5rem;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 10px 10px 60px #00000020;
+    flex: 1;
+    height: 750px;
+
+    @include mobile {
+      width: 90%;
+      border-radius: 10px;
+      padding: 2.5rem 2rem;
+    }
+
+    h1 {
+      font-size: 50px;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.2;
+      font-weight: 600;
+
+      @include mobile {
+        font-size: 35px;
+      }
+    }
+  }
+
+  .right {
+    padding: 4.5rem;
+    padding-right: 0;
+    border-radius: 30px;
+    flex: 1;
+    height: 750px;
+    position: relative;
     overflow: hidden;
-    box-shadow: 10px 10px 60px #00000020;
+    width: calc((1000px / 2) - 1rem);
 
-    h1 {
-      font-size: 80px;
-      max-width: 800px;
-      width: 100%;
-      margin: 0 5rem;
-      margin-bottom: 5rem;
-      line-height: 1;
-    }
-
-    img {
-      width: 100%;
-    }
-  }
-
-  .grid_6 {
-    max-width: 1100px;
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 1rem;
-    padding: 5rem;
-    border-radius: 50px;
-    box-shadow: 10px 10px 60px #00000020;
-
-    p {
-      font-size: 20px;
-      color: white;
+    @include mobile {
+      display: none;
     }
 
     h1 {
-      padding-top: 2rem;
-      line-height: 0.9;
-      font-size: 120px;
-      color: white;
-      max-width: 900px;
-      width: 100%;
+      font-size: 70px;
+      line-height: 1.1;
+      max-width: 1000px;
       font-weight: 600;
     }
+
+    .img {
+      position: absolute;
+      right: -150px;
+      bottom: 120px;
+    }
+    .img2 {
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
+}
+.grid_5 {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 10px 10px 60px #00000020;
+
+  @include mobile {
+    border-radius: 10px;
+    width: 90%;
   }
 
-  .sec_2 {
-    background-size: cover;
+  h1 {
+    font-size: 80px;
+    max-width: 800px;
     width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    flex-direction: column;
-    position: absolute;
+    margin: 0 5rem;
+    margin-bottom: 5rem;
+    line-height: 1;
 
-    h1 {
-      line-height: 1;
-      font-size: 90px;
-      text-align: center;
-      max-width: 800px;
-      width: 100%;
-      margin: 0 auto;
+    @include mobile {
+      font-size: 40px;
+      margin: 0 3rem;
+      margin-bottom: 5rem;
     }
+  }
 
-    p {
-      font-size: 20px;
-      font-weight: 500;
-      max-width: 500px;
-      margin: 0 auto;
-      text-align: center;
-    }
+  img {
+    width: 100%;
+  }
+}
 
-    a {
-      font-size: 1.2rem;
-      background-color: black;
-      color: white;
-      border-radius: 20px;
-      padding: 1em 1.5em;
+.grid_6 {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  padding: 5rem;
+  border-radius: 50px;
+  box-shadow: 10px 10px 60px #00000020;
+
+  @include mobile {
+    border-radius: 10px;
+    width: 90%;
+    padding: 4rem 2rem;
+  }
+
+  p {
+    font-size: 20px;
+    color: white;
+  }
+
+  h1 {
+    padding-top: 2rem;
+    line-height: 0.9;
+    font-size: 120px;
+    color: white;
+    max-width: 900px;
+    width: 100%;
+    font-weight: 600;
+
+    @include mobile {
+      font-size: 44px;
     }
+  }
+}
+// }
+.sec_2 {
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-direction: column;
+  position: absolute;
+
+  @include mobile {
+    padding: 0 2.5rem;
+  }
+
+  h1 {
+    line-height: 1;
+    font-size: 90px;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+
+    @include mobile {
+      font-size: 36px;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    font-weight: 500;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  a {
+    font-size: 1.2rem;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 1em 1.5em;
   }
 }
