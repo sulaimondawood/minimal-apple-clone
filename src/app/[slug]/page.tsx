@@ -1041,6 +1041,7 @@ function slugContent(
           <p>{res.sec2Text}</p>
           <Link href={""}>Apply now</Link>
         </article>
+
         <Footer state="#f5f5f5" />
       </>
     );
