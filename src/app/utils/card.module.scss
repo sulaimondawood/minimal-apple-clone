@@ -97,16 +97,17 @@
   }
 
   p:first-child {
-    font-size: 120px;
+    font-size: 100px;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 600;
     text-align: center;
-    max-width: 1500px;
+    max-width: 1200px;
     width: 100%;
     line-height: 1.1;
     margin: 0 auto;
+    letter-spacing: 0.6;
 
     @include mobile {
       font-size: 3.5rem;
@@ -181,9 +182,9 @@
 .grid_2 {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   gap: 1rem;
   margin-top: 1rem;
@@ -197,6 +198,7 @@
     padding: 6rem 3.5rem;
     border-radius: 30px;
     box-shadow: 10px 10px 60px #00000020;
+    flex: 1;
 
     @include mobile {
       width: 90%;
@@ -223,6 +225,7 @@
     padding: 0 3.5rem;
     padding-bottom: 6rem;
     box-shadow: 10px 10px 60px #00000020;
+    flex: 1 !important;
 
     @include mobile {
       border-radius: 10px;
@@ -238,7 +241,9 @@
     }
 
     h1 {
-      font-size: 48px;
+      // padding-
+      font-size: 50px;
+      line-height: 1.1;
 
       @include mobile {
         font-size: 40px;

@@ -97,7 +97,7 @@ function MyLink({ items }: { items: any }) {
   return (
     <div className={styles.btn_wrap}>
       <Link href={`/${items.slug.current}`}> {items.learnmore} </Link>
-      <Link href="/buy">{items.buy}</Link>
+      <Link href={`/shop/${items.slug.current}`}>{items.buy}</Link>
     </div>
   );
 }
