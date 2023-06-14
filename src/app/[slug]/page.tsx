@@ -8,6 +8,8 @@ import Nav from "../components/nav/Nav";
 import Footer from "../components/footer/Footer";
 import AppleTrade from "../components/appleTrade/AppleTrade";
 import TradeTab1, { Faqs } from "@/types/TradeTab1";
+import { gsap } from "gsap";
+// import { useRef } from "react";
 
 let layoutState: any;
 
@@ -451,13 +453,10 @@ let layoutState: any;
 // }
 export default async function Detail({ params }: any) {
   const { slug } = params;
-
   const data = await client.fetch(
     `*[_type in ['details2', 'detail'] && slug.current == "${slug}" ][0]`
   );
-
   const res = data;
-
   const tab2 = await client.fetch(
     `*[_type == 'appleTab2'] | order(_createdAt)`
   );
@@ -475,6 +474,8 @@ function slugContent(
   faqs: Faqs[]
 ) {
   if (state === "sharedLayout") {
+    // const divRef = useRef(null);
+    // gsap.utils.toArray(divRef.current); //SETTING UP GSAP HERE ON EACH DIVS
     return (
       <>
         <Nav
