@@ -38,7 +38,7 @@ const Tab = ({ tab }: { tab: TradeTab1[] }) => {
             <h1>{tab[tabIndex].contentTitle}</h1>
             {tab[tabIndex].ContentName.map((item: ContentI) => {
               return (
-                <table>
+                <table key={item._key}>
                   <thead className={styles.thead}>
                     <tr>
                       <td className={styles.td}>
@@ -77,7 +77,11 @@ const Tab = ({ tab }: { tab: TradeTab1[] }) => {
           <div className={styles.right}>
             {tab[tabIndex].ContentName.map((item: ContentI) => {
               return (
-                <img src={urlForImage(item.contentSubImage).url()} alt="" />
+                <img
+                  key={item._key}
+                  src={urlForImage(item.contentSubImage).url()}
+                  alt=""
+                />
               );
             })}
           </div>

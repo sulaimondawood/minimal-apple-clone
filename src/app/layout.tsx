@@ -1,5 +1,3 @@
-import Footer from "./components/footer/Footer";
-import Nav from "./components/nav/Nav";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 

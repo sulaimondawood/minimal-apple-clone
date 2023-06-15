@@ -21,58 +21,52 @@ function Faqs({ faqs }: { faqs: Faqs[] }) {
       <div className={styles.btn_wrp}>
         {faqs.map((item: Faqs, index: number) => {
           return (
-            <>
-              <button
-                onClick={() => handleClick(index)}
-                className={isActive === index ? styles.btn : ""}
-              >
-                {item.name}
-              </button>
-            </>
+            <button
+              key={item.slug.current}
+              onClick={() => handleClick(index)}
+              className={isActive === index ? styles.btn : ""}
+            >
+              {item.name}
+            </button>
           );
         })}
       </div>
 
       <div className={styles.details_wrp}>
-        {faqs[isActive].questions.map((item: FaqsQues) => {
+        {faqs[isActive].questions.map((item: FaqsQues, index: number) => {
           return (
-            <>
-              <div>
-                <h2>{item?.name}</h2>
-                <div className={styles.ques}>
-                  <div className={styles.sub}>
-                    <p
-                      onClick={() => setClick(!click)}
-                      className={styles.ques_}
-                    >
-                      {item.question}
-                    </p>
-
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 17 8.85"
-                      className={click ? styles.svg_open : styles.svg}
-                      role="img"
-                      aria-hidden="true"
-                    >
-                      <path fill="none" d="M0 0h35v35H0z"></path>
-                      <path
-                        fill="none"
-                        stroke="#86868b"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2.25"
-                        d="M15 1.13L8.5 7.72 2 1.13"
-                      ></path>
-                    </svg>
-                  </div>
-                  {/* {click && <p className={styles.ans_active}> item.answer</p>} */}
-                  <p className={click ? styles.ans_active : styles.ans}>
-                    {item.answer}
+            <div key={index}>
+              <h2>{item?.name}</h2>
+              <div className={styles.ques}>
+                <div className={styles.sub}>
+                  <p onClick={() => setClick(!click)} className={styles.ques_}>
+                    {item.question}
                   </p>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 17 8.85"
+                    className={click ? styles.svg_open : styles.svg}
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <path fill="none" d="M0 0h35v35H0z"></path>
+                    <path
+                      fill="none"
+                      stroke="#86868b"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2.25"
+                      d="M15 1.13L8.5 7.72 2 1.13"
+                    ></path>
+                  </svg>
                 </div>
+                {/* {click && <p className={styles.ans_active}> item.answer</p>} */}
+                <p className={click ? styles.ans_active : styles.ans}>
+                  {item.answer}
+                </p>
               </div>
-            </>
+            </div>
           );
         })}
       </div>

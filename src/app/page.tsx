@@ -10,7 +10,6 @@ export default async function Home() {
     `*[_type == "landingProducts2"] | order(_createdAt)`
   );
   const res2 = await data2;
-  // console.log(res);
   const slides = await client.fetch(`*[_type == "slider"]`);
 
   return (

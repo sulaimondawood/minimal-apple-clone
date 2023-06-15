@@ -29,9 +29,9 @@ function Tab2({ tab2 }: { tab2: Tab2[] }) {
         <h2>{tab2[tabIndex].title1}</h2>
 
         <div className={styles.row} key={tab2[tabIndex].slug.current}>
-          {tab2[tabIndex].extraDetails.map((item: Tab2Extra) => {
+          {tab2[tabIndex].extraDetails.map((item: Tab2Extra, index: number) => {
             return (
-              <div>
+              <div key={index}>
                 <img src={urlForImage(item.image).url()} alt="" />
                 <p className={styles.p}>{item.step}</p>
                 <h2>{item.title}</h2>
