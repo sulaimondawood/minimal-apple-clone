@@ -37,6 +37,7 @@
   width: 100%;
   top: 0;
   flex-wrap: wrap;
+  position: relative;
 
   .btn_wrp {
     display: flex;
@@ -53,14 +54,29 @@
   svg {
     width: 17px;
   }
-
   .links_wrp {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 999 !important;
 
-    a {
-      font-size: 2rem;
+    .wrp {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 4rem;
+      padding: 0 2rem;
+
+      a {
+        font-size: 1.5rem;
+      }
     }
+  }
+
+  .active {
+    transform: translateY(0%);
+    transition: 0.5s;
   }
 }

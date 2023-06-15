@@ -463,7 +463,7 @@ export default async function Detail({ params }: any) {
   const tab = await client.fetch(`*[_type == 'appleTab1'] | order(_createdAt)`);
   const faqs = await client.fetch(`*[_type == 'faqs']`);
 
-  return slugContent(res.layoutState, res, tab, tab2, faqs);
+  return slugContent(res?.layoutState, res, tab, tab2, faqs);
 }
 
 function slugContent(

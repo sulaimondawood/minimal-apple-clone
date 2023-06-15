@@ -1,5 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import styles from "./nav.module.scss";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+
 const Nav = ({
   state,
   bgState,
@@ -9,11 +14,45 @@ const Nav = ({
   bgState: string;
   colorState: string;
 }) => {
+  const [isOpen, setIsOpen] = useState(true);
+  const btnRef = useRef(null);
+  const mobileRef = useRef(null);
+  // const handleNav = (): void => {
+  //   setIsOpen(!isOPen);
+  // };
+
+  let tl: any;
+  const handleNav = useCallback((): void => {
+    const doc: any = document.querySelector("body");
+    setIsOpen(!isOpen);
+    if (isOpen) {
+      tl.play();
+      doc.style.overflow = "hidden";
+    } else {
+      tl.reverse();
+      doc.style.overflow = "auto";
+    }
+  }, [isOpen]);
+  useEffect(() => {
+    tl = gsap.timeline({ paused: true });
+    tl.from(mobileRef.current, {
+      yPercent: -100,
+      opacity: 0,
+      autoAlpha: 0,
+      duration: 1,
+    });
+    tl.to(mobileRef.current, {
+      yPercent: 0,
+      opacity: 1,
+      duration: 1,
+      ease: "Power2.out",
+    });
+  }, [isOpen]);
+
   return (
     <div className="">
       <div
         style={{
-          // backgroundColor: state === true ? "rgba(22, 22, 23, 0.8)" : "white",
           backgroundColor: bgState,
           position: state ? "fixed" : "static",
         }}
@@ -109,7 +148,7 @@ const Nav = ({
               ></path>
             </svg>
           </button>
-          <button>
+          <button ref={btnRef} onClick={handleNav}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
               <polyline
                 id="globalnav-menutrigger-bread-bottom"
@@ -186,56 +225,79 @@ const Nav = ({
           </button>
         </div>
 
-        <div className={styles.links_wrp}>
-          <Link
-            style={{ color: colorState }}
-            className="nav-link"
-            href="/store"
-          >
-            Store
-          </Link>
-          <Link style={{ color: colorState }} className="nav-link" href="/mac">
-            Mac
-          </Link>
-          <Link style={{ color: colorState }} className="nav-link" href="/ipad">
-            ipad
-          </Link>
-          <Link
-            style={{ color: colorState }}
-            className="nav-link"
-            href="/store"
-          >
-            iPhone
-          </Link>
-          <Link
-            style={{ color: colorState }}
-            className="nav-link"
-            href="/store"
-          >
-            Watch
-          </Link>
-          <Link
-            style={{ color: colorState }}
-            className="nav-link"
-            href="/store"
-          >
-            Airpods
-          </Link>
+        <div
+          ref={mobileRef}
+          style={{
+            backgroundColor: bgState,
+          }}
+          className={styles.links_wrp}
+        >
+          <div className={styles.wrp}>
+            <Link
+              onClick={handleNav}
+              style={{ color: colorState }}
+              className="nav-link"
+              href="/store"
+            >
+              Store
+            </Link>
+            <Link
+              onClick={handleNav}
+              style={{ color: colorState }}
+              className="nav-link"
+              href="/mac"
+            >
+              Mac
+            </Link>
+            <Link
+              style={{ color: colorState }}
+              className="nav-link"
+              href="/ipad"
+            >
+              ipad
+            </Link>
+            <Link
+              onClick={handleNav}
+              style={{ color: colorState }}
+              className="nav-link"
+              href=""
+            >
+              iPhone
+            </Link>
+            <Link
+              onClick={handleNav}
+              style={{ color: colorState }}
+              className="nav-link"
+              href=""
+            >
+              Watch
+            </Link>
+            <Link
+              onClick={handleNav}
+              style={{ color: colorState }}
+              className="nav-link"
+              href=""
+            >
+              Airpods
+            </Link>
 
-          <Link
-            style={{ color: colorState }}
-            className="nav-link"
-            href="/store"
-          >
-            Accesories
-          </Link>
-          <Link
-            style={{ color: colorState }}
-            className="nav-link"
-            href="/store"
-          >
-            Support
-          </Link>
+            <Link
+              onClick={handleNav}
+              style={{ color: colorState }}
+              className="nav-link"
+              href=""
+            >
+              Accesories
+            </Link>
+            <Link
+              onClick={handleNav}
+              style={{ color: colorState }}
+              className="nav-link"
+              href=""
+            >
+              Support
+            </Link>
+          </div>
         </div>
       </div>
     </div>
