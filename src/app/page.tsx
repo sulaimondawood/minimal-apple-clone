@@ -1,7 +1,7 @@
 import { Provider } from "react-redux";
 import { client } from "../../sanity/lib/client";
 import Landing from "./components/landing/Landing";
-import { store } from "./redux/store";
+import { store } from "../redux/store";
 export default async function Home() {
   const data = await client.fetch(
     `*[_type == "landingProducts"] | order(_createdAt)`
@@ -15,13 +15,7 @@ export default async function Home() {
 
   return (
     <main className={""}>
-      <Provider store={store}>
-        <Landing
-          landingProducts={res}
-          landingProducts2={res2}
-          slides={slides}
-        />
-      </Provider>
+      <Landing landingProducts={res} landingProducts2={res2} slides={slides} />
     </main>
   );
 }

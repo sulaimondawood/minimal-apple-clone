@@ -1,6 +1,8 @@
+import { Provider } from "react-redux";
 import "./globals.css";
 import { Poppins } from "next/font/google";
-
+import { store } from "../redux/store";
+import Provide from "@/redux/provider/Provide";
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
   subsets: ["latin"],
@@ -18,7 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        <Provide>{children}</Provide>
+      </body>
     </html>
   );
 }

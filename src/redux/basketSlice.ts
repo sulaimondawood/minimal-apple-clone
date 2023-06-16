@@ -11,5 +11,12 @@ const initialState: BasketType = {
 export const basketSlice = createSlice({
   name: "basket",
   initialState,
-  reducers: {},
+  reducers: {
+    addToBasket: (state, action) => {
+      state.products = [...state.products, action.payload];
+    },
+    removefromBasket(state, payload) {},
+  },
 });
+
+export default basketSlice.reducer;
