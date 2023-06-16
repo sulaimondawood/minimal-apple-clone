@@ -14,7 +14,7 @@ const Nav = ({
   bgState: string;
   colorState: string;
 }) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const btnRef = useRef(null);
   const mobileRef = useRef(null);
   // const handleNav = (): void => {
@@ -38,8 +38,8 @@ const Nav = ({
     tl.from(mobileRef.current, {
       yPercent: -100,
       opacity: 0,
-      autoAlpha: 0,
       duration: 1,
+      ease: "Power2.out",
     });
     tl.to(mobileRef.current, {
       yPercent: 0,
@@ -154,9 +154,9 @@ const Nav = ({
                 id="globalnav-menutrigger-bread-bottom"
                 fill={colorState}
                 stroke={colorState}
-                stroke-width="1.2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 points="2 12, 16 12"
                 // class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"
                 className={styles.burger}
@@ -190,9 +190,9 @@ const Nav = ({
                 // fill="currentColor"
                 fill={colorState}
                 stroke={colorState}
-                stroke-width="1.2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 points="2 5, 16 5"
                 // class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"
               >
@@ -233,14 +233,7 @@ const Nav = ({
           className={styles.links_wrp}
         >
           <div className={styles.wrp}>
-            <Link
-              onClick={handleNav}
-              style={{ color: colorState }}
-              className="nav-link"
-              href="/store"
-            >
-              Store
-            </Link>
+            <button onClick={handleNav}>close</button>
             <Link
               onClick={handleNav}
               style={{ color: colorState }}
