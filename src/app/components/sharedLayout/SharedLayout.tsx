@@ -1,11 +1,42 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef } from "react";
 import Footer from "../footer/Footer";
 import Nav from "../nav/Nav";
 import styles from "./sharedlayout.module.scss";
 import Link from "next/link";
 import { urlForImage } from "../../../../sanity/lib/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 const SharedLayout = ({ res }: { res: any }) => {
+  const divRefs = useRef<HTMLDivElement | any>();
+  const heroRefImg = useRef<HTMLDivElement | any>();
+  const titleRef = useRef<HTMLDivElement | any>();
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.fromTo(
+        divRefs.current,
+        {
+          opacity: 0,
+          autoAlpha: 0,
+        },
+        {
+          autoAlpha: 1,
+          opacity: 1,
+          scrollTrigger: {
+            scrub: true,
+            trigger: divRefs.current,
+          },
+        }
+      );
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <>
       <Nav
@@ -35,8 +66,10 @@ const SharedLayout = ({ res }: { res: any }) => {
           className={styles.hero_detail}
         >
           <div>
-            <h1 style={{ color: res.heroDescColor }}>{res?.desc}</h1>
-            <img src={urlForImage(res?.image).url()} alt="" />
+            <h1 ref={titleRef} style={{ color: res.heroDescColor }}>
+              {res?.desc}
+            </h1>
+            <img ref={heroRefImg} src={urlForImage(res?.image).url()} alt="" />
           </div>
         </div>
 
@@ -49,6 +82,7 @@ const SharedLayout = ({ res }: { res: any }) => {
 
           <div className={styles.grid_2}>
             <div
+              ref={divRefs}
               style={{ backgroundColor: res.secGridOneItemColor }}
               className={styles.grid_item_left}
             >
@@ -79,6 +113,7 @@ const SharedLayout = ({ res }: { res: any }) => {
             </div>
             <div className={styles.grid_item_right}>
               <div
+                // ref={divRefs}
                 style={{
                   backgroundColor: res?.secGridOneItem2Color,
                   backgroundImage: res.sec2gridoneimgstate

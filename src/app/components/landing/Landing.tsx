@@ -21,6 +21,7 @@ interface Iitems {
   image: any;
   color: string;
   logo: any;
+  _id: string;
 }
 
 export type Slides = {
@@ -43,7 +44,6 @@ export default function Landing({
   console.log(useStateContext());
 
   const dispatch = useAppDispatch();
-  // const dispatch = useDispatch();
   function addBasket(item: any): void {
     dispatch(addToBasket(item));
   }
@@ -60,7 +60,7 @@ export default function Landing({
         {landingProducts.map((items: Iitems) => {
           return (
             <div
-              key={items.slug.current}
+              key={items._id}
               className={styles.bg_item}
               style={{
                 backgroundImage: `url(${urlForImage(items?.image).url()})`,
@@ -80,7 +80,7 @@ export default function Landing({
         {landingProducts2.map((items: Iitems) => {
           return (
             <div
-              key={items.slug.current}
+              key={items._id}
               className={styles.bg_item}
               style={{
                 backgroundImage: `url(${urlForImage(items?.image).url()})`,

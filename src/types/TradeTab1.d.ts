@@ -37,6 +37,7 @@ interface FaqsQues {
   name: string;
   answer: string;
   question: string;
+  _key?: string;
 }
 
 interface Faqs {
@@ -49,6 +50,7 @@ interface Faqs {
     current: string;
   };
   name: string;
+  _id: string;
 }
 
 export default interface TradeTab1 {

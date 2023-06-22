@@ -7,9 +7,7 @@ import TradeTab1, { ContentI } from "@/types/TradeTab1";
 const Tab = ({ tab }: { tab: TradeTab1[] }) => {
   const [tabIndex, setTabIndex] = useState(0);
   const [isActive, setIsActive] = useState(false);
-  const handleTabFunc = (index: any) => {
-    setTabIndex((prev) => (prev = index));
-  };
+
   return (
     <>
       <div className={styles.btn_wrp}>
@@ -17,7 +15,6 @@ const Tab = ({ tab }: { tab: TradeTab1[] }) => {
           return (
             <button
               onClick={() => setTabIndex(index)}
-              //   onClick={handleTabFunc(index)}
               className={styles.button}
               key={item.slug.current}
               style={{

@@ -26,8 +26,8 @@ const AppleTrade = ({
 }) => {
   return (
     <div>
+      <Nav bgState={res?.navBg} colorState={res?.navColor} state={false} />
       <section className={styles.appleTradeSec}>
-        <Nav bgState={res?.navBg} colorState={res?.navColor} state={false} />
         <div style={{ backgroundColor: res.navBg }} className={styles.header}>
           <div>
             <h2 style={{ color: res.navColor }}>{res?.heroName}</h2>
@@ -42,10 +42,10 @@ const AppleTrade = ({
           <h1>{res.heroTitleString}</h1>
           <p>{res.heroDesc}</p>
         </div>
-        <div className={styles.sec_2}>
-          <Tab tab={tab} />
-        </div>
       </section>
+      <div className={styles.sec_2}>
+        <Tab tab={tab} />
+      </div>
       <div className={styles.sec_3}>
         <h1>Two easy ways to trade in.</h1>
         <p>
