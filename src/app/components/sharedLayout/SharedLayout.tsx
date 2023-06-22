@@ -15,9 +15,12 @@ const SharedLayout = ({ res }: { res: any }) => {
   const heroRefImg = useRef<HTMLDivElement | any>();
   const titleRef = useRef<HTMLDivElement | any>();
 
+  console.log(divRefs);
+
   useEffect(() => {
+    const tl = gsap.timeline();
     let ctx = gsap.context(() => {
-      gsap.fromTo(
+      tl.fromTo(
         divRefs.current,
         {
           opacity: 0,
@@ -80,9 +83,10 @@ const SharedLayout = ({ res }: { res: any }) => {
           <h2 style={{ color: res.sec2TitleColor }}>{res.sec2Title}</h2>
           <p style={{ color: res.sec2pricerangeColor }}>{res.sec2pricerange}</p>
 
+          {/* herereojeoo */}
           <div className={styles.grid_2}>
             <div
-              ref={divRefs}
+              // ref={divRefs}
               style={{ backgroundColor: res.secGridOneItemColor }}
               className={styles.grid_item_left}
             >
@@ -113,7 +117,7 @@ const SharedLayout = ({ res }: { res: any }) => {
             </div>
             <div className={styles.grid_item_right}>
               <div
-                // ref={divRefs}
+                ref={divRefs}
                 style={{
                   backgroundColor: res?.secGridOneItem2Color,
                   backgroundImage: res.sec2gridoneimgstate
@@ -159,6 +163,7 @@ const SharedLayout = ({ res }: { res: any }) => {
               </div>
             </div>
           </div>
+
           <div className={styles.grid_3}>
             <img src={urlForImage(res?.secGridTwoItem1Img).url()} alt="" />
             <div style={{ backgroundColor: res.secGridTwoItem2BgColor }}>
@@ -217,6 +222,8 @@ const SharedLayout = ({ res }: { res: any }) => {
               </div>
             </div>
           )}
+
+          {/* here */}
 
           <div className={styles.grid_5}>
             <div
