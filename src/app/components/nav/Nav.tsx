@@ -2,7 +2,13 @@
 
 import Link from "next/link";
 import styles from "./nav.module.scss";
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { gsap } from "gsap";
 
 const Nav = ({
@@ -24,21 +30,21 @@ const Nav = ({
   let tl: any;
   const handleNav = useCallback((): void => {
     const doc: any = document.querySelector("body");
-    setIsOpen(!isOpen);
     if (isOpen) {
+      setIsOpen(!isOpen);
       tl.play();
       doc.style.overflow = "hidden";
     } else {
+      setIsOpen(!isOpen);
       tl.reverse();
       doc.style.overflow = "auto";
     }
   }, [isOpen]);
-  useEffect(() => {
+  useLayoutEffect(() => {
     tl = gsap.timeline({ paused: true });
     tl.from(mobileRef.current, {
       yPercent: -100,
       opacity: 0,
-      duration: 1,
       ease: "Power2.out",
     });
     tl.to(mobileRef.current, {

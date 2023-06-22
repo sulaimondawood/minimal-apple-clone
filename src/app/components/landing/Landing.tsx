@@ -1,9 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import styles from "./landing.module.scss";
 import { urlForImage } from "../../../../sanity/lib/image";
 import Footer from "../footer/Footer";
 import Nav from "../nav/Nav";
 import Slider from "../slider/Slider";
+import Button from "../button/Button";
+import { useAppDispatch } from "@/redux/hooks/hook";
+import { addToBasket } from "@/redux/basketSlice";
+import { useDispatch } from "react-redux";
+import { useStateContext } from "@/context/Context";
 
 interface Iitems {
   learnmore: "Learn More";
@@ -33,6 +40,13 @@ export default function Landing({
   landingProducts2: any;
   slides: Slides[];
 }) {
+  console.log(useStateContext());
+
+  const dispatch = useAppDispatch();
+  // const dispatch = useDispatch();
+  function addBasket(item: any): void {
+    dispatch(addToBasket(item));
+  }
   return (
     <>
       <Nav bgState="rgba(22, 22, 23, 0.8)" colorState="#e8e8ed" state={true} />
@@ -57,7 +71,7 @@ export default function Landing({
               </h1>
               <h2 style={{ color: items.color }}>{items.desc}</h2>
 
-              <MyLink items={items} />
+              <Button addBasket={addBasket} items={items} />
             </div>
           );
         })}
@@ -82,7 +96,7 @@ export default function Landing({
                 alt="alt"
               />
               <h2 style={{ color: items.color }}>{items.desc}</h2>
-              <MyLink items={items} />
+              <Button addBasket={addBasket} items={items} />
             </div>
           );
         })}
@@ -90,14 +104,5 @@ export default function Landing({
       <Slider slides={slides} />
       <Footer state={"white"} />
     </>
-  );
-}
-
-function MyLink({ items }: { items: any }) {
-  return (
-    <div className={styles.btn_wrap}>
-      <Link href={`/${items.slug.current}`}> {items.learnmore} </Link>
-      <Link href={`/shop/${items.slug.current}`}>{items.buy}</Link>
-    </div>
   );
 }

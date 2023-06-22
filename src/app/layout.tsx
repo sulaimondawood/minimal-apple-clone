@@ -3,6 +3,7 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import { store } from "../redux/store";
 import Provide from "@/redux/provider/Provide";
+import Context from "@/context/Context";
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
   subsets: ["latin"],
@@ -21,7 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Provide>{children}</Provide>
+        <Provide>
+          <Context>{children}</Context>
+        </Provide>
       </body>
     </html>
   );

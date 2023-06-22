@@ -5,15 +5,14 @@ import styles from "./faqs.module.scss";
 import { useState } from "react";
 function Faqs({ faqs }: { faqs: Faqs[] }) {
   const [isActive, setIsActive] = useState(0);
-  const [click, setClick] = useState(false);
+  const [click, setClick] = useState(0);
+  // const [click, setClick] = useState(false);
 
   const handleClick = (index: number) => {
     setIsActive(index);
   };
-  const handleQues = (e: MouseEvent) => {
-    if (e.currentTarget) {
-      setClick(!click);
-    }
+  const handleQues = (index: number) => {
+    setClick(index);
   };
   return (
     <section className={styles.faqs}>
@@ -33,13 +32,19 @@ function Faqs({ faqs }: { faqs: Faqs[] }) {
       </div>
 
       <div className={styles.details_wrp}>
-        {faqs[isActive].questions.map((item: FaqsQues, index: number) => {
+        {faqs[isActive].questions.map((item: FaqsQues, index) => {
+          console.log(index);
+
           return (
             <div key={index}>
               <h2>{item?.name}</h2>
               <div className={styles.ques}>
                 <div className={styles.sub}>
-                  <p onClick={() => setClick(!click)} className={styles.ques_}>
+                  <p
+                    onClick={() => handleClick(index)}
+                    className={styles.ques_}
+                  >
+                    {/* <p onClick={() => setClick(!click)} className={styles.ques_}> */}
                     {item.question}
                   </p>
 
@@ -62,7 +67,7 @@ function Faqs({ faqs }: { faqs: Faqs[] }) {
                   </svg>
                 </div>
                 {/* {click && <p className={styles.ans_active}> item.answer</p>} */}
-                <p className={click ? styles.ans_active : styles.ans}>
+                <p className={click == index ? styles.ans_active : styles.ans}>
                   {item.answer}
                 </p>
               </div>
