@@ -11,6 +11,7 @@ import { useAppDispatch } from "@/redux/hooks/hook";
 import { addToBasket } from "@/redux/basketSlice";
 import { useDispatch } from "react-redux";
 import { useStateContext } from "@/context/Context";
+import toast from "react-hot-toast";
 
 interface Iitems {
   learnmore: "Learn More";
@@ -46,6 +47,7 @@ export default function Landing({
   const dispatch = useAppDispatch();
   function addBasket(item: any): void {
     dispatch(addToBasket(item));
+    toast.success(`${item.name} added to cart`);
   }
   return (
     <>
