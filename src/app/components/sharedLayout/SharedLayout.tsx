@@ -11,55 +11,224 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 const SharedLayout = ({ res }: { res: any }) => {
-  const divRefs = useRef<HTMLDivElement | any>();
+  const divRef1 = useRef<HTMLDivElement | any>();
+  const divRef2 = useRef<HTMLDivElement | any>();
+  const divRef3 = useRef<HTMLDivElement | any>();
+  const divRef4 = useRef<HTMLDivElement | any>();
+  const divRef5 = useRef<HTMLDivElement | any>();
+  const divRef6 = useRef<HTMLDivElement | any>();
+  const divRef7 = useRef<HTMLDivElement | any>();
+  const divRef8 = useRef<HTMLDivElement | any>();
+  const divRef9 = useRef<HTMLDivElement | any>();
+  const divRef10 = useRef<HTMLDivElement | any>();
+  const divRef11 = useRef<HTMLDivElement | any>();
+  const divRef12 = useRef<HTMLDivElement | any>();
   const heroRefImg = useRef<HTMLDivElement | any>();
   const titleRef = useRef<HTMLDivElement | any>();
-
-  const divs = document.querySelectorAll(".div");
-  console.log(divs);
 
   useEffect(() => {
     const tl = gsap.timeline();
     let ctx = gsap.context(() => {
-      // divs.forEach((item) => {
-      //   tl.fromTo(
-      //     item,
-      //     {
-      //       opacity: 0,
-      //       autoAlpha: 0,
-      //     },
-      //     {
-      //       autoAlpha: 1,
-      //       opacity: 1,
-      //       scrollTrigger: {
-      //         scrub: true,
-      //         trigger: divRefs.current,
-      //       },
-      //       stagger: 1,
-      //     }
-      //   );
-      // });
-
-      gsap.utils.toArray(".div").forEach((item: any) => {
-        tl.fromTo(
-          item,
+      tl.fromTo(
+        divRef1.current,
+        {
+          opacity: 0,
+          autoAlpha: 0,
+        },
+        {
+          autoAlpha: 1,
+          opacity: 1,
+          scrollTrigger: {
+            scrub: true,
+            trigger: divRef1.current,
+          },
+        }
+      )
+        .fromTo(
+          divRef2.current,
           {
             opacity: 0,
             autoAlpha: 0,
-            duration: 0.75,
-            stagger: 2,
           },
           {
             autoAlpha: 1,
             opacity: 1,
             scrollTrigger: {
               scrub: true,
-              trigger: divRefs.current,
+              trigger: divRef3.current,
             },
-            // stagger: 1,
+          }
+        )
+        .fromTo(
+          divRef3.current,
+          {
+            opacity: 0,
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
+            opacity: 1,
+            scrollTrigger: {
+              scrub: true,
+              trigger: divRef4.current,
+            },
+          }
+        )
+        .fromTo(
+          divRef4.current,
+          {
+            opacity: 0,
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
+            opacity: 1,
+            scrollTrigger: {
+              scrub: true,
+              trigger: divRef4.current,
+            },
+          }
+        )
+        .fromTo(
+          divRef5.current,
+          {
+            opacity: 0,
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
+            opacity: 1,
+            scrollTrigger: {
+              scrub: true,
+              trigger: divRef6.current,
+            },
+          }
+        )
+        .fromTo(
+          divRef6.current,
+          {
+            opacity: 0,
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
+            opacity: 1,
+            scrollTrigger: {
+              scrub: true,
+              trigger: divRef7.current,
+            },
+          }
+        )
+        .fromTo(
+          divRef7.current,
+          {
+            opacity: 0,
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
+            opacity: 1,
+            scrollTrigger: {
+              scrub: true,
+              trigger: divRef8.current,
+            },
+          }
+        )
+        .fromTo(
+          divRef8.current,
+          {
+            opacity: 0,
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
+            opacity: 1,
+            scrollTrigger: {
+              scrub: true,
+              trigger: divRef9.current,
+            },
+          }
+        )
+        .fromTo(
+          divRef9.current,
+          {
+            opacity: 0,
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
+            opacity: 1,
+            scrollTrigger: {
+              scrub: true,
+              trigger: divRef10.current,
+            },
+          }
+        )
+        .fromTo(
+          divRef10.current,
+          {
+            opacity: 0,
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
+            opacity: 1,
+            scrollTrigger: {
+              scrub: true,
+              trigger: divRef11.current,
+            },
+          }
+        )
+        .fromTo(
+          divRef11.current,
+          {
+            opacity: 0,
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
+            opacity: 1,
+            scrollTrigger: {
+              scrub: true,
+              trigger: divRef12.current,
+            },
+          }
+        )
+        .fromTo(
+          divRef12.current,
+          {
+            opacity: 0,
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
+            opacity: 1,
+            scrollTrigger: {
+              scrub: true,
+              trigger: divRef12.current,
+            },
           }
         );
-      });
+      // gsap.utils.toArray(".div").forEach((item: any) => {
+      //   tl.fromTo(
+      //     item,
+      //     {
+      //       opacity: 0,
+      //       autoAlpha: 0,
+      //       duration: 0.75,
+      //       stagger: 2,
+      //       trigger: item,
+      //     },
+      //     {
+      //       autoAlpha: 1,
+      //       opacity: 1,
+      //       scrollTrigger: {
+      //         scrub: true,
+      //         trigger: item,
+      //       },
+      //     }
+      //   );
+      // });
     });
 
     return () => ctx.revert();
@@ -111,10 +280,9 @@ const SharedLayout = ({ res }: { res: any }) => {
           {/* herereojeoo */}
           <div className={styles.grid_2}>
             <div
-              // ref={divRefs}
+              ref={divRef1}
               style={{ backgroundColor: res.secGridOneItemColor }}
-              // className={styles.grid_item_left}
-              className={` div  ${styles.grid_item_left}`}
+              className={styles.grid_item_left}
             >
               <div className={styles.f_sub_div}>
                 <h2 style={{ color: res.secGridOneItemTitleColor }}>
@@ -141,9 +309,9 @@ const SharedLayout = ({ res }: { res: any }) => {
                 </div>
               </div>
             </div>
-            <div className={styles.grid_item_right}>
+            <div className={`${styles.grid_item_right}`}>
               <div
-                ref={divRefs}
+                ref={divRef2}
                 style={{
                   backgroundColor: res?.secGridOneItem2Color,
                   backgroundImage: res.sec2gridoneimgstate
@@ -161,6 +329,7 @@ const SharedLayout = ({ res }: { res: any }) => {
                 </h2>
               </div>
               <div
+                ref={divRef3}
                 style={{ backgroundColor: res?.secGridOneItem3Color }}
                 className={styles.sub_div_2}
               >
@@ -192,8 +361,15 @@ const SharedLayout = ({ res }: { res: any }) => {
           </div>
 
           <div className={styles.grid_3}>
-            <img src={urlForImage(res?.secGridTwoItem1Img).url()} alt="" />
-            <div style={{ backgroundColor: res.secGridTwoItem2BgColor }}>
+            <img
+              ref={divRef4}
+              src={urlForImage(res?.secGridTwoItem1Img).url()}
+              alt=""
+            />
+            <div
+              ref={divRef5}
+              style={{ backgroundColor: res.secGridTwoItem2BgColor }}
+            >
               <p style={{ color: res.secGridTwoItem2TitleColor }}>
                 {res?.secGridTwoItem2Title}
               </p>
@@ -207,6 +383,7 @@ const SharedLayout = ({ res }: { res: any }) => {
             <div className={styles.grid_4}>
               <div className={styles.grid_4_left}>
                 <div
+                  ref={divRef6}
                   className=""
                   style={{
                     backgroundImage: res.sec2gridoneimgstate
@@ -219,6 +396,7 @@ const SharedLayout = ({ res }: { res: any }) => {
                   </h2>
                 </div>
                 <div
+                  ref={divRef7}
                   style={{ backgroundColor: res?.secGridThreeItem2Color }}
                   className={styles.div_2}
                 >
@@ -236,6 +414,7 @@ const SharedLayout = ({ res }: { res: any }) => {
                 </div>
               </div>
               <div
+                ref={divRef8}
                 style={{
                   backgroundImage: res.sec2gridoneimgstate
                     ? ""
@@ -254,6 +433,7 @@ const SharedLayout = ({ res }: { res: any }) => {
 
           <div className={styles.grid_5}>
             <div
+              ref={divRef9}
               style={{
                 backgroundImage: `url(${urlForImage(
                   res?.secGridFourItem1Img
@@ -265,12 +445,13 @@ const SharedLayout = ({ res }: { res: any }) => {
                 {res.secGridFourItem1Text}
               </h2>
             </div>
-            <div className={styles.grid_item_right}>
+            <div ref={divRef10} className={styles.grid_item_right}>
               <img src={urlForImage(res.secGridFourItem2Img).url()} alt="" />
             </div>
           </div>
           <div className={styles.grid_6}>
             <div
+              ref={divRef11}
               style={{ backgroundColor: res.secGridFiveItem1Color }}
               className={styles.grid_6_item_left}
             >
@@ -283,6 +464,7 @@ const SharedLayout = ({ res }: { res: any }) => {
               <img src={urlForImage(res.secGridFiveItem1Img).url()} alt="" />
             </div>
             <div
+              ref={divRef12}
               style={{
                 backgroundImage: `url(${urlForImage(
                   res.secGridFiveItem2Img
