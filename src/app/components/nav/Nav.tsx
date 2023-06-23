@@ -10,6 +10,7 @@ import {
   useState,
 } from "react";
 import { gsap } from "gsap";
+import { useAppSelector } from "@/redux/hooks/hook";
 
 const Nav = ({
   state,
@@ -20,12 +21,11 @@ const Nav = ({
   bgState: string;
   colorState: string;
 }) => {
+  const { products } = useAppSelector((state) => state.basketSlice);
+
   const [isOpen, setIsOpen] = useState(false);
   const btnRef = useRef(null);
   const mobileRef = useRef(null);
-  // const handleNav = (): void => {
-  //   setIsOpen(!isOPen);
-  // };
 
   let tl: any;
   const handleNav = useCallback((): void => {
@@ -111,7 +111,12 @@ const Nav = ({
             ></path>
           </svg>
         </button>
-        <button>
+        <button className={styles.svg_grd}>
+          {products.length > 0 && (
+            <span style={{ color: bgState, backgroundColor: colorState }}>
+              {products.length}
+            </span>
+          )}
           <svg viewBox="0 0 14 44" xmlns="http://www.w3.org/2000/svg">
             <path
               style={{ fill: colorState }}

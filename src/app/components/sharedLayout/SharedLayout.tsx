@@ -15,26 +15,51 @@ const SharedLayout = ({ res }: { res: any }) => {
   const heroRefImg = useRef<HTMLDivElement | any>();
   const titleRef = useRef<HTMLDivElement | any>();
 
-  console.log(divRefs);
+  const divs = document.querySelectorAll(".div");
+  console.log(divs);
 
   useEffect(() => {
     const tl = gsap.timeline();
     let ctx = gsap.context(() => {
-      tl.fromTo(
-        divRefs.current,
-        {
-          opacity: 0,
-          autoAlpha: 0,
-        },
-        {
-          autoAlpha: 1,
-          opacity: 1,
-          scrollTrigger: {
-            scrub: true,
-            trigger: divRefs.current,
+      // divs.forEach((item) => {
+      //   tl.fromTo(
+      //     item,
+      //     {
+      //       opacity: 0,
+      //       autoAlpha: 0,
+      //     },
+      //     {
+      //       autoAlpha: 1,
+      //       opacity: 1,
+      //       scrollTrigger: {
+      //         scrub: true,
+      //         trigger: divRefs.current,
+      //       },
+      //       stagger: 1,
+      //     }
+      //   );
+      // });
+
+      gsap.utils.toArray(".div").forEach((item: any) => {
+        tl.fromTo(
+          item,
+          {
+            opacity: 0,
+            autoAlpha: 0,
+            duration: 0.75,
+            stagger: 2,
           },
-        }
-      );
+          {
+            autoAlpha: 1,
+            opacity: 1,
+            scrollTrigger: {
+              scrub: true,
+              trigger: divRefs.current,
+            },
+            // stagger: 1,
+          }
+        );
+      });
     });
 
     return () => ctx.revert();
@@ -88,7 +113,8 @@ const SharedLayout = ({ res }: { res: any }) => {
             <div
               // ref={divRefs}
               style={{ backgroundColor: res.secGridOneItemColor }}
-              className={styles.grid_item_left}
+              // className={styles.grid_item_left}
+              className={` div  ${styles.grid_item_left}`}
             >
               <div className={styles.f_sub_div}>
                 <h2 style={{ color: res.secGridOneItemTitleColor }}>
@@ -124,7 +150,8 @@ const SharedLayout = ({ res }: { res: any }) => {
                     ? `url(${urlForImage(res?.sec2gridone[1]).url()})`
                     : "",
                 }}
-                className={styles.sub_div}
+                className={` div  ${styles.sub_div}`}
+                // className={styles.sub_div}
               >
                 <p style={{ color: res?.secGridOneItemTitleColor }}>
                   {res?.secGridOneItem2Title}
