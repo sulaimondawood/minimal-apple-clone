@@ -42,8 +42,6 @@ export default function Landing({
   landingProducts2: any;
   slides: Slides[];
 }) {
-  console.log(useStateContext());
-
   const dispatch = useAppDispatch();
   function addBasket(item: any): void {
     dispatch(addToBasket(item));

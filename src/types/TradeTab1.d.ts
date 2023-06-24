@@ -65,3 +65,13 @@ export default interface TradeTab1 {
 
   ContentName: ContentI[];
 }
+
+interface LandingProducts {
+  learnmore: string;
+  desc: string;
+  _id: string;
+  color: string;
+  buy: string;
+  _type: string;
+  name: string;
+}

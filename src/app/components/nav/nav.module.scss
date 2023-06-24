@@ -108,8 +108,9 @@
     background-color: red;
 
     @include mobile {
+      right: -5px;
       font-size: 0.7rem;
-      padding: 0.2rem;
+      padding: 0rem 0.2rem;
     }
   }
 }

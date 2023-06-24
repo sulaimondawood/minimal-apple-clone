@@ -88,9 +88,15 @@ export default {
       title: "Sec2 Title Color",
       type: "string",
     },
+
     {
       name: "sec2pricerangeColor",
       title: "Sec 2Price Range Color",
+      type: "string",
+    },
+    {
+      name: "sec2pricerange",
+      title: "Sec2 Price Range",
       type: "string",
     },
     {

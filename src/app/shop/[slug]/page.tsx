@@ -1,5 +1,6 @@
 import Nav from "@/app/components/nav/Nav";
 import { client } from "../../../../sanity/lib/client";
+import Shop from "@/app/components/shop/Shop";
 
 async function page({ params }: { params: any }) {
   const { slug } = params;
@@ -13,6 +14,7 @@ async function page({ params }: { params: any }) {
   return (
     <div>
       <Nav bgState={res?.navBg} colorState="#000000" state={false} />
+      <Shop data={data} />
     </div>
   );
 }
