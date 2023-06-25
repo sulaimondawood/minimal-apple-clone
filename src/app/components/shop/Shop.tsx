@@ -23,17 +23,6 @@ function Shop({ data }: { data: any }) {
           className={`mySwiper ${styles.swipe_me}`}
           pagination={true}
           modules={[Pagination]}
-          breakpoints={{
-            0: {
-              slidesPerView: 1.2,
-              spaceBetween: 20,
-            },
-            1440: {
-              width: 1440,
-              slidesPerView: 1.16,
-              spaceBetween: 30,
-            },
-          }}
         >
           {data.cartImages.map((item: any) => {
             return (

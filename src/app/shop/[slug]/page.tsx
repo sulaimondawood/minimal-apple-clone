@@ -8,8 +8,6 @@ async function page({ params }: { params: any }) {
     `*[_type in ['details2', 'detail'] && slug.current == "${slug}" ][0]`
   );
 
-  console.log(slug);
-
   const res = data;
   return (
     <div>

@@ -16,9 +16,11 @@
     margin-top: 40px;
 
     .swipe_me {
+      width: 1050px;
+
       img {
+        width: 100%;
         border-radius: 20px;
-        width: 1050px;
         height: 100%;
       }
     }
