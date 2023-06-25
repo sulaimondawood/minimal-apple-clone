@@ -829,5 +829,29 @@ export default {
         },
       ],
     },
+    {
+      name: "cartProductBox",
+      title: "Cart Product Box",
+      type: "array",
+      of: [
+        {
+          name: "cartBox",
+          title: "Cart Box",
+          type: "object",
+          fields: [
+            {
+              name: "name",
+              title: "Name",
+              type: "string",
+            },
+            {
+              name: "image",
+              title: "Image",
+              type: "image",
+            },
+          ],
+        },
+      ],
+    },
   ],
 };
