@@ -50,7 +50,7 @@ function Shop({ data }: { data: any }) {
       </div>
 
       <div className={styles.btm}>
-        <h2>What's in the Box</h2>
+        <h2>What&apos;s in the Box</h2>
         <div></div>
       </div>
     </section>

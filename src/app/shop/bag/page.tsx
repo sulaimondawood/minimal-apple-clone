@@ -6,7 +6,7 @@ import { useAppSelector } from "@/redux/hooks/hook";
 import { LandingProducts } from "@/types/TradeTab1";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
-const page = () => {
+const Page = () => {
   const products = useSelector(
     (state: RootState) => state.basketSlice.products
   );
@@ -41,4 +41,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
