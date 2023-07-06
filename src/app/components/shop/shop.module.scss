@@ -11,12 +11,12 @@
 
   .cart_box {
     display: grid;
-    grid-template-columns: 3fr 1.5fr;
+    grid-template-columns: 2fr 1.5fr;
     gap: 3rem;
     margin-top: 40px;
 
     .swipe_me {
-      width: 1050px;
+      width: 800px;
 
       img {
         width: 100%;
