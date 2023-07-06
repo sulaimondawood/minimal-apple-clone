@@ -1,6 +1,7 @@
 import Nav from "@/app/components/nav/Nav";
 import { client } from "../../../../sanity/lib/client";
 import Shop from "@/app/components/shop/Shop";
+import Footer from "@/app/components/footer/Footer";
 
 async function Page({ params }: { params: any }) {
   const { slug } = params;
@@ -13,6 +14,7 @@ async function Page({ params }: { params: any }) {
     <div>
       <Nav bgState={res?.navBg} colorState="#000000" state={false} />
       <Shop data={data} />
+      <Footer state={res.sec2BackgroundColor} />
     </div>
   );
 }
