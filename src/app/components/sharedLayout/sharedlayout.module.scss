@@ -64,6 +64,10 @@
   padding: 2rem 0;
 
   @include mobile {
+    height: 50vh;
+  }
+
+  @include tablet {
     height: 60vh;
   }
 
