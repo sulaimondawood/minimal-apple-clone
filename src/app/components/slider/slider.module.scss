@@ -11,6 +11,10 @@
       width: 100vw;
     }
 
+    @media screen and (min-width: 1200px) {
+      height: 600px;
+    }
+
     img {
       @include mobile {
         width: 100%;
@@ -18,6 +22,10 @@
         background-size: contain;
         background-position: center;
         background-size: contain;
+      }
+
+      @media screen and (min-width: 1200px) {
+        width: 82vw;
       }
     }
   }

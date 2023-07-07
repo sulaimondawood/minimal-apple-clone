@@ -362,6 +362,7 @@ const SharedLayout = ({ res }: { res: any }) => {
 
           <div className={styles.grid_3}>
             <img
+              className={styles.grid_3_img}
               ref={divRef4}
               src={urlForImage(res?.secGridTwoItem1Img).url()}
               alt=""
