@@ -12,7 +12,7 @@ async function Page({ params }: { params: any }) {
   const res = data;
   return (
     <div>
-      <Nav bgState={res?.navBg} colorState="#000000" state={false} />
+      <Nav bgState={res?.navBg} colorState="#000000" state={true} />
       <Shop data={data} />
       <Footer state={res.sec2BackgroundColor} />
     </div>

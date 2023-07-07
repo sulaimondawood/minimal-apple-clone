@@ -10,6 +10,7 @@
   padding: 0 12px;
   width: 100%;
   top: 0;
+  z-index: 999 !important;
 
   @include mobile {
     display: none;
@@ -39,11 +40,16 @@
   flex-wrap: wrap;
   position: relative;
   display: none;
+  z-index: 999 !important;
 
-  @include mobile {
+  @include nav {
     display: flex;
     backdrop-filter: blur(1000px);
   }
+  // @include mobile {
+  //   display: flex;
+  //   backdrop-filter: blur(1000px);
+  // }
 
   .btn_wrp {
     display: flex;

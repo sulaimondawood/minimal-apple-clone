@@ -6,9 +6,21 @@
   margin: 0 auto;
   margin-top: 80px;
 
+  @include mobile {
+    padding: 0 1rem;
+  }
+
+  @include tablet {
+    padding: 0 1rem;
+  }
+
   h1 {
     font-size: 2.5rem;
     padding-bottom: 1rem;
+
+    @include mobile {
+      font-weight: 600;
+    }
   }
 
   .cart_box {
@@ -17,19 +29,49 @@
     gap: 3rem;
     margin-top: 40px;
 
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
     .swipe_me {
       width: 800px;
+
+      @include mobile {
+        width: 100%;
+        height: 230px;
+      }
+
+      @include tablet {
+        width: 60vw;
+      }
+
+      @include laptop {
+        width: 60vw;
+      }
 
       img {
         width: 100%;
         border-radius: 20px;
         height: 100%;
+
+        @include mobile {
+          object-fit: cover;
+        }
+
+        @include tablet {
+          object-fit: cover;
+        }
       }
     }
 
     .boxes {
       h3 {
         font-weight: 500;
+
+        @include mobile {
+          font-size: 1.6rem;
+        }
       }
 
       article {
@@ -51,7 +93,7 @@
           p {
             font-size: 0.65rem;
             max-width: 150px;
-            text-align: right;
+            text-align: left;
           }
           h3 {
             font-size: 1rem;
@@ -79,6 +121,10 @@
       font-size: 2.2rem;
       font-weight: 600;
       text-align: center;
+
+      @include mobile {
+        font-size: 1.8rem;
+      }
     }
 
     .btm_row {
@@ -90,6 +136,11 @@
       width: 100%;
       margin: 0 auto;
 
+      @include mobile {
+        flex-direction: column;
+        align-items: center;
+      }
+
       div {
         display: flex;
         flex-direction: column;
@@ -100,6 +151,10 @@
         .img_wrp {
           width: 150px;
           height: 350px;
+
+          @include mobile {
+            height: 300px;
+          }
           img {
             width: 100%;
             height: 100%;
@@ -116,6 +171,10 @@
 
     .btm_row2 {
       margin-top: 80px;
+
+      @include mobile {
+        margin-top: 50px;
+      }
 
       h3 {
         font-size: 0.9rem;
@@ -193,6 +252,10 @@
           img {
             @include mobile {
               width: 80%;
+            }
+
+            @include tablet {
+              width: 50%;
             }
           }
 

@@ -12,8 +12,16 @@ import "swiper/css/pagination";
 
 import { Pagination } from "swiper";
 import Link from "next/link";
+import { useAppDispatch } from "@/redux/hooks/hook";
+import { toast } from "react-hot-toast";
+import { addToBasket } from "@/redux/basketSlice";
 
 function Shop({ data }: { data: any }) {
+  const dispatch = useAppDispatch();
+  function addBasket(item: any): void {
+    dispatch(addToBasket(item));
+    toast.success(`${item.name} added to cart`);
+  }
   return (
     <section className={styles.shop}>
       <h1>Buy {data.name}</h1>
@@ -47,7 +55,7 @@ function Shop({ data }: { data: any }) {
               </article>
             );
           })}
-          <button>Add to cart</button>
+          <button onClick={() => addBasket(data)}>Add to cart</button>
         </div>
       </div>
 
