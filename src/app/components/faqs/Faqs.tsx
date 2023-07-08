@@ -5,7 +5,6 @@ import styles from "./faqs.module.scss";
 import { useState } from "react";
 function Faqs({ faqs }: { faqs: Faqs[] }) {
   const [isActive, setIsActive] = useState(0);
-  const [click, setClick] = useState(false);
 
   const handleClick = (index: number) => {
     setIsActive(index);
@@ -29,38 +28,14 @@ function Faqs({ faqs }: { faqs: Faqs[] }) {
 
       <div className={styles.details_wrp}>
         {faqs[isActive].questions.map((item: FaqsQues, index) => {
-          console.log(index);
-
           return (
             <div key={item._key}>
               <h2>{item?.name}</h2>
               <div className={styles.ques}>
                 <div className={styles.sub}>
-                  <p onClick={() => setClick(!click)} className={styles.ques_}>
-                    {item.question}
-                  </p>
-
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 17 8.85"
-                    className={click ? styles.svg_open : styles.svg}
-                    role="img"
-                    aria-hidden="true"
-                  >
-                    <path fill="none" d="M0 0h35v35H0z"></path>
-                    <path
-                      fill="none"
-                      stroke="#86868b"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2.25"
-                      d="M15 1.13L8.5 7.72 2 1.13"
-                    ></path>
-                  </svg>
+                  <p className={styles.ques_}>{item.question}</p>
                 </div>
-                <p className={click ? styles.ans_active : styles.ans}>
-                  {item.answer}
-                </p>
+                <p className={styles.ans_active}>{item.answer}</p>
               </div>
             </div>
           );

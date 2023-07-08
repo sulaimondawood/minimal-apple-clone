@@ -3,11 +3,68 @@ const Footer = ({ state }: { state: string }) => {
   return (
     <div style={{ backgroundColor: state }} className={styles.footer_wrapper}>
       <div className={styles.footer_wrapper_sub_wrapper}>
-        To access and use all the features of Apple Card, you must add Apple
-        Card to your Wallet on iPhonne or iPad with the latest version of IOS or
-        iPadOS. Update to the latest version by going to the Settings : General
-        : Software Update. Tap Download and Install. Avaialble for qualifying
-        applicants in the United States.
+        <p>
+          {" "}
+          To access and use all the features of Apple Card, you must add Apple
+          Card to your Wallet on iPhonne or iPad with the latest version of IOS
+          or iPadOS. Update to the latest version by going to the Settings :
+          General : Software Update. Tap Download and Install. Avaialble for
+          qualifying applicants in the United States. Lorem ipsum dolor sit amet
+          consectetur, adipisicing elit. Necessitatibus cum adipisci ipsa
+          eligendi alias voluptates eaque ea vel explicabo inventore, sint,
+          dolorum, harum sapiente? Adipisci natus placeat optio cupiditate
+          exercitationem!
+        </p>
+        <br />
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum,
+          exercitationem iste harum quibusdam nemo repellat non aspernatur,
+          impedit sint tenetur, repudiandae cum at adipisci culpa vitae vel rem
+          expedita minima fugiat quidem sed. Sunt a, reprehenderit nesciunt nam
+          temporibus quaerat fugiat, beatae cum vel alias modi sint sed, ut
+          recusandae.
+        </p>
+        <br />
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum,
+          exercitationem iste harum quibusdam nemo repellat non aspernatur,
+          impedit sint tenetur, repudiandae cum at adipisci culpa vitae vel rem
+          expedita minima fugiat quidem sed. Sunt a, reprehenderit nesciunt nam
+          temporibus quaerat fugiat, beatae cum vel alias modi sint sed, ut
+          recusandae.
+        </p>
+        <br />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti eum
+          eligendi sapiente veritatis, cumque minima iusto soluta reiciendis
+          nesciunt delectus, molestiae necessitatibus, perspiciatis placeat
+          assumenda totam suscipit nostrum voluptate possimus sequi quod quo est
+          omnis id! Omnis totam molestiae in id, eligendi itaque doloremque
+          tenetur consequatur? Molestiae nesciunt consequatur facilis fugiat
+          impedit aperiam odit laborum tempore, maiores fuga fugit dolorum nobis
+          in iure sequi, quaerat ratione, aliquam maxime vero laudantium
+          voluptate quidem. Quidem fuga officia porro sint deleniti incidunt
+          tempore! Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Voluptatum, exercitationem iste harum quibusdam nemo repellat non
+          aspernatur, impedit sint tenetur, repudiandae cum at adipisci culpa
+          vitae vel rem expedita minima fugiat quidem sed. Sunt a, reprehenderit
+          nesciunt nam temporibus quaerat fugiat, beatae cum vel alias modi sint
+          sed, ut recusandae.
+        </p>
+
+        <br />
+
+        <p>
+          To access and use all the features of Apple Card, you must add Apple
+          Card to your Wallet on iPhonne or iPad with the latest version of IOS
+          or iPadOS. Update to the latest version by going to the Settings :
+          General : Software Update. Tap Download and Install. Avaialble for
+          qualifying applicants in the United States. Lorem ipsum dolor sit amet
+          consectetur, adipisicing elit. Necessitatibus cum adipisci ipsa
+          eligendi alias voluptates eaque ea vel explicabo inventore, sint,
+          dolorum, harum sapiente? Adipisci natus placeat optio cupiditate
+          exercitationem!
+        </p>
       </div>
 
       <hr />
@@ -50,34 +107,6 @@ const Footer = ({ state }: { state: string }) => {
           <p className="">Order Status</p>
           <p className="">Shopping Help </p>
         </div>
-        {/* <div className="flex flex-row flex-wrap lg:flex-col gap-3"> */}
-        {/* <div className={styles.sub_div}>
-          <div className={styles.sub_sub_div}>
-            <h1 className={styles.title_2}>For Business</h1>
-            <p>Apple and Business</p>
-            <p>Shop Business</p>
-          </div>
-
-          <div className={styles.sub_sub_div}>
-            <h1 className={styles.title_2}>For Education</h1>
-            <p> Apple and Education </p>
-            <p>Shop for K-12</p>
-            <p>Shop for College</p>
-          </div>
-
-          <div className={styles.sub_sub_div}>
-            <h1 className={styles.title_2}>For Healthcare</h1>
-            <p> Apple in Healthcare </p>
-            <p>Health on Apple Watch</p>
-            <p>Health Records on iPhone</p>
-          </div>
-
-          <div className={styles.sub_sub_div}>
-            <h1 className={styles.title_2}>For Government</h1>
-            <p> Shop for Government </p>
-            <p>Shop for Veterans and Military</p>
-          </div>
-        </div> */}
       </div>
     </div>
   );

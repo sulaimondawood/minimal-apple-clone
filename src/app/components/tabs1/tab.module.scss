@@ -27,7 +27,9 @@
       width: 60px;
       height: 70px;
 
-      fill: red;
+      @include mobile {
+        width: 45px;
+      }
     }
 
     p {
@@ -55,6 +57,11 @@
     padding: 2rem;
     width: fit-content;
     height: fit-content;
+  }
+
+  @include tablet {
+    width: 90%;
+    padding: 2.5rem 3rem;
   }
 
   .row {
