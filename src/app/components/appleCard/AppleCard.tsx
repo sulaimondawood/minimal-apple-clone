@@ -29,7 +29,7 @@ const AppleCard = ({ res }: { res: any }) => {
         </div>
       </div>
       <article style={{ backgroundColor: res.secBg }} className={styles2.sec_1}>
-        <p style={{ backgroundImage: res.secTitleColor }}>
+        <p style={{ backgroundImage: res?.secTitleColor }}>
           The simplicity of Apple. In a credit card.
         </p>
         <p>{res.secText}</p>
