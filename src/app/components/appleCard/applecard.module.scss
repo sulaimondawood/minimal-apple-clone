@@ -62,6 +62,10 @@
   height: 90vh;
   padding: 2rem 0;
 
+  @include tablet {
+    height: 80vh;
+  }
+
   div {
     max-width: 920px;
     margin: 0 auto;
@@ -165,7 +169,7 @@
 .grid1 {
   box-shadow: 10px 10px 60px #00000020;
   max-width: 1100px;
-  width: 100%;
+  width: 90%;
   height: 700px;
   margin: 0 auto;
   margin-top: 100px;
@@ -226,8 +230,8 @@
   display: flex;
   justify-content: center;
   align-items: stretch;
-  width: 100%;
-  max-width: 700px;
+  width: 90%;
+  max-width: 1100px;
   margin: 0 auto;
   gap: 1rem;
   margin-top: 1rem;
@@ -237,6 +241,10 @@
     flex-direction: column;
   }
 
+  @include tablet {
+    width: 90%;
+  }
+
   .left {
     padding: 6rem 3.5rem;
     border-radius: 30px;
@@ -244,13 +252,14 @@
     flex: 1;
 
     @include mobile {
-      width: 90%;
       padding: 3rem 2rem;
       border-radius: 10px;
     }
 
     @include tablet {
       padding: 3rem 2rem;
+      width: 100%;
+      flex: 1 !important;
     }
 
     h1 {
@@ -281,7 +290,7 @@
 
     @include mobile {
       border-radius: 10px;
-      width: 90%;
+
       padding: 0 2rem;
       padding-bottom: 4rem;
     }
@@ -289,6 +298,7 @@
     @include tablet {
       padding: 0 2rem;
       padding-bottom: 4rem;
+      width: 100%;
     }
 
     img {
@@ -298,6 +308,11 @@
 
       @include tablet {
         width: 80%;
+        display: none;
+      }
+
+      @media screen and (min-width: 1024px) {
+        display: none;
       }
     }
 
@@ -312,7 +327,7 @@
       }
 
       @include tablet {
-        font-size: 40px;
+        font-size: 50px;
       }
     }
   }
@@ -322,7 +337,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  width: 100%;
+  width: 90%;
   max-width: 1100px;
   margin: 0 auto;
   margin-top: 1rem;
@@ -381,7 +396,7 @@
   justify-content: center;
   align-items: flex-start;
   max-width: 1100px;
-  width: 100%;
+  width: 90%;
   gap: 1rem;
   margin: 0 auto;
   margin-top: 1rem;
@@ -404,7 +419,6 @@
     height: 750px;
 
     @include mobile {
-      width: 90%;
       border-radius: 10px;
       padding: 2.5rem 2rem;
     }
@@ -490,7 +504,7 @@
 }
 .grid_5 {
   max-width: 1100px;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   margin-top: 1rem;
   border-radius: 50px;
@@ -499,6 +513,10 @@
 
   @include mobile {
     border-radius: 10px;
+    width: 90%;
+  }
+
+  @include tablet {
     width: 90%;
   }
 
@@ -515,6 +533,10 @@
       margin: 0 3rem;
       margin-bottom: 5rem;
     }
+
+    @include tablet {
+      font-size: 60px;
+    }
   }
 
   img {
@@ -524,7 +546,7 @@
 
 .grid_6 {
   max-width: 1100px;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   margin-top: 1rem;
   padding: 5rem;
@@ -540,6 +562,10 @@
     padding: 4rem 2rem;
   }
 
+  @include tablet {
+    width: 90%;
+    padding: 3.5rem 2rem;
+  }
   p {
     font-size: 20px;
     color: white;
@@ -556,6 +582,10 @@
 
     @include mobile {
       font-size: 44px;
+    }
+
+    @include tablet {
+      font-size: 90px;
     }
   }
 }
@@ -588,6 +618,10 @@
     @include mobile {
       font-size: 36px;
     }
+
+    @include tablet {
+      font-size: 60px;
+    }
   }
 
   p {
@@ -604,5 +638,10 @@
     color: white;
     border-radius: 20px;
     padding: 1em 1.5em;
+
+    @include tablet {
+      font-size: 1rem;
+      border-radius: 40px;
+    }
   }
 }
