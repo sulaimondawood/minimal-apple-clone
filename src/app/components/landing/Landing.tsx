@@ -43,10 +43,6 @@ export default function Landing({
   slides: Slides[];
 }) {
   const dispatch = useAppDispatch();
-  function addBasket(item: any): void {
-    dispatch(addToBasket(item));
-    toast.success(`${item.name} added to cart`);
-  }
   return (
     <>
       <Nav bgState="rgba(22, 22, 23, 0.8)" colorState="#e8e8ed" state={true} />
@@ -71,7 +67,7 @@ export default function Landing({
               </h1>
               <h2 style={{ color: items.color }}>{items.desc}</h2>
 
-              <Button addBasket={addBasket} items={items} />
+              <Button items={items} />
             </div>
           );
         })}
@@ -96,7 +92,7 @@ export default function Landing({
                 alt="alt"
               />
               <h2 style={{ color: items.color }}>{items.desc}</h2>
-              <Button addBasket={addBasket} items={items} />
+              <Button items={items} />
             </div>
           );
         })}

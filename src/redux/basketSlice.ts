@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 interface BasketType {
   products: any;
@@ -15,7 +15,20 @@ export const basketSlice = createSlice({
     addToBasket: (state, action) => {
       state.products = [...state.products, action.payload];
     },
-    removeFromBasket(state, payload) {},
+    removeFromBasket(state: BasketType, action: PayloadAction) {
+      const index = state.products.findIndex((item: any) => {
+        item.slug === action.payload;
+      });
+      const newProducts = [state.products];
+
+      if (index > 0) {
+        newProducts.splice(index, 1);
+      } else {
+        console.log("Product is not in the cart");
+      }
+
+      state.products = newProducts;
+    },
   },
 });
 
