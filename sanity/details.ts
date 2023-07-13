@@ -853,5 +853,10 @@ export default {
         },
       ],
     },
+    {
+      name: "bagImage",
+      title: "Bag Image",
+      type: "image",
+    },
   ],
 };

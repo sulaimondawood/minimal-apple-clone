@@ -6,12 +6,19 @@ import { useAppSelector } from "@/redux/hooks/hook";
 import { LandingProducts } from "@/types/TradeTab1";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
+
+import { FaAngleDown } from "react-icons/fa";
+import { removeFromBasket } from "@/redux/basketSlice";
+
 const Page = () => {
   const products = useSelector(
     (state: RootState) => state.basketSlice.products
   );
   console.log(products);
 
+  function removeProduct(id: string): any {
+    removeFromBasket(id);
+  }
   return (
     <div>
       <Nav bgState={"white"} colorState={"black"} state={false} />
@@ -21,21 +28,40 @@ const Page = () => {
           <p>Free delivery and free returns.</p>
         </div>
 
-        <div className={styles.bottom}>
-          {products?.map((item: LandingProducts) => {
-            return (
-              <div key={item._id}>
-                <div>
-                  <img src="" alt="" />
-                  <div>
-                    <h2>{item.name}</h2>
-                    <p>Show product details</p>
+        {products.length <= 0 ? (
+          <div className={styles.oops}>
+            <h1>Oopss no products in cart yet!!🤨🙂</h1>
+          </div>
+        ) : (
+          <div className={styles.bottom}>
+            {products?.map((item: LandingProducts) => {
+              return (
+                <div className={styles.product_row} key={item._id}>
+                  <div className={styles.sub_div}>
+                    <img src="" alt="" />
+                    <div>
+                      <h2>{item.name}</h2>
+                      <p>Show product details</p>
+                    </div>
+                  </div>
+
+                  <div className={styles.product_count}>
+                    <h2>{products.length}</h2>
+                    <span>
+                      <FaAngleDown />
+                    </span>
+                  </div>
+                  <div className={styles.price_div}>
+                    <h2>$1000</h2>
+                    <button onClick={() => removeFromBasket(item._id)}>
+                      Remove
+                    </button>
                   </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        )}
       </section>
     </div>
   );

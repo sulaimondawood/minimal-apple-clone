@@ -258,5 +258,78 @@ export default {
       title: "Sec2 Text2",
       type: "string",
     },
+
+    // cartfkmmgrkgmrk
+
+    {
+      name: "cartImages",
+      title: "Cart Images",
+      type: "array",
+      of: [
+        {
+          type: "image",
+        },
+      ],
+    },
+
+    {
+      name: "cartProductModel",
+      title: "Cart Product Model",
+      type: "array",
+      of: [
+        {
+          name: "cartP",
+          title: "Cart P",
+          type: "object",
+          fields: [
+            {
+              name: "name",
+              title: "Name",
+              type: "string",
+            },
+            {
+              name: "desc",
+              title: "Desc",
+              type: "string",
+            },
+            {
+              name: "price",
+              title: "Price",
+              type: "string",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: "cartProductBox",
+      title: "Cart Product Box",
+      type: "array",
+      of: [
+        {
+          name: "cartBox",
+          title: "Cart Box",
+          type: "object",
+          fields: [
+            {
+              name: "name",
+              title: "Name",
+              type: "string",
+            },
+            {
+              name: "image",
+              title: "Image",
+              type: "image",
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      name: "bagImage",
+      title: "Bag Image",
+      type: "image",
+    },
   ],
 };

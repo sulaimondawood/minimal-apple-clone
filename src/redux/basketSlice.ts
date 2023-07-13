@@ -15,7 +15,7 @@ export const basketSlice = createSlice({
     addToBasket: (state, action) => {
       state.products = [...state.products, action.payload];
     },
-    removeFromBasket(state: BasketType, action: PayloadAction) {
+    removeFromBasket(state: BasketType, action) {
       const index = state.products.findIndex((item: any) => {
         item.slug === action.payload;
       });

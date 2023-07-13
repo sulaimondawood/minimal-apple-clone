@@ -1,15 +1,85 @@
+@import "../../utils/variable.module";
+
 .section {
   max-width: 930px;
   width: 100%;
   margin: 0 auto;
   text-align: left;
-  .top {
-    margin-top: 50px;
 
+  .top {
+    margin-top: 80px;
     h1 {
       font-size: 2rem;
       font-weight: 600;
-      padding-bottom: 1rem;
+    }
+  }
+
+  .oops {
+    font-size: 2rem;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .bottom {
+    margin: 50px 0;
+
+    h2 {
+      font-weight: 500;
+    }
+
+    .product_row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid gray;
+
+      .sub_div {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+
+        > div {
+          p {
+            color: $blue;
+            font-size: 0.9rem;
+            cursor: pointer;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      .product_count {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        span {
+          color: $blue;
+          font-size: 1rem;
+        }
+      }
+
+      .price_div {
+        display: flex;
+        flex-direction: column;
+
+        button {
+          background-color: transparent;
+          color: $blue;
+          border: none;
+          font-size: 1.1rem;
+          cursor: pointer;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
     }
   }
 }
