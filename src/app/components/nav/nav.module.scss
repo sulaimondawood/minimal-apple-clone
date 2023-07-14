@@ -74,6 +74,7 @@
     width: 100%;
     z-index: 999 !important;
     background-color: black !important;
+    overflow: hidden;
 
     .wrp {
       display: flex;
@@ -96,6 +97,11 @@
 
       a {
         font-size: 1.5rem;
+        color: #f5f5f5;
+      }
+
+      button {
+        color: #f5f5f5;
       }
     }
   }
@@ -116,6 +122,7 @@
     border-radius: 50%;
     position: absolute;
     background-color: red;
+    color: #f5f5f5;
 
     @include mobile {
       right: -5px;
