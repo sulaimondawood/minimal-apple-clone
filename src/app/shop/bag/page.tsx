@@ -4,20 +4,19 @@ import Nav from "@/app/components/nav/Nav";
 import styles from "./bag.module.scss";
 import { useAppSelector } from "@/redux/hooks/hook";
 import { LandingProducts } from "@/types/TradeTab1";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 
 import { FaAngleDown } from "react-icons/fa";
 import { removeFromBasket } from "@/redux/basketSlice";
 
 const Page = () => {
-  const products = useSelector(
-    (state: RootState) => state.basketSlice.products
-  );
+  const dispatch = useDispatch();
+  const { products } = useSelector((state: RootState) => state.basketSlice);
   console.log(products);
 
-  function removeProduct(id: string): any {
-    removeFromBasket(id);
+  function removeProduct(id: any): any {
+    dispatch(removeFromBasket(id));
   }
   return (
     <div>
@@ -34,7 +33,7 @@ const Page = () => {
           </div>
         ) : (
           <div className={styles.bottom}>
-            {products?.map((item: LandingProducts) => {
+            {products?.map((item: any) => {
               return (
                 <div className={styles.product_row} key={item._id}>
                   <div className={styles.sub_div}>
@@ -46,16 +45,14 @@ const Page = () => {
                   </div>
 
                   <div className={styles.product_count}>
-                    <h2>{products.length}</h2>
+                    <h2>{item.quantity}</h2>
                     <span>
                       <FaAngleDown />
                     </span>
                   </div>
                   <div className={styles.price_div}>
                     <h2>$1000</h2>
-                    <button onClick={() => removeFromBasket(item._id)}>
-                      Remove
-                    </button>
+                    <button onClick={() => removeProduct(item)}>Remove</button>
                   </div>
                 </div>
               );

@@ -260,7 +260,11 @@ export default {
     },
 
     // cartfkmmgrkgmrk
-
+    {
+name:'quantity',
+title: 'Cart Quantity',
+type: 'number'
+    },
     {
       name: "cartImages",
       title: "Cart Images",

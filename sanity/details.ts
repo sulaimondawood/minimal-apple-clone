@@ -790,6 +790,12 @@ export default {
     },
 
     {
+name:'quantity',
+title: 'Cart Quantity',
+type: 'number'
+    },
+
+    {
       name: "cartImages",
       title: "Cart Images",
       type: "array",
