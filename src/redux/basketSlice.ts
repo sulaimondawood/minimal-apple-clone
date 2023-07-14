@@ -35,10 +35,13 @@ export const basketSlice = createSlice({
             return {
               ...item,
               quantity: (item.quantity as number) + 1,
+              priceOnCart: item.quantity * item.priceOnCart,
             };
           }
         });
 
+        state.totalPrice =
+          state.totalPrice + Number(action.payload.priceOnCart);
         state.products = updateCartProducts;
       } else {
         state.products = [...state.products, action.payload];
@@ -47,41 +50,15 @@ export const basketSlice = createSlice({
       // state.products = [...state.products, action.payload];
     },
     removeFromBasket(state: BasketType, action: PayloadAction<any>) {
-      // const index = state.products.findIndex((item: any) => {
-      //   item._id === action.payload._id;
-      // });
-
-      // console.log(index);
-
-      // const newProducts = [state.products];
-
-      // if (index >= 0) {
-      //   newProducts.splice(index, 1);
-      // } else {
-      //   console.log("Product is not in the cart");
-      // }
-
-      // state.products = newProducts;
-
       const removedProduct = state.products.filter(
         (item: any) => item._id !== action.payload._id
       );
 
       state.products = removedProduct;
+      state.totalPrice = state.totalPrice - Number(action.payload.priceOnCart);
     },
   },
 });
 
 export default basketSlice.reducer;
 export const { addToBasket, removeFromBasket } = basketSlice.actions;
-
-// export const selectCartId = (state: RootState, id: string) => {
-//   state.basketSlice.products.filter((item: any) => item._id === id);
-// };
-
-// export const cartTotal = (state: RootState) => {
-//   state.basketSlice.products.reduce(
-//     (total: number, item: any) => (total += item.price)
-//   ),
-//     0;
-// };

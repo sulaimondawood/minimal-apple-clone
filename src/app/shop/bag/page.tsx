@@ -9,10 +9,13 @@ import { RootState } from "@/redux/store";
 
 import { FaAngleDown } from "react-icons/fa";
 import { removeFromBasket } from "@/redux/basketSlice";
+import { urlForImage } from "../../../../sanity/lib/image";
 
 const Page = () => {
   const dispatch = useDispatch();
-  const { products } = useSelector((state: RootState) => state.basketSlice);
+  const { products, totalPrice } = useSelector(
+    (state: RootState) => state.basketSlice
+  );
   console.log(products);
 
   function removeProduct(id: any): any {
@@ -37,7 +40,11 @@ const Page = () => {
               return (
                 <div className={styles.product_row} key={item._id}>
                   <div className={styles.sub_div}>
-                    <img src="" alt="" />
+                    <img
+                      className={styles.img}
+                      src={urlForImage(item.bagImage).url()}
+                      alt=""
+                    />
                     <div>
                       <h2>{item.name}</h2>
                       <p>Show product details</p>
@@ -51,12 +58,27 @@ const Page = () => {
                     </span>
                   </div>
                   <div className={styles.price_div}>
-                    <h2>$1000</h2>
+                    <h2>${item.priceOnCart}</h2>
                     <button onClick={() => removeProduct(item)}>Remove</button>
                   </div>
                 </div>
               );
             })}
+            <div className={styles.sub_total}>
+              <div className={styles.sub_1}>
+                <p>Subtotal</p>
+                <p>${totalPrice}</p>
+              </div>
+              <div className={styles.sub_1}>
+                <p>Shipping </p>
+                <p>${"free"}</p>
+              </div>
+            </div>
+
+            <div className={styles.total}>
+              <h2>Total</h2>
+              <h2>${totalPrice}</h2>
+            </div>
           </div>
         )}
       </section>

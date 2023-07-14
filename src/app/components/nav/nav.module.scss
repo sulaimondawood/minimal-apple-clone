@@ -86,8 +86,12 @@
         position: absolute;
         top: 2rem;
         right: 2rem;
-        color: white;
-        font-size: 1.5rem;
+        // color: white;
+        // font-size: 1.5rem;
+
+        .btn_close {
+          font-size: 2.5rem;
+        }
       }
 
       a {

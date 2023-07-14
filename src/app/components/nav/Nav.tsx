@@ -12,6 +12,8 @@ import {
 import { gsap } from "gsap";
 import { useAppSelector } from "@/redux/hooks/hook";
 
+import { AiOutlineClose } from "react-icons/ai";
+
 const Nav = ({
   state,
   bgState,
@@ -28,32 +30,55 @@ const Nav = ({
   const mobileRef = useRef(null);
 
   let tl: any;
-  const handleNav = useCallback((): void => {
-    const doc: any = document.querySelector("body");
+  // const handleNav = useCallback((): void => {
+  //   const doc: any = document.querySelector("body");
+  //   if (isOpen) {
+  //     setIsOpen(!isOpen);
+  //     tl.play();
+  //     doc.style.overflow = "hidden";
+  //   } else {
+  //     setIsOpen(!isOpen);
+  //     tl.reverse();
+  //     doc.style.overflow = "auto";
+  //   }
+  // }, [isOpen]);
+  // useLayoutEffect(() => {
+  //   tl = gsap.timeline({ paused: true });
+  //   tl.from(mobileRef.current, {
+  //     yPercent: -100,
+  //     opacity: 0,
+  //     ease: "Power2.out",
+  //   });
+  //   tl.to(mobileRef.current, {
+  //     yPercent: 0,
+  //     opacity: 1,
+  //     duration: 1,
+  //     ease: "Power2.out",
+  //   });
+  // }, [isOpen]);
+  const onClose = () => {
+    setIsOpen(false);
+  };
+  const onOpen = () => {
+    setIsOpen(true);
+  };
+
+  useEffect(() => {
     if (isOpen) {
-      setIsOpen(!isOpen);
-      tl.play();
-      doc.style.overflow = "hidden";
+      gsap.to(mobileRef.current, {
+        duration: 0.3,
+        x: "0%",
+        ease: "power2.out",
+      });
     } else {
-      setIsOpen(!isOpen);
-      tl.reverse();
-      doc.style.overflow = "auto";
+      gsap.to(mobileRef.current, {
+        duration: 0.3,
+        x: "100%",
+        ease: "power2.in",
+        onComplete: onClose,
+      });
     }
-  }, [isOpen]);
-  useLayoutEffect(() => {
-    tl = gsap.timeline({ paused: true });
-    tl.from(mobileRef.current, {
-      yPercent: -100,
-      opacity: 0,
-      ease: "Power2.out",
-    });
-    tl.to(mobileRef.current, {
-      yPercent: 0,
-      opacity: 1,
-      duration: 1,
-      ease: "Power2.out",
-    });
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   return (
     <div className="">
@@ -164,7 +189,7 @@ const Nav = ({
               ></path>
             </svg>
           </Link>
-          <button ref={btnRef} onClick={handleNav}>
+          <button ref={btnRef} onClick={onOpen}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
               <polyline
                 id="globalnav-menutrigger-bread-bottom"
@@ -249,9 +274,17 @@ const Nav = ({
           className={styles.links_wrp}
         >
           <div className={styles.wrp}>
-            <button onClick={handleNav}>close</button>
+            <button onClick={onClose}>
+              <AiOutlineClose
+                className={styles.btn_close}
+                color="white"
+                size={"2.5rem"}
+              />
+            </button>
+            {/* <button onClick={handleNav}>close</button> */}
             <Link
-              onClick={handleNav}
+              onClick={onClose}
+              // onClick={handleNav}
               style={{ color: colorState }}
               className="nav-link"
               href="/mac"
@@ -266,7 +299,8 @@ const Nav = ({
               ipad
             </Link>
             <Link
-              onClick={handleNav}
+              onClick={onClose}
+              // onClick={handleNav}
               style={{ color: colorState }}
               className="nav-link"
               href=""
@@ -274,7 +308,8 @@ const Nav = ({
               iPhone
             </Link>
             <Link
-              onClick={handleNav}
+              onClick={onClose}
+              // onClick={handleNav}
               style={{ color: colorState }}
               className="nav-link"
               href=""
@@ -282,7 +317,8 @@ const Nav = ({
               Watch
             </Link>
             <Link
-              onClick={handleNav}
+              // onClick={handleNav}
+              onClick={onClose}
               style={{ color: colorState }}
               className="nav-link"
               href=""
@@ -291,7 +327,8 @@ const Nav = ({
             </Link>
 
             <Link
-              onClick={handleNav}
+              onClick={onClose}
+              // onClick={handleNav}
               style={{ color: colorState }}
               className="nav-link"
               href=""
@@ -299,7 +336,8 @@ const Nav = ({
               Accesories
             </Link>
             <Link
-              onClick={handleNav}
+              // onClick={handleNav}
+              onClick={onClose}
               style={{ color: colorState }}
               className="nav-link"
               href=""

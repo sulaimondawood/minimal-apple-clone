@@ -261,9 +261,19 @@ export default {
 
     // cartfkmmgrkgmrk
     {
-name:'quantity',
-title: 'Cart Quantity',
-type: 'number'
+      name: "quantity",
+      title: "Cart Quantity",
+      type: "number",
+    },
+    {
+      name: "priceOnCart",
+      title: "Price On Cart",
+      type: "number",
+    },
+    {
+      name: "shippingFee",
+      title: "Shipping Fee",
+      type: "number",
     },
     {
       name: "cartImages",
