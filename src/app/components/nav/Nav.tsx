@@ -9,11 +9,13 @@ import {
   useRef,
   useState,
 } from "react";
-import { gsap } from "gsap";
+
 import { useAppSelector } from "@/redux/hooks/hook";
 
+import { IoMdClose } from "react-icons/io";
 import { AiOutlineClose } from "react-icons/ai";
 import { useRouter } from "next/navigation";
+import { findDOMNode } from "react-dom";
 
 const Nav = ({
   state,
@@ -26,38 +28,24 @@ const Nav = ({
 }) => {
   const router = useRouter();
   const { products } = useAppSelector((state) => state.basketSlice);
-
   const [isOpen, setIsOpen] = useState(false);
-  const btnRef = useRef(null);
-  const mobileRef = useRef(null);
+  let doc: any;
+  useEffect(() => {
+    doc = findDOMNode(document.body);
+  }, [isOpen]);
 
   const onClose = () => {
     setIsOpen(false);
+    doc.style.overflowY = "auto";
   };
   const onOpen = () => {
     setIsOpen(true);
+    doc.style.overflowY = "hidden";
   };
 
   const handleRoute = () => {
     router.push("/shop/bag");
   };
-
-  useEffect(() => {
-    if (isOpen) {
-      gsap.to(mobileRef.current, {
-        duration: 0.3,
-        x: "0%",
-        ease: "power2.out",
-      });
-    } else {
-      gsap.to(mobileRef.current, {
-        duration: 0.3,
-        x: "100%",
-        ease: "power2.in",
-        onComplete: onClose,
-      });
-    }
-  }, [isOpen, onClose]);
 
   return (
     <div className="">
@@ -146,7 +134,6 @@ const Nav = ({
       {/* Mobile? */}
       <div
         style={{
-          // backgroundColor: state === true ? "rgba(22, 22, 23, 0.8)" : "white",
           backgroundColor: bgState,
           position: state ? "fixed" : "static",
         }}
@@ -181,7 +168,7 @@ const Nav = ({
               ></path>
             </svg>
           </Link>
-          <button ref={btnRef} onClick={onOpen}>
+          <button onClick={onOpen}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
               <polyline
                 id="globalnav-menutrigger-bread-bottom"
@@ -259,19 +246,20 @@ const Nav = ({
         </div>
 
         <div
-          ref={mobileRef}
           style={{
             backgroundColor: bgState,
           }}
-          className={styles.links_wrp}
+          className={isOpen ? styles.active : styles.links_wrp}
         >
           <div className={styles.wrp}>
-            <button onClick={onClose}>
-              <AiOutlineClose
+            <button className={styles.btn_close} onClick={onClose}>
+              <span></span>
+              <span></span>
+              {/* <IoMdClose
                 className={styles.btn_close}
                 color="white"
-                size={"2.5rem"}
-              />
+                size="50px"
+              /> */}
             </button>
             {/* <button onClick={handleNav}>close</button> */}
             <Link
