@@ -15,7 +15,6 @@ import { useAppSelector } from "@/redux/hooks/hook";
 import { IoMdClose } from "react-icons/io";
 import { AiOutlineClose } from "react-icons/ai";
 import { useRouter } from "next/navigation";
-import { findDOMNode } from "react-dom";
 
 const Nav = ({
   state,
@@ -29,18 +28,14 @@ const Nav = ({
   const router = useRouter();
   const { products } = useAppSelector((state) => state.basketSlice);
   const [isOpen, setIsOpen] = useState(false);
-  let doc: any;
-  useEffect(() => {
-    doc = findDOMNode(document.body);
-  }, [isOpen]);
 
   const onClose = () => {
     setIsOpen(false);
-    doc.style.overflowY = "auto";
+    // doc.style.overflowY = "auto";
   };
   const onOpen = () => {
     setIsOpen(true);
-    doc.style.overflowY = "hidden";
+    // doc.style.overflowY = "hidden";
   };
 
   const handleRoute = () => {
