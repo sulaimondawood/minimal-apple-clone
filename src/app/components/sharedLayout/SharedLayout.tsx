@@ -41,6 +41,8 @@ const SharedLayout = ({ res }: { res: any }) => {
           scrollTrigger: {
             scrub: true,
             trigger: divRef1.current,
+            start: "top 90%",
+            end: "center 50%",
           },
         }
       )
@@ -56,6 +58,8 @@ const SharedLayout = ({ res }: { res: any }) => {
             scrollTrigger: {
               scrub: true,
               trigger: divRef3.current,
+              start: "top 90%",
+              end: "center 50%",
             },
           }
         )
@@ -71,6 +75,8 @@ const SharedLayout = ({ res }: { res: any }) => {
             scrollTrigger: {
               scrub: true,
               trigger: divRef4.current,
+              start: "top 90%",
+              end: "center 50%",
             },
           }
         )
@@ -86,6 +92,8 @@ const SharedLayout = ({ res }: { res: any }) => {
             scrollTrigger: {
               scrub: true,
               trigger: divRef4.current,
+              start: "top 90%",
+              end: "center 50%",
             },
           }
         )
@@ -101,6 +109,8 @@ const SharedLayout = ({ res }: { res: any }) => {
             scrollTrigger: {
               scrub: true,
               trigger: divRef6.current,
+              start: "top 90%",
+              end: "center 50%",
             },
           }
         )
@@ -116,6 +126,8 @@ const SharedLayout = ({ res }: { res: any }) => {
             scrollTrigger: {
               scrub: true,
               trigger: divRef7.current,
+              start: "top 90%",
+              end: "center 50%",
             },
           }
         )
@@ -131,6 +143,8 @@ const SharedLayout = ({ res }: { res: any }) => {
             scrollTrigger: {
               scrub: true,
               trigger: divRef8.current,
+              start: "top 90%",
+              end: "center 50%",
             },
           }
         )
@@ -146,6 +160,8 @@ const SharedLayout = ({ res }: { res: any }) => {
             scrollTrigger: {
               scrub: true,
               trigger: divRef9.current,
+              start: "top 90%",
+              end: "center 50%",
             },
           }
         )
@@ -161,6 +177,8 @@ const SharedLayout = ({ res }: { res: any }) => {
             scrollTrigger: {
               scrub: true,
               trigger: divRef10.current,
+              start: "top 90%",
+              end: "center 50%",
             },
           }
         )
@@ -176,6 +194,8 @@ const SharedLayout = ({ res }: { res: any }) => {
             scrollTrigger: {
               scrub: true,
               trigger: divRef11.current,
+              start: "top 90%",
+              end: "center 50%",
             },
           }
         )
@@ -191,6 +211,8 @@ const SharedLayout = ({ res }: { res: any }) => {
             scrollTrigger: {
               scrub: true,
               trigger: divRef12.current,
+              start: "top 90%",
+              end: "center 50%",
             },
           }
         )
@@ -206,29 +228,11 @@ const SharedLayout = ({ res }: { res: any }) => {
             scrollTrigger: {
               scrub: true,
               trigger: divRef12.current,
+              start: "top 90%",
+              end: "center 50%",
             },
           }
         );
-      // gsap.utils.toArray(".div").forEach((item: any) => {
-      //   tl.fromTo(
-      //     item,
-      //     {
-      //       opacity: 0,
-      //       autoAlpha: 0,
-      //       duration: 0.75,
-      //       stagger: 2,
-      //       trigger: item,
-      //     },
-      //     {
-      //       autoAlpha: 1,
-      //       opacity: 1,
-      //       scrollTrigger: {
-      //         scrub: true,
-      //         trigger: item,
-      //       },
-      //     }
-      //   );
-      // });
     });
 
     return () => ctx.revert();

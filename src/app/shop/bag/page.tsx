@@ -10,6 +10,7 @@ import { RootState } from "@/redux/store";
 import { FaAngleDown } from "react-icons/fa";
 import { removeFromBasket } from "@/redux/basketSlice";
 import { urlForImage } from "../../../../sanity/lib/image";
+import Footer from "@/app/components/footer/Footer";
 
 const Page = () => {
   const dispatch = useDispatch();
@@ -51,15 +52,19 @@ const Page = () => {
                     </div>
                   </div>
 
-                  <div className={styles.product_count}>
-                    <h2>{item.quantity}</h2>
-                    <span>
-                      <FaAngleDown />
-                    </span>
-                  </div>
-                  <div className={styles.price_div}>
-                    <h2>${item.priceOnCart}</h2>
-                    <button onClick={() => removeProduct(item)}>Remove</button>
+                  <div className={styles.count_btn_price}>
+                    <div className={styles.product_count}>
+                      <h2>{item.quantity}</h2>
+                      <span>
+                        <FaAngleDown />
+                      </span>
+                    </div>
+                    <div className={styles.price_div}>
+                      <h2>${item.priceOnCart}</h2>
+                      <button onClick={() => removeProduct(item)}>
+                        Remove
+                      </button>
+                    </div>
                   </div>
                 </div>
               );
@@ -79,9 +84,29 @@ const Page = () => {
               <h2>Total</h2>
               <h2>${totalPrice}</h2>
             </div>
+
+            <div className={styles.checkout_wrp}>
+              <p>How would you like to check out?</p>
+              <div className={styles.row}>
+                <div className="">
+                  <h3>
+                    Pay Monthly with Apple Card $108.25/mo.per month at 0%
+                    APRFootnote at 0% APR◊
+                  </h3>
+                  <button>
+                    Check Out with Apple Card Monthly Installments
+                  </button>
+                </div>
+                <div className="">
+                  <h3>Pay in Full $3,327.00</h3>
+                  <button>Check Out</button>
+                </div>
+              </div>
+            </div>
           </div>
         )}
       </section>
+      <Footer state="f5f5f5" />
     </div>
   );
 };
