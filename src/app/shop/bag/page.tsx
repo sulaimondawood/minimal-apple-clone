@@ -11,6 +11,10 @@ import { FaAngleDown } from "react-icons/fa";
 import { removeFromBasket } from "@/redux/basketSlice";
 import { urlForImage } from "../../../../sanity/lib/image";
 import Footer from "@/app/components/footer/Footer";
+import { NumericFormat } from "react-number-format";
+import { useEffect } from "react";
+import Stripe from "stripe";
+import { fetchPostJSON } from "@/lib/stripe/stripe-api-helper";
 
 const Page = () => {
   const dispatch = useDispatch();
@@ -22,6 +26,13 @@ const Page = () => {
   function removeProduct(id: any): any {
     dispatch(removeFromBasket(id));
   }
+
+  const handleStripeRes = async () => {
+    const stripeCheckoutSession: Stripe.Checkout.Session = await fetchPostJSON(
+      "/api/checkout_session"
+    );
+  };
+
   return (
     <div>
       <Nav bgState={"white"} colorState={"black"} state={false} />
@@ -60,7 +71,14 @@ const Page = () => {
                       </span>
                     </div>
                     <div className={styles.price_div}>
-                      <h2>${item.priceOnCart}</h2>
+                      {/* <h2>${item.priceOnCart}</h2> */}
+                      <NumericFormat
+                        value={`${item.priceOnCart}`}
+                        displayType="text"
+                        decimalScale={2}
+                        fixedDecimalScale
+                        prefix="$"
+                      />
                       <button onClick={() => removeProduct(item)}>
                         Remove
                       </button>
@@ -82,7 +100,14 @@ const Page = () => {
 
             <div className={styles.total}>
               <h2>Total</h2>
-              <h2>${totalPrice}</h2>
+              {/* <h2>${totalPrice}</h2> */}
+              <NumericFormat
+                value={`${totalPrice}`}
+                displayType="text"
+                decimalScale={2}
+                fixedDecimalScale
+                prefix="$"
+              />
             </div>
 
             <div className={styles.checkout_wrp}>
