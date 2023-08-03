@@ -2,13 +2,17 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 import Stripe from "stripe";
 
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const stripe = require("stripe")(
+  "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"
+);
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
+    console.log(req.body.products);
+
     try {
       const params = {
         submit_type: "pay",

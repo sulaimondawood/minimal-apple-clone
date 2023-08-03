@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 import Stripe from "stripe";
 import { fetchPostJSON } from "@/lib/stripe/stripe-api-helper";
 import getStripe from "@/lib/stripe/stripe";
+import { toast } from "react-hot-toast";
 
 const Page = () => {
   const [sessionLoading, setSessionLoading] = useState(false);
@@ -30,9 +31,17 @@ const Page = () => {
   }
 
   const handleStripeCheckout = async () => {
+    // initialized stripe instance once
+    const stripe = await getStripe();
     setSessionLoading(true);
-    const stripeCheckoutSession: Stripe.Checkout.Session = await fetchPostJSON(
-      "/api/checkout_session",
+    // const stripeCheckoutSession: Stripe.Checkout.Session = await fetchPostJSON(
+    // const stripeCheckoutSession = await fetchPostJSON(
+    //   "/src/app/api/checkout_session",
+    //   products
+    // );
+
+    const stripeCheckoutSession = await fetch(
+      "/src/app/api/checkout_session/route.ts",
       {
         method: "POST",
         headers: {
@@ -41,20 +50,14 @@ const Page = () => {
         body: JSON.stringify(products),
       }
     );
-
     // internal server eerror
-    if ((stripeCheckoutSession as any).status === 500) {
-      console.error((stripeCheckoutSession as any).message);
-    }
+    if ((stripeCheckoutSession as any).status === 500) return;
+    const data = await stripeCheckoutSession.json();
 
-    // initialized stripe instance once
-    const stripe = await getStripe();
-
-    const { error } = await stripe!.redirectToCheckout({
-      sessionId: stripeCheckoutSession.id,
-    });
-
-    console.warn(error.message);
+    // const { error } = await stripe!.redirectToCheckout({
+    //   sessionId: stripeCheckoutSession.id,
+    // });
+    toast.loading("Redirecting...");
     setSessionLoading(false);
   };
 
@@ -149,7 +152,7 @@ const Page = () => {
                 </div>
                 <div className="">
                   <h3>Pay in Full $3,327.00</h3>
-                  <button>Check Out</button>
+                  <button onClick={handleStripeCheckout}>Check Out</button>
                 </div>
               </div>
             </div>
