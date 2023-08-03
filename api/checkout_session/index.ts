@@ -1,53 +1,37 @@
-import { formatAmountForStripe } from "@/lib/stripe/stripe-helpers";
-// import { CURRENCY, MAX_AMOUNT, MIN_AMOUNT } from "@//config";
-import { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 import Stripe from "stripe";
-// import { formatAmountForStripe } from "../../../utils/stripe-helpers";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  // https://github.com/stripe/stripe-node#configuration
-  apiVersion: "2022-11-15",
-});
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
-    const amount: number = req.body.amount;
     try {
-      // Validate the amount that was passed from the client.
-      if (!(amount >= MIN_AMOUNT && amount <= MAX_AMOUNT)) {
-        throw new Error("Invalid amount.");
-      }
-      // Create Checkout Sessions from body params.
-      const params: Stripe.Checkout.SessionCreateParams = {
-        submit_type: "donate",
-        payment_method_types: ["card"],
+      const params = {
+        submit_type: "pay",
+        mode: "payment",
+        payment_method_type: ["card"],
+        billing_address_collection: "auto",
+        // shipping_options:[]
         line_items: [
           {
-            amount: formatAmountForStripe(amount, CURRENCY),
+            // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+            price: "{{PRICE_ID}}",
             quantity: 1,
-            price_data: {
-              currency: CURRENCY,
-              product_data: {
-                name: "Custom amount donation",
-              },
-            },
           },
         ],
-        success_url: `${req.headers.origin}/result?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${req.headers.origin}/donate-with-checkout`,
+        success_url: `${req.headers.origin}/?success=true`,
+        cancel_url: `${req.headers.origin}/?canceled=true`,
       };
-      const checkoutSession: Stripe.Checkout.Session =
-        await stripe.checkout.sessions.create(params);
 
-      res.status(200).json(checkoutSession);
-    } catch (err) {
-      const errorMessage =
-        err instanceof Error ? err.message : "Internal server error";
-      res.status(500).json({ statusCode: 500, message: errorMessage });
+      // Create Checkout Sessions from body params.
+      const session = await stripe.checkout.sessions.create(params);
+      res.redirect(303, session.url);
+    } catch (err: any) {
+      res.status(err.statusCode || 500).json(err.message);
     }
   } else {
     res.setHeader("Allow", "POST");
