@@ -31,32 +31,26 @@ const Page = () => {
   }
 
   const handleStripeCheckout = async () => {
-    // initialized stripe instance once
-    const stripe = await getStripe();
     setSessionLoading(true);
-    // const stripeCheckoutSession: Stripe.Checkout.Session = await fetchPostJSON(
-    // const stripeCheckoutSession = await fetchPostJSON(
-    //   "/src/app/api/checkout_session",
-    //   products
-    // );
 
-    const stripeCheckoutSession = await fetch(
-      "/src/app/api/checkout_session/route.ts",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(products),
-      }
+    const stripeCheckoutSession: Stripe.Checkout.Session = await fetchPostJSON(
+      "/api/checkout_session",
+      products
     );
-    // internal server eerror
-    if ((stripeCheckoutSession as any).status === 500) return;
-    const data = await stripeCheckoutSession.json();
 
-    // const { error } = await stripe!.redirectToCheckout({
-    //   sessionId: stripeCheckoutSession.id,
-    // });
+    // internal server eerror
+    if ((stripeCheckoutSession as any).status === 500) {
+      console.error((stripeCheckoutSession as any).message);
+      return;
+    }
+
+    const stripe = await getStripe();
+
+    const { error } = await stripe!.redirectToCheckout({
+      sessionId: stripeCheckoutSession.id,
+    });
+    console.warn(error.message);
+
     toast.loading("Redirecting...");
     setSessionLoading(false);
   };
