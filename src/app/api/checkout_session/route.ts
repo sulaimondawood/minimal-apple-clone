@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
-
 import Stripe from "stripe";
+import { NextResponse } from "next/server";
+// import Stripe from "stripe";
 
 const key = process.env.STRIPE_SECRET_KEY || "";
 
@@ -9,19 +10,19 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as any, {
 });
 
 export async function POST(req: NextApiRequest, res: NextApiResponse) {
-  // if (req.method === "POST") {
-  console.log(req.body);
+  // const products = req.body.products;
+  // const transformedProducts = products.map((item: any) => {
+  //   price_data: {
+  //     currency: "usd";
+  //     product_data: {
+  //       name: item.name;
+  //     }
+  //     // unit_amount:item,
+  //     quantity: 1;
+  //   }
+  // });
   const products = req.body.products;
-  const transformedProducts = products.map((item: any) => {
-    price_data: {
-      currency: "usd";
-      product_data: {
-        name: item.name;
-      }
-      // unit_amount:item,
-      quantity: 1;
-    }
-  });
+  console.log(products);
   try {
     const params: Stripe.Checkout.SessionCreateParams = {
       submit_type: "pay",
@@ -37,8 +38,7 @@ export async function POST(req: NextApiRequest, res: NextApiResponse) {
         },
       ],
       success_url: `${req.headers.origin}/result?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${req.headers.origin}/checkout`,
-      // cancel_url: `${req.headers.origin}/result?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${req.headers.origin}/result?session_id={CHECKOUT_SESSION_ID}`,
 
       // success_url: `${req.headers.origin}/?success=true`,
       // cancel_url: `${req.headers.origin}/?canceled=true`,
@@ -52,8 +52,4 @@ export async function POST(req: NextApiRequest, res: NextApiResponse) {
   } catch (err: any) {
     res.status(err.statusCode || 500).json(err.message);
   }
-  // } else {
-  //   res.setHeader("Allow", "POST");
-  //   res.status(405).end("Method Not Allowed");
-  // }
 }
