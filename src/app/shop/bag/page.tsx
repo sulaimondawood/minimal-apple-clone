@@ -18,8 +18,9 @@ import { fetchPostJSON } from "@/lib/stripe/stripe-api-helper";
 import getStripe from "@/lib/stripe/stripe";
 import { toast } from "react-hot-toast";
 import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
+import { headers } from "next/dist/client/components/headers";
 
-// const Page = () => {
 //   const [sessionLoading, setSessionLoading] = useState(false);
 //   const dispatch = useDispatch();
 //   const { products, totalPrice } = useSelector(
@@ -193,42 +194,52 @@ const Page = () => {
   const { products, totalPrice } = useSelector(
     (state: RootState) => state.basketSlice
   );
-  const body = {
-    interval: "month",
-    amount: 2000,
-    plan: "Monthly",
-    planDescription: "Subscribe for $20 per month",
-  };
-  // console.log({ body });
+  const objProducts = { products };
 
   function removeProduct(id: any): any {
     dispatch(removeFromBasket(id));
   }
 
   const handleStripeCheckout = async () => {
-    // setSessionLoading(true);
-
-    const stripeCheckoutSession: Stripe.Checkout.Session = await fetchPostJSON(
+    const stripe = await getStripe();
+    const checkoutSession: Stripe.Checkout.Session = await fetchPostJSON(
       "/api/checkout_session",
       { products }
     );
 
     // internal server eerror
-    if ((stripeCheckoutSession as any).status === 500) {
-      console.error((stripeCheckoutSession as any).message);
-      return;
+    if (checkoutSession) {
+      stripe?.redirectToCheckout({ sessionId: checkoutSession.id });
     }
 
-    const stripe = await getStripe();
-
     const { error } = await stripe!.redirectToCheckout({
-      sessionId: stripeCheckoutSession.id,
+      sessionId: checkoutSession.id,
     });
     console.warn(error.message);
 
-    toast.loading("Redirecting...");
-    // setSessionLoading(false);
+    // toast.loading("Redirecting...");
   };
+  // const handleStripeCheckout = async () => {
+  //   const checkoutSession: Stripe.Checkout.Session = await fetchPostJSON(
+  //     "/api/checkout_session",
+  //     { products }
+  //   );
+
+  //   // internal server eerror
+  //   if ((checkoutSession as any).statusCode === 500) {
+  //     console.error((checkoutSession as any).message);
+  //     return;
+  //   }
+
+  //   //Reddirect to checkout
+  //   const stripe = await getStripe();
+  //   const { error } = await stripe!.redirectToCheckout({
+  //     sessionId: checkoutSession.id,
+  //   });
+  //   console.warn(error.message);
+
+  //   // toast.loading("Redirecting...");
+  // };
 
   return (
     <div>
@@ -321,7 +332,7 @@ const Page = () => {
                 </div>
                 <div className="">
                   <h3>Pay in Full $3,327.00</h3>
-                  <button type="button" onClick={() => handleStripeCheckout}>
+                  <button type="button" onClick={handleStripeCheckout}>
                     Check Out
                   </button>
                 </div>
