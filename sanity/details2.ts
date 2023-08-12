@@ -345,5 +345,10 @@ export default {
       title: "Bag Image",
       type: "image",
     },
+    {
+      name: "price",
+      title: "Price",
+      type: "number",
+    },
   ],
 };

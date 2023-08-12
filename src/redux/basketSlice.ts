@@ -5,13 +5,11 @@ import { stat } from "fs";
 interface BasketType {
   products: any;
   totalPrice: number;
-  price: number;
 }
 
 const initialState: BasketType = {
   products: [],
   totalPrice: 0,
-  price: 0,
 };
 
 export const basketSlice = createSlice({
@@ -25,29 +23,30 @@ export const basketSlice = createSlice({
         }
       });
 
-      console.log(checkCart);
-
       if (checkCart) {
-        const updateCartProducts = state.products.map((item: any) => {
-          console.log(item.quantity);
-
+        const updatedProducts = state.products.map((item: any) => {
           if (item._id === action.payload._id) {
+            const updatedQuantity = item.quantity + 1;
             return {
               ...item,
-              quantity: (item.quantity as number) + 1,
-              priceOnCart: item.quantity * item.priceOnCart,
+              quantity: updatedQuantity,
+              priceOnCart: updatedQuantity * parseInt(item.price),
             };
           }
+          return item;
         });
 
-        state.totalPrice =
-          state.totalPrice + Number(action.payload.priceOnCart);
-        state.products = updateCartProducts;
+        state.products = updatedProducts;
       } else {
         state.products = [...state.products, action.payload];
       }
+      const totalPrice = state.products.reduce(
+        (acc: number, item: any) => acc + item.priceOnCart,
+        0
+      );
+      state.totalPrice = totalPrice;
 
-      // state.products = [...state.products, action.payload];
+      console.log(state.products);
     },
     removeFromBasket(state: BasketType, action: PayloadAction<any>) {
       const removedProduct = state.products.filter(

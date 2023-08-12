@@ -28,7 +28,6 @@ const Page = () => {
   const handleStripeCheckout = async () => {
     setSessionLoading(true);
     const stripe = await getStripe();
-
     const response = await fetch("/api/checkout_session", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -84,11 +83,19 @@ const Page = () => {
                     <div className={styles.price_div}>
                       {/* <h2>${item.priceOnCart}</h2> */}
                       <NumericFormat
-                        value={`${item.priceOnCart}`}
+                        value={`${item.price}`}
                         displayType="text"
                         decimalScale={2}
                         fixedDecimalScale
                         prefix="$"
+                      />
+                      <NumericFormat
+                        value={`${parseInt(item?.priceOnCart)}`}
+                        displayType="text"
+                        decimalScale={2}
+                        fixedDecimalScale
+                        prefix="$"
+                        style={{ fontSize: "10px" }}
                       />
                       <button onClick={() => removeProduct(item)}>
                         Remove
