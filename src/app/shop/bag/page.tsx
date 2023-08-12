@@ -27,6 +27,7 @@ const Page = () => {
 
   const handleStripeCheckout = async () => {
     setSessionLoading(true);
+    toast.loading("Redirecting...");
     const stripe = await getStripe();
     const response = await fetch("/api/checkout_session", {
       method: "POST",
@@ -39,7 +40,6 @@ const Page = () => {
     if (data.session) {
       stripe?.redirectToCheckout({ sessionId: data.session.id });
     }
-    toast.loading("Redirecting...");
     setSessionLoading(false);
   };
 

@@ -38,7 +38,13 @@ export const basketSlice = createSlice({
 
         state.products = updatedProducts;
       } else {
-        state.products = [...state.products, action.payload];
+        const newItem = {
+          ...action.payload,
+          quantity: 1,
+          priceOnCart:
+            parseInt(action.payload.price) * parseInt(action.payload.quantity),
+        };
+        state.products = [...state.products, newItem];
       }
       const totalPrice = state.products.reduce(
         (acc: number, item: any) => acc + item.priceOnCart,
@@ -54,7 +60,8 @@ export const basketSlice = createSlice({
       );
 
       state.products = removedProduct;
-      state.totalPrice = state.totalPrice - Number(action.payload.priceOnCart);
+      state.totalPrice =
+        state.totalPrice - parseInt(action.payload.priceOnCart);
     },
   },
 });

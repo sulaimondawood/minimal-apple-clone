@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
+import { urlForImage } from "../../../../sanity/lib/image";
 
 const key = process.env.STRIPE_SECRET_KEY || "";
 
@@ -27,7 +28,7 @@ export async function POST(request: NextRequest) {
               product_data: {
                 name: item.name,
               },
-              unit_amount: item.priceOnCart * 100,
+              unit_amount: item.price * 100,
             },
             quantity: item.quantity,
             adjustable_quantity: {
