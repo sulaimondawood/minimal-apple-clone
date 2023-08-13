@@ -33,7 +33,7 @@ const AppleTrade = ({
             <h2 style={{ color: res.navColor }}>{res?.heroName}</h2>
             <div>
               <p>Overview</p>
-              <Link href="">Find your trade-in value</Link>
+              <Link href="/construction">Find your trade-in value</Link>
             </div>
           </div>
         </div>

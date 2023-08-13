@@ -14,7 +14,7 @@ const AppleCard = ({ res }: { res: any }) => {
           <h2 style={{ color: res.navBg }}>{res?.heroName}</h2>
           <div>
             <p>Overview</p>
-            <Link href="">Apply</Link>
+            <Link href="/construction">Apply</Link>
           </div>
         </div>
       </div>
@@ -25,7 +25,7 @@ const AppleCard = ({ res }: { res: any }) => {
       >
         <div>
           <img src={urlForImage(res?.heroTitle).url()} alt="" />
-          <Link href={""}>Apply now</Link>
+          <Link href="/construction">Apply now</Link>
         </div>
       </div>
       <article style={{ backgroundColor: res.secBg }} className={styles2.sec_1}>
@@ -111,7 +111,7 @@ const AppleCard = ({ res }: { res: any }) => {
         <img src={urlForImage(res.sec2Img).url()} alt="" />
         <h1>{res.sec2Title}</h1>
         <p>{res.sec2Text}</p>
-        <Link href={""}>Apply now</Link>
+        <Link href="/construction">Apply now</Link>
       </article>
 
       <Footer state="#f5f5f5" />

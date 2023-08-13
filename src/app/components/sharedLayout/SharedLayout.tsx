@@ -26,218 +26,6 @@ const SharedLayout = ({ res }: { res: any }) => {
   const heroRefImg = useRef<HTMLDivElement | any>();
   const titleRef = useRef<HTMLDivElement | any>();
 
-  // useEffect(() => {
-  //   const tl = gsap.timeline();
-  //   let ctx = gsap.context(() => {
-  //     tl.fromTo(
-  //       divRef1.current,
-  //       {
-  //         opacity: 0,
-  //         autoAlpha: 0,
-  //       },
-  //       {
-  //         autoAlpha: 1,
-  //         opacity: 1,
-  //         scrollTrigger: {
-  //           scrub: true,
-  //           trigger: divRef1.current,
-  //           start: "top 90%",
-  //           end: "center 50%",
-  //         },
-  //       }
-  //     )
-  //       .fromTo(
-  //         divRef2.current,
-  //         {
-  //           opacity: 0,
-  //           autoAlpha: 0,
-  //         },
-  //         {
-  //           autoAlpha: 1,
-  //           opacity: 1,
-  //           scrollTrigger: {
-  //             scrub: true,
-  //             trigger: divRef3.current,
-  //             start: "top 90%",
-  //             end: "center 50%",
-  //           },
-  //         }
-  //       )
-  //       .fromTo(
-  //         divRef3.current,
-  //         {
-  //           opacity: 0,
-  //           autoAlpha: 0,
-  //         },
-  //         {
-  //           autoAlpha: 1,
-  //           opacity: 1,
-  //           scrollTrigger: {
-  //             scrub: true,
-  //             trigger: divRef4.current,
-  //             start: "top 90%",
-  //             end: "center 50%",
-  //           },
-  //         }
-  //       )
-  //       .fromTo(
-  //         divRef4.current,
-  //         {
-  //           opacity: 0,
-  //           autoAlpha: 0,
-  //         },
-  //         {
-  //           autoAlpha: 1,
-  //           opacity: 1,
-  //           scrollTrigger: {
-  //             scrub: true,
-  //             trigger: divRef4.current,
-  //             start: "top 90%",
-  //             end: "center 50%",
-  //           },
-  //         }
-  //       )
-  //       .fromTo(
-  //         divRef5.current,
-  //         {
-  //           opacity: 0,
-  //           autoAlpha: 0,
-  //         },
-  //         {
-  //           autoAlpha: 1,
-  //           opacity: 1,
-  //           scrollTrigger: {
-  //             scrub: true,
-  //             trigger: divRef6.current,
-  //             start: "top 90%",
-  //             end: "center 50%",
-  //           },
-  //         }
-  //       )
-  //       .fromTo(
-  //         divRef6.current,
-  //         {
-  //           opacity: 0,
-  //           autoAlpha: 0,
-  //         },
-  //         {
-  //           autoAlpha: 1,
-  //           opacity: 1,
-  //           scrollTrigger: {
-  //             scrub: true,
-  //             trigger: divRef7.current,
-  //             start: "top 90%",
-  //             end: "center 50%",
-  //           },
-  //         }
-  //       )
-  //       .fromTo(
-  //         divRef7.current,
-  //         {
-  //           opacity: 0,
-  //           autoAlpha: 0,
-  //         },
-  //         {
-  //           autoAlpha: 1,
-  //           opacity: 1,
-  //           scrollTrigger: {
-  //             scrub: true,
-  //             trigger: divRef8.current,
-  //             start: "top 90%",
-  //             end: "center 50%",
-  //           },
-  //         }
-  //       )
-  //       .fromTo(
-  //         divRef8.current,
-  //         {
-  //           opacity: 0,
-  //           autoAlpha: 0,
-  //         },
-  //         {
-  //           autoAlpha: 1,
-  //           opacity: 1,
-  //           scrollTrigger: {
-  //             scrub: true,
-  //             trigger: divRef9.current,
-  //             start: "top 90%",
-  //             end: "center 50%",
-  //           },
-  //         }
-  //       )
-  //       .fromTo(
-  //         divRef9.current,
-  //         {
-  //           opacity: 0,
-  //           autoAlpha: 0,
-  //         },
-  //         {
-  //           autoAlpha: 1,
-  //           opacity: 1,
-  //           scrollTrigger: {
-  //             scrub: true,
-  //             trigger: divRef10.current,
-  //             start: "top 90%",
-  //             end: "center 50%",
-  //           },
-  //         }
-  //       )
-  //       .fromTo(
-  //         divRef10.current,
-  //         {
-  //           opacity: 0,
-  //           autoAlpha: 0,
-  //         },
-  //         {
-  //           autoAlpha: 1,
-  //           opacity: 1,
-  //           scrollTrigger: {
-  //             scrub: true,
-  //             trigger: divRef11.current,
-  //             start: "top 90%",
-  //             end: "center 50%",
-  //           },
-  //         }
-  //       )
-  //       .fromTo(
-  //         divRef11.current,
-  //         {
-  //           opacity: 0,
-  //           autoAlpha: 0,
-  //         },
-  //         {
-  //           autoAlpha: 1,
-  //           opacity: 1,
-  //           scrollTrigger: {
-  //             scrub: true,
-  //             trigger: divRef12.current,
-  //             start: "top 90%",
-  //             end: "center 50%",
-  //           },
-  //         }
-  //       )
-  //       .fromTo(
-  //         divRef12.current,
-  //         {
-  //           opacity: 0,
-  //           autoAlpha: 0,
-  //         },
-  //         {
-  //           autoAlpha: 1,
-  //           opacity: 1,
-  //           scrollTrigger: {
-  //             scrub: true,
-  //             trigger: divRef12.current,
-  //             start: "top 90%",
-  //             end: "center 50%",
-  //           },
-  //         }
-  //       );
-  //   });
-
-  //   return () => ctx.revert();
-  // }, []);
-
   return (
     <section className={styles.grand_grand}>
       <Nav
@@ -502,7 +290,7 @@ const SharedLayout = ({ res }: { res: any }) => {
                 <h2 style={{ color: res.sec2sec3GridItem1TitleColor }}>
                   {res.sec2GridItem1Title}
                 </h2>
-                <Link href={""}>{res.sec2GridItem1Text}</Link>
+                <Link href={"/construction"}>{res.sec2GridItem1Text}</Link>
                 <img
                   className={styles.img_img}
                   src={urlForImage(res.sec2GridItem1Image).url()}
@@ -516,7 +304,7 @@ const SharedLayout = ({ res }: { res: any }) => {
                 <h2 style={{ color: res.sec2sec3GridItem1TitleColor }}>
                   {res.sec2GridItem2Title}
                 </h2>
-                <Link href={""}>{res.sec2GridItem2Text}</Link>
+                <Link href={"/construction"}>{res.sec2GridItem2Text}</Link>
                 <img
                   className={styles.img_img}
                   src={urlForImage(res.sec2GridItem2Image).url()}
@@ -531,7 +319,7 @@ const SharedLayout = ({ res }: { res: any }) => {
                   {res.sec2GridItem3Title}
                 </h2>
 
-                <Link href={""}>{res.sec2GridItem3Text}</Link>
+                <Link href={"/construction"}>{res.sec2GridItem3Text}</Link>
 
                 <img src={urlForImage(res.sec2GridItem3Image).url()} alt="" />
               </article>
@@ -557,7 +345,7 @@ const SharedLayout = ({ res }: { res: any }) => {
                 <h2 style={{ color: res.sec2sec3GridItem1TitleColor }}>
                   {res.sec3GridItem1Title}
                 </h2>
-                <Link href={""}>{res.sec3GridItem1Text}</Link>
+                <Link href={"/construction"}>{res.sec3GridItem1Text}</Link>
                 <img src={urlForImage(res?.sec3GridItem1Image)?.url()} alt="" />
               </article>
               <article
@@ -582,7 +370,7 @@ const SharedLayout = ({ res }: { res: any }) => {
                   {res.sec3GridItem3Title}
                 </h2>
 
-                <Link href={""}>{res.sec3GridItem3Text}</Link>
+                <Link href={"/construction"}>{res.sec3GridItem3Text}</Link>
 
                 <img src={urlForImage(res.sec3GridItem3Image).url()} alt="" />
               </article>
@@ -600,7 +388,7 @@ const SharedLayout = ({ res }: { res: any }) => {
                 <h1 style={{ color: res.eachSecTitleColor }}>
                   Which iPhone is right for you?
                 </h1>
-                <Link href={""}>Compare all iPhone Models</Link>
+                <Link href={"/construction"}>Compare all iPhone Models</Link>
               </div>
               <div className={styles.bottom}>
                 <article className={styles.col_1}>
@@ -618,10 +406,10 @@ const SharedLayout = ({ res }: { res: any }) => {
                     <p style={{ color: res.eachSecTitleColor }}>
                       {res.sec4GridItem1Price}
                     </p>
-                    <Link className={styles.buy_link} href={""}>
+                    <Link className={styles.buy_link} href={"/construction"}>
                       Buy
                     </Link>
-                    <Link className={styles.l_link} href={""}>
+                    <Link className={styles.l_link} href={"/construction"}>
                       Learn more
                     </Link>
                   </div>
@@ -639,10 +427,10 @@ const SharedLayout = ({ res }: { res: any }) => {
                     <p style={{ color: res.eachSecTitleColor }}>
                       {res.sec4GridItem2Price}
                     </p>
-                    <Link className={styles.buy_link} href={""}>
+                    <Link className={styles.buy_link} href={"/construction"}>
                       Buy
                     </Link>
-                    <Link className={styles.l_link} href={""}>
+                    <Link className={styles.l_link} href={"/construction"}>
                       Learn more
                     </Link>
                   </div>
@@ -660,10 +448,10 @@ const SharedLayout = ({ res }: { res: any }) => {
                     <p style={{ color: res.eachSecTitleColor }}>
                       {res.sec4GridItem3Price}
                     </p>
-                    <Link className={styles.buy_link} href={""}>
+                    <Link className={styles.buy_link} href={"/construction"}>
                       Buy
                     </Link>
-                    <Link className={styles.l_link} href={""}>
+                    <Link className={styles.l_link} href={"/construction"}>
                       Learn more
                     </Link>
                   </div>
@@ -681,10 +469,10 @@ const SharedLayout = ({ res }: { res: any }) => {
                     <p style={{ color: res.eachSecTitleColor }}>
                       {res.sec4GridItem4Price}
                     </p>
-                    <Link className={styles.buy_link} href={""}>
+                    <Link className={styles.buy_link} href={"/construction"}>
                       Buy
                     </Link>
-                    <Link className={styles.l_link} href={""}>
+                    <Link className={styles.l_link} href={"/construction"}>
                       Learn more
                     </Link>
                   </div>
