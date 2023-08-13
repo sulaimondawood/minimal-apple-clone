@@ -7,7 +7,7 @@ import Footer from "../footer/Footer";
 
 const AppleCard = ({ res }: { res: any }) => {
   return (
-    <>
+    <section className={styles2.grand_grand}>
       <Nav bgState={res?.navBg} colorState={res?.navColor} state={false} />
       <div style={{ backgroundColor: res.navColor }} className={styles2.header}>
         <div>
@@ -115,7 +115,7 @@ const AppleCard = ({ res }: { res: any }) => {
       </article>
 
       <Footer state="#f5f5f5" />
-    </>
+    </section>
   );
 };
 

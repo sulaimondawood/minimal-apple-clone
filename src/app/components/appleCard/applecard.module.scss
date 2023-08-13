@@ -1,5 +1,9 @@
 @import "../../utils/variable.module";
 
+.grand_grand {
+  overflow-x: hidden;
+}
+
 .header {
   position: sticky;
   width: 100%;
@@ -9,6 +13,7 @@
 
   @include mobile {
     padding: 1rem;
+    position: static;
   }
 
   @include tablet {
@@ -263,7 +268,7 @@
     }
 
     h1 {
-      font-size: 115px;
+      font-size: 100px;
       width: 100%;
       line-height: 0.9;
 
@@ -283,7 +288,7 @@
     position: relative;
     background-color: white;
     border-radius: 30px;
-    padding: 0 3.5rem;
+    padding: 3.5rem 3.5rem;
     padding-bottom: 6rem;
     box-shadow: 10px 10px 60px #00000020;
     flex: 1 !important;

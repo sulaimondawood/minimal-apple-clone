@@ -25,7 +25,7 @@ const AppleTrade = ({
   tab2: TTab2[];
 }) => {
   return (
-    <div>
+    <div className={styles.grand_grand}>
       <Nav bgState={res?.navBg} colorState={res?.navColor} state={false} />
       <section className={styles.appleTradeSec}>
         <div style={{ backgroundColor: res.navBg }} className={styles.header}>

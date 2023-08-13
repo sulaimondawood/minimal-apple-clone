@@ -239,7 +239,7 @@ const SharedLayout = ({ res }: { res: any }) => {
   // }, []);
 
   return (
-    <>
+    <section className={styles.grand_grand}>
       <Nav
         bgState={res.sec2BackgroundColor}
         colorState={res.eachSecTitleColor}
@@ -695,7 +695,7 @@ const SharedLayout = ({ res }: { res: any }) => {
         </div>
       </section>
       <Footer state={res.sec2BackgroundColor} />
-    </>
+    </section>
   );
 };
 

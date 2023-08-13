@@ -29,14 +29,4 @@ export default [
     name: "Airpods",
     link: "/airpods",
   },
-  {
-    id: 7,
-    name: "Accessories",
-    link: "/accessories",
-  },
-  {
-    id: 8,
-    name: "Support",
-    link: "/support",
-  },
 ];

@@ -1,5 +1,9 @@
 @import "../../utils/variable.module";
 
+.grand_grand {
+  overflow-x: hidden;
+}
+
 .appleTradeSec {
   .header {
     position: sticky !important;
@@ -9,6 +13,7 @@
 
     @include mobile {
       padding: 1rem;
+      position: static;
     }
 
     @include tablet {
