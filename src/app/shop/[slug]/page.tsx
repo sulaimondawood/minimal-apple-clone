@@ -14,7 +14,8 @@ async function Page({ params }: { params: any }) {
     <div>
       <Nav bgState={res?.navBg} colorState="#000000" state={true} />
       <Shop data={data} />
-      <Footer state={res.sec2BackgroundColor} />
+      {/* <Footer state={res.sec2BackgroundColor} /> */}
+      <Footer state={"white"} />
     </div>
   );
 }
