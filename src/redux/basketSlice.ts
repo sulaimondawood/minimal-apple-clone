@@ -51,8 +51,6 @@ export const basketSlice = createSlice({
         0
       );
       state.totalPrice = totalPrice;
-
-      console.log(state.products);
     },
     removeFromBasket(state: BasketType, action: PayloadAction<any>) {
       const removedProduct = state.products.filter(

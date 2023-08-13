@@ -21,7 +21,6 @@ function Shop({ data }: { data: any }) {
   function addBasket(item: any): void {
     dispatch(addToBasket(item));
     toast.success(`${item.name} added to cart`);
-    console.log(data.quantity);
   }
   return (
     <section className={styles.shop}>

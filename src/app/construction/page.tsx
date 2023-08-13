@@ -12,7 +12,7 @@ export default function Construction() {
         <img src={Image.src} alt="" />
         <h1> Under Construction!😋😎</h1>
       </div>
-      <Footer state="white" />
+      <Footer state="#f5f5f5" />
     </>
   );
 }

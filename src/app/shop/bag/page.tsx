@@ -54,7 +54,7 @@ const Page = () => {
 
         {products.length <= 0 ? (
           <div className={styles.oops}>
-            <h1>Oopss no products in cart yet!!🤨🙂</h1>
+            <h1>Oopss, no products in cart yet!!🤨🙂</h1>
           </div>
         ) : (
           <div className={styles.bottom}>
@@ -86,6 +86,7 @@ const Page = () => {
                         displayType="text"
                         decimalScale={2}
                         fixedDecimalScale
+                        thousandSeparator=","
                         prefix="$"
                       />
                       <button onClick={() => removeProduct(item)}>
@@ -99,7 +100,14 @@ const Page = () => {
             <div className={styles.sub_total}>
               <div className={styles.sub_1}>
                 <p>Subtotal</p>
-                <p>${totalPrice}</p>
+                <NumericFormat
+                  value={`${totalPrice}`}
+                  displayType="text"
+                  decimalScale={2}
+                  fixedDecimalScale
+                  thousandSeparator=","
+                  prefix="$"
+                />
               </div>
               <div className={styles.sub_1}>
                 <p>Shipping </p>
@@ -115,6 +123,7 @@ const Page = () => {
                 displayType="text"
                 decimalScale={2}
                 fixedDecimalScale
+                thousandSeparator=","
                 prefix="$"
               />
             </div>
@@ -132,7 +141,18 @@ const Page = () => {
                   </button>
                 </div>
                 <div className="">
-                  <h3>Pay in Full $3,327.00</h3>
+                  <h3>
+                    Pay in full
+                    <span style={{ paddingRight: "0.5rem" }}></span>
+                    <NumericFormat
+                      value={`${totalPrice}`}
+                      displayType="text"
+                      decimalScale={2}
+                      fixedDecimalScale
+                      thousandSeparator=","
+                      prefix="$"
+                    />
+                  </h3>
                   <button type="button" onClick={handleStripeCheckout}>
                     {sessionLoading ? "Please wait..." : "Check Out"}
                   </button>

@@ -2,31 +2,31 @@ export default [
   {
     id: 1,
     name: "Store",
-    link: "/store",
+    link: "/construction",
   },
   {
     id: 2,
     name: "Mac",
-    link: "/mac",
+    link: "/construction",
   },
   {
     id: 3,
     name: "iPad",
-    link: "/ipad",
+    link: "/construction",
   },
   {
     id: 4,
     name: "iPhone",
-    link: "/iphone",
+    link: "/construction",
   },
   {
     id: 5,
     name: "Watch",
-    link: "/watch",
+    link: "/construction",
   },
   {
     id: 6,
     name: "Airpods",
-    link: "/airpods",
+    link: "/construction",
   },
 ];
