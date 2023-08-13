@@ -11,6 +11,7 @@
   }
 
   .top {
+    padding: 0 1rem;
     margin-top: 80px;
 
     @include mobile {
@@ -28,10 +29,17 @@
     max-width: 600px;
     width: 100%;
     margin-top: 30px;
+    padding: 2rem 1rem;
+    font-weight: 500;
   }
 
   .bottom {
     margin: 50px 0;
+    padding: 0 2rem;
+
+    @include mobile {
+      padding: 0;
+    }
 
     h2 {
       font-weight: 500;
@@ -112,7 +120,6 @@
         align-items: center;
 
         @include mobile {
-          gap: 1rem;
         }
 
         button {
@@ -121,6 +128,12 @@
           border: none;
           font-size: 1.1rem;
           cursor: pointer;
+
+          @include mobile {
+            margin-top: -10px;
+            font-size: 1rem;
+            line-height: 1;
+          }
 
           &:hover {
             text-decoration: underline;
@@ -172,7 +185,7 @@
           display: flex;
           align-items: center;
           flex-direction: column;
-
+          justify-content: center;
           gap: 2rem;
           border-radius: 20px;
 

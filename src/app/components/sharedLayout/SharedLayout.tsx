@@ -26,217 +26,217 @@ const SharedLayout = ({ res }: { res: any }) => {
   const heroRefImg = useRef<HTMLDivElement | any>();
   const titleRef = useRef<HTMLDivElement | any>();
 
-  useEffect(() => {
-    const tl = gsap.timeline();
-    let ctx = gsap.context(() => {
-      tl.fromTo(
-        divRef1.current,
-        {
-          opacity: 0,
-          autoAlpha: 0,
-        },
-        {
-          autoAlpha: 1,
-          opacity: 1,
-          scrollTrigger: {
-            scrub: true,
-            trigger: divRef1.current,
-            start: "top 90%",
-            end: "center 50%",
-          },
-        }
-      )
-        .fromTo(
-          divRef2.current,
-          {
-            opacity: 0,
-            autoAlpha: 0,
-          },
-          {
-            autoAlpha: 1,
-            opacity: 1,
-            scrollTrigger: {
-              scrub: true,
-              trigger: divRef3.current,
-              start: "top 90%",
-              end: "center 50%",
-            },
-          }
-        )
-        .fromTo(
-          divRef3.current,
-          {
-            opacity: 0,
-            autoAlpha: 0,
-          },
-          {
-            autoAlpha: 1,
-            opacity: 1,
-            scrollTrigger: {
-              scrub: true,
-              trigger: divRef4.current,
-              start: "top 90%",
-              end: "center 50%",
-            },
-          }
-        )
-        .fromTo(
-          divRef4.current,
-          {
-            opacity: 0,
-            autoAlpha: 0,
-          },
-          {
-            autoAlpha: 1,
-            opacity: 1,
-            scrollTrigger: {
-              scrub: true,
-              trigger: divRef4.current,
-              start: "top 90%",
-              end: "center 50%",
-            },
-          }
-        )
-        .fromTo(
-          divRef5.current,
-          {
-            opacity: 0,
-            autoAlpha: 0,
-          },
-          {
-            autoAlpha: 1,
-            opacity: 1,
-            scrollTrigger: {
-              scrub: true,
-              trigger: divRef6.current,
-              start: "top 90%",
-              end: "center 50%",
-            },
-          }
-        )
-        .fromTo(
-          divRef6.current,
-          {
-            opacity: 0,
-            autoAlpha: 0,
-          },
-          {
-            autoAlpha: 1,
-            opacity: 1,
-            scrollTrigger: {
-              scrub: true,
-              trigger: divRef7.current,
-              start: "top 90%",
-              end: "center 50%",
-            },
-          }
-        )
-        .fromTo(
-          divRef7.current,
-          {
-            opacity: 0,
-            autoAlpha: 0,
-          },
-          {
-            autoAlpha: 1,
-            opacity: 1,
-            scrollTrigger: {
-              scrub: true,
-              trigger: divRef8.current,
-              start: "top 90%",
-              end: "center 50%",
-            },
-          }
-        )
-        .fromTo(
-          divRef8.current,
-          {
-            opacity: 0,
-            autoAlpha: 0,
-          },
-          {
-            autoAlpha: 1,
-            opacity: 1,
-            scrollTrigger: {
-              scrub: true,
-              trigger: divRef9.current,
-              start: "top 90%",
-              end: "center 50%",
-            },
-          }
-        )
-        .fromTo(
-          divRef9.current,
-          {
-            opacity: 0,
-            autoAlpha: 0,
-          },
-          {
-            autoAlpha: 1,
-            opacity: 1,
-            scrollTrigger: {
-              scrub: true,
-              trigger: divRef10.current,
-              start: "top 90%",
-              end: "center 50%",
-            },
-          }
-        )
-        .fromTo(
-          divRef10.current,
-          {
-            opacity: 0,
-            autoAlpha: 0,
-          },
-          {
-            autoAlpha: 1,
-            opacity: 1,
-            scrollTrigger: {
-              scrub: true,
-              trigger: divRef11.current,
-              start: "top 90%",
-              end: "center 50%",
-            },
-          }
-        )
-        .fromTo(
-          divRef11.current,
-          {
-            opacity: 0,
-            autoAlpha: 0,
-          },
-          {
-            autoAlpha: 1,
-            opacity: 1,
-            scrollTrigger: {
-              scrub: true,
-              trigger: divRef12.current,
-              start: "top 90%",
-              end: "center 50%",
-            },
-          }
-        )
-        .fromTo(
-          divRef12.current,
-          {
-            opacity: 0,
-            autoAlpha: 0,
-          },
-          {
-            autoAlpha: 1,
-            opacity: 1,
-            scrollTrigger: {
-              scrub: true,
-              trigger: divRef12.current,
-              start: "top 90%",
-              end: "center 50%",
-            },
-          }
-        );
-    });
+  // useEffect(() => {
+  //   const tl = gsap.timeline();
+  //   let ctx = gsap.context(() => {
+  //     tl.fromTo(
+  //       divRef1.current,
+  //       {
+  //         opacity: 0,
+  //         autoAlpha: 0,
+  //       },
+  //       {
+  //         autoAlpha: 1,
+  //         opacity: 1,
+  //         scrollTrigger: {
+  //           scrub: true,
+  //           trigger: divRef1.current,
+  //           start: "top 90%",
+  //           end: "center 50%",
+  //         },
+  //       }
+  //     )
+  //       .fromTo(
+  //         divRef2.current,
+  //         {
+  //           opacity: 0,
+  //           autoAlpha: 0,
+  //         },
+  //         {
+  //           autoAlpha: 1,
+  //           opacity: 1,
+  //           scrollTrigger: {
+  //             scrub: true,
+  //             trigger: divRef3.current,
+  //             start: "top 90%",
+  //             end: "center 50%",
+  //           },
+  //         }
+  //       )
+  //       .fromTo(
+  //         divRef3.current,
+  //         {
+  //           opacity: 0,
+  //           autoAlpha: 0,
+  //         },
+  //         {
+  //           autoAlpha: 1,
+  //           opacity: 1,
+  //           scrollTrigger: {
+  //             scrub: true,
+  //             trigger: divRef4.current,
+  //             start: "top 90%",
+  //             end: "center 50%",
+  //           },
+  //         }
+  //       )
+  //       .fromTo(
+  //         divRef4.current,
+  //         {
+  //           opacity: 0,
+  //           autoAlpha: 0,
+  //         },
+  //         {
+  //           autoAlpha: 1,
+  //           opacity: 1,
+  //           scrollTrigger: {
+  //             scrub: true,
+  //             trigger: divRef4.current,
+  //             start: "top 90%",
+  //             end: "center 50%",
+  //           },
+  //         }
+  //       )
+  //       .fromTo(
+  //         divRef5.current,
+  //         {
+  //           opacity: 0,
+  //           autoAlpha: 0,
+  //         },
+  //         {
+  //           autoAlpha: 1,
+  //           opacity: 1,
+  //           scrollTrigger: {
+  //             scrub: true,
+  //             trigger: divRef6.current,
+  //             start: "top 90%",
+  //             end: "center 50%",
+  //           },
+  //         }
+  //       )
+  //       .fromTo(
+  //         divRef6.current,
+  //         {
+  //           opacity: 0,
+  //           autoAlpha: 0,
+  //         },
+  //         {
+  //           autoAlpha: 1,
+  //           opacity: 1,
+  //           scrollTrigger: {
+  //             scrub: true,
+  //             trigger: divRef7.current,
+  //             start: "top 90%",
+  //             end: "center 50%",
+  //           },
+  //         }
+  //       )
+  //       .fromTo(
+  //         divRef7.current,
+  //         {
+  //           opacity: 0,
+  //           autoAlpha: 0,
+  //         },
+  //         {
+  //           autoAlpha: 1,
+  //           opacity: 1,
+  //           scrollTrigger: {
+  //             scrub: true,
+  //             trigger: divRef8.current,
+  //             start: "top 90%",
+  //             end: "center 50%",
+  //           },
+  //         }
+  //       )
+  //       .fromTo(
+  //         divRef8.current,
+  //         {
+  //           opacity: 0,
+  //           autoAlpha: 0,
+  //         },
+  //         {
+  //           autoAlpha: 1,
+  //           opacity: 1,
+  //           scrollTrigger: {
+  //             scrub: true,
+  //             trigger: divRef9.current,
+  //             start: "top 90%",
+  //             end: "center 50%",
+  //           },
+  //         }
+  //       )
+  //       .fromTo(
+  //         divRef9.current,
+  //         {
+  //           opacity: 0,
+  //           autoAlpha: 0,
+  //         },
+  //         {
+  //           autoAlpha: 1,
+  //           opacity: 1,
+  //           scrollTrigger: {
+  //             scrub: true,
+  //             trigger: divRef10.current,
+  //             start: "top 90%",
+  //             end: "center 50%",
+  //           },
+  //         }
+  //       )
+  //       .fromTo(
+  //         divRef10.current,
+  //         {
+  //           opacity: 0,
+  //           autoAlpha: 0,
+  //         },
+  //         {
+  //           autoAlpha: 1,
+  //           opacity: 1,
+  //           scrollTrigger: {
+  //             scrub: true,
+  //             trigger: divRef11.current,
+  //             start: "top 90%",
+  //             end: "center 50%",
+  //           },
+  //         }
+  //       )
+  //       .fromTo(
+  //         divRef11.current,
+  //         {
+  //           opacity: 0,
+  //           autoAlpha: 0,
+  //         },
+  //         {
+  //           autoAlpha: 1,
+  //           opacity: 1,
+  //           scrollTrigger: {
+  //             scrub: true,
+  //             trigger: divRef12.current,
+  //             start: "top 90%",
+  //             end: "center 50%",
+  //           },
+  //         }
+  //       )
+  //       .fromTo(
+  //         divRef12.current,
+  //         {
+  //           opacity: 0,
+  //           autoAlpha: 0,
+  //         },
+  //         {
+  //           autoAlpha: 1,
+  //           opacity: 1,
+  //           scrollTrigger: {
+  //             scrub: true,
+  //             trigger: divRef12.current,
+  //             start: "top 90%",
+  //             end: "center 50%",
+  //           },
+  //         }
+  //       );
+  //   });
 
-    return () => ctx.revert();
-  }, []);
+  //   return () => ctx.revert();
+  // }, []);
 
   return (
     <>
@@ -257,7 +257,7 @@ const SharedLayout = ({ res }: { res: any }) => {
             <h2 style={{ color: res.eachSecTitleColor }}>{res?.name}</h2>
             <div>
               <p>Overview</p>
-              <Link href="">Buy</Link>
+              <Link href={`/shop/${res.slug.current}`}>Buy</Link>
             </div>
           </div>
         </div>

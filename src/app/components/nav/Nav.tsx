@@ -2,19 +2,16 @@
 
 import Link from "next/link";
 import styles from "./nav.module.scss";
-import {
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+import { useState } from "react";
 
 import { useAppSelector } from "@/redux/hooks/hook";
 
 import { IoMdClose } from "react-icons/io";
 import { AiOutlineClose } from "react-icons/ai";
 import { useRouter } from "next/navigation";
+
+import NavConstants from "@/constants/nav";
+import { FaGripLines } from "react-icons/fa6";
 
 const Nav = ({
   state,
@@ -29,13 +26,12 @@ const Nav = ({
   const { products } = useAppSelector((state) => state.basketSlice);
   const [isOpen, setIsOpen] = useState(false);
 
-  const onClose = () => {
-    setIsOpen(false);
-    // doc.style.overflowY = "auto";
-  };
-  const onOpen = () => {
-    setIsOpen(true);
-    // doc.style.overflowY = "hidden";
+  const handleNav = () => {
+    if (isOpen) {
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
+    }
   };
 
   const handleRoute = () => {
@@ -65,31 +61,19 @@ const Nav = ({
             </svg>
           </span>
         </Link>
-        <Link style={{ color: colorState }} className="nav-link" href="/store">
-          Store
-        </Link>
-        <Link style={{ color: colorState }} className="nav-link" href="/mac">
-          Mac
-        </Link>
-        <Link style={{ color: colorState }} className="nav-link" href="/ipad">
-          ipad
-        </Link>
-        <Link style={{ color: colorState }} className="nav-link" href="/store">
-          iPhone
-        </Link>
-        <Link style={{ color: colorState }} className="nav-link" href="/store">
-          Watch
-        </Link>
-        <Link style={{ color: colorState }} className="nav-link" href="/store">
-          Airpods
-        </Link>
+        {NavConstants.map(
+          (item: { name: string; link: string; id: number }) => (
+            <Link
+              style={{ color: colorState }}
+              className="nav-link"
+              key={item.id}
+              href={item.link}
+            >
+              {item.name}
+            </Link>
+          )
+        )}
 
-        <Link style={{ color: colorState }} className="nav-link" href="/store">
-          Accesories
-        </Link>
-        <Link style={{ color: colorState }} className="nav-link" href="/store">
-          Support
-        </Link>
         <button className="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 44">
             <path
@@ -111,19 +95,6 @@ const Nav = ({
             ></path>
           </svg>
         </button>
-        {/* <Link href="/shop/bag" className={styles.svg_grd}>
-          {products.length > 0 && (
-            <span style={{ color: bgState, backgroundColor: colorState }}>
-              {products.length}
-            </span>
-          )}
-          <svg viewBox="0 0 14 44" xmlns="http://www.w3.org/2000/svg">
-            <path
-              style={{ fill: colorState }}
-              d="m11.3535 16.0283h-1.0205a3.4229 3.4229 0 0 0 -3.333-2.9648 3.4229 3.4229 0 0 0 -3.333 2.9648h-1.02a2.1184 2.1184 0 0 0 -2.117 2.1162v7.7155a2.1186 2.1186 0 0 0 2.1162 2.1167h8.707a2.1186 2.1186 0 0 0 2.1168-2.1167v-7.7155a2.1184 2.1184 0 0 0 -2.1165-2.1162zm-4.3535-1.8652a2.3169 2.3169 0 0 1 2.2222 1.8652h-4.4444a2.3169 2.3169 0 0 1 2.2222-1.8652zm5.37 11.6969a1.0182 1.0182 0 0 1 -1.0166 1.0171h-8.7069a1.0182 1.0182 0 0 1 -1.0165-1.0171v-7.7155a1.0178 1.0178 0 0 1 1.0166-1.0166h8.707a1.0178 1.0178 0 0 1 1.0164 1.0166z"
-            ></path>
-          </svg>
-        </Link> */}
       </div>
 
       {/* Mobile? */}
@@ -148,7 +119,6 @@ const Nav = ({
             </svg>
           </span>
         </Link>
-
         <div className={styles.btn_wrp}>
           <Link href="/shop/bag" className={styles.svg_grd}>
             {products.length > 0 && (
@@ -163,164 +133,41 @@ const Nav = ({
               ></path>
             </svg>
           </Link>
-          <button onClick={onOpen}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-              <polyline
-                id="globalnav-menutrigger-bread-bottom"
-                fill={colorState}
-                stroke={colorState}
-                strokeWidth="1.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                points="2 12, 16 12"
-                // class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"
-                className={styles.burger}
-              >
-                <animate
-                  id="globalnav-anim-menutrigger-bread-bottom-open"
-                  attributeName="points"
-                  keyTimes="0;0.5;1"
-                  dur="0.24s"
-                  begin="indefinite"
-                  fill={colorState}
-                  calcMode="spline"
-                  keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
-                  values=" 2 12, 16 12; 2 9, 16 9; 3.5 15, 15 3.5"
-                ></animate>
-                <animate
-                  id="globalnav-anim-menutrigger-bread-bottom-close"
-                  attributeName="points"
-                  keyTimes="0;0.5;1"
-                  dur="0.24s"
-                  begin="indefinite"
-                  fill={colorState}
-                  calcMode="spline"
-                  keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
-                  values=" 3.5 15, 15 3.5; 2 9, 16 9; 2 12, 16 12"
-                ></animate>
-              </polyline>
-              <polyline
-                style={{ fill: colorState }}
-                id="globalnav-menutrigger-bread-top"
-                // fill="currentColor"
-                fill={colorState}
-                stroke={colorState}
-                strokeWidth="1.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                points="2 5, 16 5"
-                // class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"
-              >
-                <animate
-                  style={{ fill: colorState }}
-                  id="globalnav-anim-menutrigger-bread-top-open"
-                  attributeName="points"
-                  keyTimes="0;0.5;1"
-                  dur="0.24s"
-                  begin="indefinite"
-                  fill={colorState}
-                  calcMode="spline"
-                  keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
-                  values=" 2 5, 16 5; 2 9, 16 9; 3.5 3.5, 15 15"
-                ></animate>
-                <animate
-                  style={{ fill: colorState }}
-                  id="globalnav-anim-menutrigger-bread-top-close"
-                  attributeName="points"
-                  keyTimes="0;0.5;1"
-                  dur="0.24s"
-                  begin="indefinite"
-                  fill={colorState}
-                  calcMode="spline"
-                  keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
-                  values=" 3.5 3.5, 15 15; 2 9, 16 9; 2 5, 16 5"
-                ></animate>
-              </polyline>
-            </svg>
+
+          <button className={styles.btn_open} onClick={handleNav}>
+            <FaGripLines style={{ color: colorState, fontSize: "2rem" }} />
           </button>
         </div>
-
-        <div
-          style={{
-            backgroundColor: bgState,
-          }}
-          className={isOpen ? styles.active : styles.links_wrp}
+        {/* <div
+          // style={{
+          //   backgroundColor: bgState,
+          // }}
+          className={styles.links_wrp}
+          // className={
+          //   isOpen ? `${styles.active} ${styles.links_wrp}` : styles.links_wrp
+          // }
         >
           <div className={styles.wrp}>
-            <button className={styles.btn_close} onClick={onClose}>
+            <button className={styles.btn_close} onClick={handleNav}>
               <span></span>
               <span></span>
-              {/* <IoMdClose
-                className={styles.btn_close}
-                color="white"
-                size="50px"
-              /> */}
             </button>
-            {/* <button onClick={handleNav}>close</button> */}
-            <Link
-              onClick={onClose}
-              // onClick={handleNav}
-              style={{ color: colorState }}
-              className="nav-link"
-              href="/mac"
-            >
-              Mac
-            </Link>
-            <Link
-              style={{ color: colorState }}
-              className="nav-link"
-              href="/ipad"
-            >
-              ipad
-            </Link>
-            <Link
-              onClick={onClose}
-              // onClick={handleNav}
-              style={{ color: colorState }}
-              className="nav-link"
-              href=""
-            >
-              iPhone
-            </Link>
-            <Link
-              onClick={onClose}
-              // onClick={handleNav}
-              style={{ color: colorState }}
-              className="nav-link"
-              href=""
-            >
-              Watch
-            </Link>
-            <Link
-              // onClick={handleNav}
-              onClick={onClose}
-              style={{ color: colorState }}
-              className="nav-link"
-              href=""
-            >
-              Airpods
-            </Link>
 
-            <Link
-              onClick={onClose}
-              // onClick={handleNav}
-              style={{ color: colorState }}
-              className="nav-link"
-              href=""
-            >
-              Accesories
-            </Link>
-            <Link
-              // onClick={handleNav}
-              onClick={onClose}
-              style={{ color: colorState }}
-              className="nav-link"
-              href=""
-            >
-              Support
-            </Link>
+            {NavConstants.map(
+              (item: { name: string; link: string; id: number }) => (
+                <Link
+                  onClick={handleNav}
+                  style={{ color: colorState }}
+                  className="nav-link"
+                  key={item.id}
+                  href={item.link}
+                >
+                  {item.name}
+                </Link>
+              )
+            )}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

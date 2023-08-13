@@ -81,21 +81,12 @@ const Page = () => {
                       </span>
                     </div>
                     <div className={styles.price_div}>
-                      {/* <h2>${item.priceOnCart}</h2> */}
-                      <NumericFormat
-                        value={`${item.price}`}
-                        displayType="text"
-                        decimalScale={2}
-                        fixedDecimalScale
-                        prefix="$"
-                      />
                       <NumericFormat
                         value={`${parseInt(item?.priceOnCart)}`}
                         displayType="text"
                         decimalScale={2}
                         fixedDecimalScale
                         prefix="$"
-                        style={{ fontSize: "10px" }}
                       />
                       <button onClick={() => removeProduct(item)}>
                         Remove
