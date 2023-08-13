@@ -36,7 +36,7 @@
   z-index: 999;
   backdrop-filter: blur(90px);
   top: 0;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 
   @include mobile {
     display: flex;
@@ -62,7 +62,7 @@
   }
 
   .links_wrp {
-    height: 100vh;
+    height: 100vh !important;
     width: 100%;
     padding: 0 2rem;
     position: fixed;
@@ -109,7 +109,7 @@
       a {
         font-size: 2.5rem;
         text-align: left;
-        color: black;
+        color: white !important;
       }
     }
   }

@@ -44,7 +44,7 @@ const Page = () => {
   };
 
   return (
-    <div>
+    <div className={styles.grand_grand}>
       <Nav bgState={"white"} colorState={"black"} state={false} />
       <section className={styles.section}>
         <div className={styles.top}>
