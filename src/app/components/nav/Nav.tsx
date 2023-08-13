@@ -138,14 +138,11 @@ const Nav = ({
             <FaGripLines style={{ color: colorState, fontSize: "2rem" }} />
           </button>
         </div>
-        {/* <div
-          // style={{
-          //   backgroundColor: bgState,
-          // }}
-          className={styles.links_wrp}
-          // className={
-          //   isOpen ? `${styles.active} ${styles.links_wrp}` : styles.links_wrp
-          // }
+        <div
+          // className={styles.links_wrp}
+          className={
+            isOpen ? `${styles.active} ${styles.links_wrp}` : styles.links_wrp
+          }
         >
           <div className={styles.wrp}>
             <button className={styles.btn_close} onClick={handleNav}>
@@ -167,7 +164,7 @@ const Nav = ({
               )
             )}
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );
